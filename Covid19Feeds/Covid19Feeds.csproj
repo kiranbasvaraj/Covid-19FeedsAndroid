@@ -21,4 +21,13 @@
     <PackageReference Include="Xamarin.Forms.Skeleton" Version="2.0.0" />
     <PackageReference Include="Xamarin.Plugin.SharedTransitions" Version="2.1.0" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Views\" />
+    <Folder Include="ViewModels\" />
+    <Folder Include="Models\" />
+    <Folder Include="Helpers\" />
+    <Folder Include="Views\ContentViews\" />
+    <Folder Include="Controls\" />
+    <Folder Include="Behaviours\" />
+  </ItemGroup>
 </Project>

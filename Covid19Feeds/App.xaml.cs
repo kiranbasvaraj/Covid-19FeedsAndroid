@@ -1,4 +1,5 @@
-﻿using eliteKit;
+﻿using Covid19Feeds.Views;
+using eliteKit;
 using System;
 using System.Reflection;
 using Xamarin.Forms;
@@ -11,8 +12,8 @@ namespace Covid19Feeds
         public App()
         {
             InitializeComponent();
-          //  Core.initializeKit(typeof(App).GetTypeInfo().Assembly);
-            MainPage = new MainPage();
+            //Core.initializeKit(typeof(App).GetTypeInfo().Assembly);
+            MainPage = new DashboardPage();
         }
 
         protected override void OnStart()

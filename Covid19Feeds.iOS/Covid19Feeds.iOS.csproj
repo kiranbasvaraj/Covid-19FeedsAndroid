@@ -149,8 +149,17 @@
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
     <ProjectReference Include="..\Covid19Feeds\Covid19Feeds.csproj">
-      <Project>{533335F6-390C-473F-B59E-9F5AF21E14A1}</Project>
+      <Project>{5E33E58F-B95A-46F5-A9A0-A2C11666A1A5}</Project>
       <Name>Covid19Feeds</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ic_dashboard.png" />
+    <BundleResource Include="Resources\ic_tab1selected.png" />
+    <BundleResource Include="Resources\ic_tab1unselected.png" />
+    <BundleResource Include="Resources\ic_tab2selected.png" />
+    <BundleResource Include="Resources\ic_tab2unselected.png" />
+    <BundleResource Include="Resources\ic_tab3selected.png" />
+    <BundleResource Include="Resources\ic_tab3unselected.png" />
   </ItemGroup>
 </Project>

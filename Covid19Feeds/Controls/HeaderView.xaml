@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView" x:Class="Covid19Feeds.Controls.HeaderView">
+    <ContentView.Content>
+         <yummy:PancakeView HasShadow="True" Sides="4" BackgroundGradientEndColor="#1976D2" BackgroundGradientStartColor="#74B9FF" BackgroundGradientAngle="180" BorderIsDashed="true" CornerRadius="0,0,50,50" HorizontalOptions="FillAndExpand" HeightRequest="100" VerticalOptions="StartAndExpand">
+                    
+                    <StackLayout>
+                        <Image x:Name="image" HeightRequest="50" WidthRequest="50" />
+                        <Label x:Name="label"  HorizontalTextAlignment="Center" VerticalTextAlignment="Center" TextColor="White" FontSize="Large" FontAttributes="Bold"></Label>
+                    </StackLayout>
+                </yummy:PancakeView>
+    </ContentView.Content>
+</ContentView>
