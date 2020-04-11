@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-
+using eliteKit.iOSCore;
+using FFImageLoading.Forms.Platform;
 using Foundation;
 using UIKit;
 
@@ -23,6 +24,8 @@ namespace Covid19Feeds.iOS
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
             global::Xamarin.Forms.Forms.Init();
+            Abstractions.Init();
+            CachedImageRenderer.Init();
             LoadApplication(new App());
 
             return base.FinishedLaunching(app, options);

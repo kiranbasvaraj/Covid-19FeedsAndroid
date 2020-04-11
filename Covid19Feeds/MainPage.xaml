@@ -3,11 +3,14 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:elite="clr-namespace:eliteKit.eliteElements;assembly=eliteKit"
              mc:Ignorable="d"
              x:Class="Covid19Feeds.MainPage">
-
+    <!--<elite:eliteFooter VerticalOptions="EndAndExpand" HorizontalOptions="FillAndExpand" HeightRequest="200" ColorPrimary="AntiqueWhite" ColorSecondary="Azure">
+         
+    </elite:eliteFooter>-->
     <StackLayout>
-        <!-- Place new controls here -->
+        
         <Label Text="Welcome to Xamarin.Forms!" 
            HorizontalOptions="Center"
            VerticalOptions="CenterAndExpand" />
