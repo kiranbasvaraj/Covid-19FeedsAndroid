@@ -166,6 +166,9 @@
     <BundleResource Include="Resources\BalooBhaina2-Medium.ttf" />
     <BundleResource Include="Resources\BalooBhaina2-Regular.ttf" />
     <BundleResource Include="Resources\BalooBhaina2-SemiBold.ttf" />
-    <BundleResource Include="Resources\covid_image.jpg" />
+    <BundleResource Include="Resources\covid_image.jpg">
+      <SubType></SubType>
+      <Generator></Generator>
+    </BundleResource>
   </ItemGroup>
 </Project>

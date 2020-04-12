@@ -4,11 +4,12 @@ using Xamarin.Forms;
 
 namespace Covid19Feeds.Views.Cards
 {
-    public partial class DashBoardCountryCard : ContentView
+    public partial class CountiresCardView : ContentView
     {
-        public DashBoardCountryCard()
+        public CountiresCardView()
         {
             InitializeComponent();
+            
         }
     }
 }

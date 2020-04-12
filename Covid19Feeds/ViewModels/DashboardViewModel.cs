@@ -186,8 +186,8 @@ namespace Covid19Feeds.ViewModels
                     TabIcon2 = "ic_tab2selected.png";
                     TabIcon3 = "ic_tab3unselected.png";
                     IsDashboardVisible = false;
-                    IsAboutVisible = true;
-                    IsCountriesVisible = false;
+                    IsAboutVisible = false;
+                    IsCountriesVisible = true;
                     Scalevalue = 0.8;
                     Scalevalue1 = 1;
                     Scalevalue2 = 0.8;
@@ -201,8 +201,8 @@ namespace Covid19Feeds.ViewModels
                     TabIcon2 = "ic_tab2unselected.png";
                     TabIcon3 = "ic_tab3selected.png";
                     IsDashboardVisible = false;
-                    IsAboutVisible = false;
-                    IsCountriesVisible = true;
+                    IsAboutVisible = true;
+                    IsCountriesVisible = false;
                     Scalevalue = 0.8;
                     Scalevalue1 = 0.8;
                     Scalevalue2 = 1;

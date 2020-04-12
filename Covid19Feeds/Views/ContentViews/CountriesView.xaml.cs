@@ -9,6 +9,7 @@ namespace Covid19Feeds.Views.ContentViews
         public CountriesView()
         {
             InitializeComponent();
+            list.ItemsSource = new List<string>() { "", "", "", "", "", "", "", "", "", "", "", "", "", "", "" };
         }
     }
 }

@@ -9,6 +9,9 @@ namespace Covid19Feeds.Views.ContentViews
         public DashboardView()
         {
             InitializeComponent();
+           
         }
+
+      
     }
 }

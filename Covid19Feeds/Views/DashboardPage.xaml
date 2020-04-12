@@ -8,7 +8,7 @@
         <yummy:PancakeView>
             <yummy:PancakeView.BackgroundGradientStops>
                 <yummy:GradientStopCollection>
-                    <yummy:GradientStop Color="#1976D2" Offset="0" />
+                    <yummy:GradientStop Color="Transparent" Offset="0" />
                     <yummy:GradientStop Color="Transparent" Offset="0.5" />
                     <yummy:GradientStop Color="Transparent" Offset="1" />
                 </yummy:GradientStopCollection>

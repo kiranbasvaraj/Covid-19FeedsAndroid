@@ -1,15 +1,15 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <ContentView xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:card="clr-namespace:Covid19Feeds.Views.ContentViews" xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView" x:Class="Covid19Feeds.Views.ContentViews.DashboardView">
     <ContentView.Content>
-        <ScrollView>
+        <ScrollView x:Name="scrollview" VerticalScrollBarVisibility="Never">
         <StackLayout Padding="10">
            
-            <yummy:PancakeView BackgroundGradientStartColor="White" BackgroundGradientAngle="180" BorderColor="Red" BackgroundGradientEndColor="White" CornerRadius="15" HasShadow="True" >
+            <yummy:PancakeView BackgroundGradientStartColor="White" BackgroundGradientAngle="180" BorderColor="Red" BackgroundGradientEndColor="White" CornerRadius="15" Style="{StaticResource Key=PancakeStyle}" >
              <Grid>
                  <!--<Image Aspect="AspectFit" Source="https://images-na.ssl-images-amazon.com/images/I/51FzkaCMaGL._AC_SX425_.jpg"></Image>-->
                  <!--<Image Aspect="AspectFit" IsAnimationPlaying="True" Source="earth.gif" HeightRequest="50"></Image>-->
                  <StackLayout>
-                 <Label Text="GLOBE" HorizontalTextAlignment="Center" TextColor="Gray" Style="{StaticResource Key=HeaderLabel}" FontSize="Large"></Label>
+                 <Label Text="GLOBAL" HorizontalTextAlignment="Center" TextColor="Gray" Style="{StaticResource Key=HeaderLabel}" FontSize="Large"></Label>
                       <yummy:PancakeView   BackgroundGradientEndColor="#EAF0F1">
                      <Grid >
                           <Grid.RowDefinitions>
@@ -37,7 +37,7 @@
             
          </yummy:PancakeView>
 
-          <yummy:PancakeView CornerRadius="15" HasShadow="True" BackgroundGradientStartColor="White"  BackgroundGradientEndColor="White">
+          <yummy:PancakeView CornerRadius="15" Style="{StaticResource Key=PancakeStyle}" BackgroundGradientStartColor="White"  BackgroundGradientEndColor="White">
              <Grid>
                  <!--<Image Aspect="Fill" HeightRequest="50" Source="https://cdn.webshopapp.com/shops/94414/files/54025310/india-flag-icon-free-download.jpg"></Image>-->
                   <StackLayout>
@@ -78,14 +78,14 @@
          
           <ScrollView Orientation="Horizontal"  HorizontalScrollBarVisibility="Never">
             <StackLayout Orientation="Horizontal" Padding="0,10,0,50">
-                <yummy:PancakeView BackgroundGradientStartColor="#F4C724" HasShadow="True" BackgroundGradientEndColor="#F0DF87" HeightRequest="120" WidthRequest="200" CornerRadius="30,5,5,30">
+                <yummy:PancakeView BackgroundGradientStartColor="#F4C724" Style="{StaticResource Key=PancakeStyle}" BackgroundGradientEndColor="#F0DF87" HeightRequest="120" WidthRequest="200" CornerRadius="30,5,5,30">
                     <StackLayout>
 
                         <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Spacing="10">
                             <Image Source="https://raw.githubusercontent.com/NovelCOVID/API/master/assets/flags/ir.png" HeightRequest="50" WidthRequest="50"></Image>
                            <Label Text="IRAN" FontSize="Large" VerticalTextAlignment="Center" Style="{StaticResource Key=PageTileLabel}" TextColor="Black"></Label>
                         </StackLayout>
-                         <Grid RowSpacing="-10">
+                         <Grid RowSpacing="0">
                           <Grid.RowDefinitions>
                               <RowDefinition Height="Auto"></RowDefinition>
                               <RowDefinition Height="Auto"></RowDefinition>
@@ -104,7 +104,7 @@
                        
                     </StackLayout>
                 </yummy:PancakeView>
-                 <yummy:PancakeView BackgroundGradientStartColor="#74B9FF" HasShadow="True" BackgroundGradientEndColor="#0A79DF" HeightRequest="180" WidthRequest="200" CornerRadius="30,5,5,30">
+                 <yummy:PancakeView BackgroundGradientStartColor="#74B9FF" Style="{StaticResource Key=PancakeStyle}" BackgroundGradientEndColor="#0A79DF" HeightRequest="180" WidthRequest="200" CornerRadius="30,5,5,30">
                     <StackLayout>
 
                         <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Spacing="10">
@@ -113,7 +113,7 @@
                         </StackLayout>
                     </StackLayout>
                 </yummy:PancakeView>
-                 <yummy:PancakeView BackgroundGradientStartColor="Red" HasShadow="True" BackgroundGradientEndColor="Orange" HeightRequest="180" WidthRequest="200" CornerRadius="30,5,5,30">
+                 <yummy:PancakeView BackgroundGradientStartColor="Red" Style="{StaticResource Key=PancakeStyle}" BackgroundGradientEndColor="Orange" HeightRequest="180" WidthRequest="200" CornerRadius="30,5,5,30">
                     <StackLayout>
 
                         <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Spacing="10">
@@ -122,7 +122,7 @@
                         </StackLayout>
                     </StackLayout>
                 </yummy:PancakeView>
-                 <yummy:PancakeView BackgroundGradientStartColor="#4834DF" HasShadow="True" BackgroundGradientEndColor="#0A79DF" HeightRequest="180" WidthRequest="200" CornerRadius="30,5,5,30">
+                 <yummy:PancakeView BackgroundGradientStartColor="#4834DF" Style="{StaticResource Key=PancakeStyle}" BackgroundGradientEndColor="#0A79DF" HeightRequest="180" WidthRequest="200" CornerRadius="30,5,5,30">
                     <StackLayout>
 
                         <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Spacing="10">
@@ -134,7 +134,7 @@
               
                 </StackLayout>
          </ScrollView>
-            <yummy:PancakeView HasShadow="True" CornerRadius="30">
+            <yummy:PancakeView CornerRadius="30" Style="{StaticResource Key=PancakeStyle}">
             <Grid>
                 
                  <Image Source="covid_image"></Image>
