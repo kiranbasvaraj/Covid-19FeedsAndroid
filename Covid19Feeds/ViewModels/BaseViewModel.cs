@@ -6,8 +6,15 @@ namespace Covid19Feeds.ViewModels
 {
     public class BaseViewModel:INotifyPropertyChanged
     {
-        public BaseViewModel()
+        private bool isBusy { get; set; }
+        public bool IsBusy
         {
+            get { return isBusy; }
+            set
+            {
+                isBusy = value;
+                NotifyChage();
+            }
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

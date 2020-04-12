@@ -14,15 +14,15 @@
                         <ColumnDefinition Width="*"></ColumnDefinition>
                          <ColumnDefinition Width="15"></ColumnDefinition>
                     </Grid.ColumnDefinitions>
-                    <Image Grid.Row="0" Grid.Column="0" HeightRequest="50" WidthRequest="50" HorizontalOptions="Center" Source="https://raw.githubusercontent.com/NovelCOVID/API/master/assets/flags/us.png"></Image>
-                    <Label Grid.Row="0" Grid.Column="1"  HorizontalTextAlignment="Start" FontSize="Large" Text="INIDA" Style="{StaticResource Key=PageTileLabel}"></Label>
+                    <Image Grid.Row="0" Grid.Column="0" HeightRequest="50" WidthRequest="50" HorizontalOptions="Center" Source="{Binding countryInfo.flag}" ></Image>
+                    <Label Grid.Row="0" Grid.Column="1"  HorizontalTextAlignment="Start" FontSize="Large" Text="{Binding country}" Style="{StaticResource Key=PageTileLabel}"></Label>
                     <Label Grid.Row="1" Grid.Column="0" HorizontalTextAlignment="Center" FontSize="Medium" Text="Active" TextColor="#f76f6f" Style="{StaticResource Key=SubHeaderLabel}"></Label>
                     <Label Grid.Row="1" Grid.Column="1"  HorizontalTextAlignment="Center" FontSize="Medium" Text="Recovred" TextColor="#26ae60" Style="{StaticResource Key=SubHeaderLabel}"></Label>
                     <Label Grid.Row="1" Grid.Column="2" HorizontalTextAlignment="Center" FontSize="Medium" Text="Deaths" TextColor="#B83227" Style="{StaticResource Key=SubHeaderLabel}"></Label>
 
-                    <Label Grid.Row="2" Grid.Column="0" HorizontalTextAlignment="Center" FontSize="Medium" TextColor="#616C6F" Text="2387678678" Style="{StaticResource Key=HeaderLabel}"></Label>
-                    <Label Grid.Row="2" Grid.Column="1" HorizontalTextAlignment="Center" FontSize="Medium" TextColor="#616C6F" Text="323224" Style="{StaticResource Key=HeaderLabel}"></Label>
-                    <Label Grid.Row="2" Grid.Column="2" HorizontalTextAlignment="Center" FontSize="Medium" TextColor="#616C6F" Text="3442424" Style="{StaticResource Key=HeaderLabel}"></Label>
+                    <Label Grid.Row="2" Grid.Column="0" HorizontalTextAlignment="Center" FontSize="Medium" TextColor="#616C6F" Text="{Binding active}" Style="{StaticResource Key=HeaderLabel}"></Label>
+                    <Label Grid.Row="2" Grid.Column="1" HorizontalTextAlignment="Center" FontSize="Medium" TextColor="#616C6F" Text="{Binding recovered}" Style="{StaticResource Key=HeaderLabel}"></Label>
+                    <Label Grid.Row="2" Grid.Column="2" HorizontalTextAlignment="Center" FontSize="Medium" TextColor="#616C6F" Text="{Binding deaths}" Style="{StaticResource Key=HeaderLabel}"></Label>
                     <BoxView Grid.Row="0" Grid.Column="3" Grid.RowSpan="3" BackgroundColor="#74B9FF"></BoxView>
            
                 </Grid>

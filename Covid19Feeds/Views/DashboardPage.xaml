@@ -26,6 +26,8 @@
                     <local:DashboardView IsVisible="{Binding IsDashboardVisible}" x:Name="dashboard"/>
                     <local:CountriesView IsVisible="{Binding IsCountriesVisible}" x:Name="countires"/>
                     <local:AboutView IsVisible="{Binding IsAboutVisible}" x:Name="about"/>
+                    
+                    <ActivityIndicator HeightRequest="50" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" WidthRequest="50" IsRunning="{Binding IsBusy}" IsVisible="{Binding IsBusy}"></ActivityIndicator>
                 </Grid>
                  <ctrl:FooterView VerticalOptions="EndAndExpand"/>
 

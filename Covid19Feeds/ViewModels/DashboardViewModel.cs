@@ -1,25 +1,40 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Threading.Tasks;
+using Covid19Feeds.Models;
+using Covid19Feeds.Services;
+using WantToWork.Helpers;
 using Xamarin.Forms;
+using System.Linq;
 
 namespace Covid19Feeds.ViewModels
 {
-    public class DashboardViewModel:BaseViewModel
+    public class DashboardViewModel : BaseViewModel
     {
         public Command<string> ChangeTabCommand { get; set; }
+        public Command CVSelectionCommand { get; set; }
         public DashboardViewModel()
         {
-            ChangeTabCommand = new Command<string>((input)=> ChangeTabs(input));
+            ChangeTabCommand = new Command<string>((input) => ChangeTabs(input));
+            CVSelectionCommand = new Command(()=>CVSelection());
             IsHeaderImageVisible = true;
+        }
+
+        private void CVSelection()
+        {
+            //var x = input;
         }
 
         private string tabIcon1 { get; set; } = "ic_tab1unselected.png";
         public string TabIcon1
         {
             get { return tabIcon1; }
-            set {
+            set
+            {
                 tabIcon1 = value;
                 NotifyChage();
-               }
+            }
         }
 
 
@@ -35,7 +50,7 @@ namespace Covid19Feeds.ViewModels
         }
 
 
-        
+
         private string tabIcon3 { get; set; } = "ic_tab3unselected.png";
         public string TabIcon3
         {
@@ -117,7 +132,7 @@ namespace Covid19Feeds.ViewModels
             }
         }
 
-        private string pageTitle { get; set; }= "Covid-19 Feeds";
+        private string pageTitle { get; set; } = "Covid-19 Feeds";
         public string PageTitle
         {
             get { return pageTitle; }
@@ -139,7 +154,7 @@ namespace Covid19Feeds.ViewModels
             }
         }
 
-        private bool isHeaderImageVisible { get; set; } 
+        private bool isHeaderImageVisible { get; set; }
         public bool IsHeaderImageVisible
         {
             get { return isHeaderImageVisible; }
@@ -211,8 +226,104 @@ namespace Covid19Feeds.ViewModels
                     ShouldMoveTitleToLeft = false;
                     IsHeaderImageVisible = false;
                     break;
-                    
-                
+
+
+            }
+        }
+
+
+
+
+        private GlobalCaseModel _globalCaseDataModel { get; set; }
+        public GlobalCaseModel GlobalCaseDataModel
+        {
+            get { return _globalCaseDataModel; }
+            set
+            {
+                _globalCaseDataModel = value;
+                NotifyChage();
+            }
+        }
+
+        public async Task LoadGlobalCases()
+        {
+            try
+            {
+                IsBusy = true;
+                var res = await RestClient.RestClientInstance.GetAsync<GlobalCaseModel>(AppConstants.LoadGlobalCasesAPi);
+                if (res != null)
+                {
+                    GlobalCaseDataModel = res;
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex.StackTrace);
+            }
+            finally
+            {
+                IsBusy = false;
+
+            }
+        }
+
+
+
+        private List<AllCountriesCasesModel> _globalCountryCaseDataModel { get; set; }
+        public List<AllCountriesCasesModel> GlobalCountryCaseDataModel
+        {
+            get { return _globalCountryCaseDataModel; }
+            set
+            {
+                _globalCountryCaseDataModel = value;
+                NotifyChage();
+            }
+        }
+
+
+        private List<AllCountriesCasesModel> _topInfectedCountries { get; set; }
+        public List<AllCountriesCasesModel> TopInfectedCountries
+        {
+            get { return _topInfectedCountries; }
+            set
+            {
+                _topInfectedCountries = value;
+                NotifyChage();
+            }
+        }
+
+
+        private List<AllCountriesCasesModel> _seletedItem { get; set; }
+        public List<AllCountriesCasesModel> SeletedItem
+        {
+            get { return _seletedItem; }
+            set
+            {
+                _seletedItem = value;
+                NotifyChage();
+            }
+        }
+
+        public async Task LoadAllCountryCases()
+        {
+            try
+            {
+                IsBusy = true;
+                var res = await RestClient.RestClientInstance.GetAsync<List<AllCountriesCasesModel>>(AppConstants.LoadAllCountryCasesAPi);
+                if (res != null)
+                {
+                    GlobalCountryCaseDataModel = res;
+                    TopInfectedCountries= res.OrderByDescending(x=>x.cases).Take(5).ToList();
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex.StackTrace);
+            }
+            finally
+            {
+                IsBusy = false;
+
             }
         }
     }

@@ -10,7 +10,7 @@ namespace Covid19Feeds.Views.ContentViews
         public CountriesView()
         {
             InitializeComponent();
-            list.ItemsSource = new List<string>() { "", "", "", "", "", "", "", "", "", "", "", "", "", "", "" };
+          //  list.ItemsSource = new List<string>() { "", "", "", "", "", "", "", "", "", "", "", "", "", "", "" };
         }
 
         private async void ListItemTapped(object s,ItemTappedEventArgs e)
