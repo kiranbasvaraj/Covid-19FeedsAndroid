@@ -1,0 +1,127 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:pancakeview="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView" x:Class="Covid19Feeds.Views.CovidDetailsPage">
+    <NavigationPage.HasBackButton>
+        <x:Boolean>false</x:Boolean>
+    </NavigationPage.HasBackButton>
+    <NavigationPage.HasNavigationBar>
+        <x:Boolean>false</x:Boolean>
+    </NavigationPage.HasNavigationBar>
+    <StackLayout  Padding="0,0,0,0">
+        <pancakeview:PancakeView HasShadow="True" Sides="4" BackgroundGradientEndColor="#1976D2" BackgroundGradientStartColor="#74B9FF" BackgroundGradientAngle="180" BorderIsDashed="true" CornerRadius="0,0,50,50" HorizontalOptions="FillAndExpand" HeightRequest="50" VerticalOptions="Start">
+            <Label Text="INDIA" x:Name="label" Style="{StaticResource PageTileLabel}" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" TextColor="White" FontSize="Large" FontAttributes="Bold"></Label>
+        </pancakeview:PancakeView>
+
+        <ScrollView>
+        <StackLayout Spacing="30"
+                     Padding="10">
+        <Image Source="https://raw.githubusercontent.com/NovelCOVID/API/master/assets/flags/us.png"></Image>
+           <pancakeview:PancakeView HasShadow="False" BackgroundGradientStartColor="#E3F2FD" BackgroundGradientEndColor="#E3F2FD" Padding="10" CornerRadius="0,30,0,30">
+                <StackLayout Orientation="Horizontal" Padding="20,0,20,0">
+                     <Label Text="Test" FontSize="Medium" HorizontalTextAlignment="End" HorizontalOptions="EndAndExpand" Style="{StaticResource SubHeaderLabel}" TextColor="#616C6F"></Label>
+                <Label Grid.Row="2" Grid.Column="1" Text="9898" HorizontalOptions="CenterAndExpand" FontSize="Medium" HorizontalTextAlignment="Center" Style="{StaticResource SubHeaderLabel}" TextColor="#616C6F"></Label>
+                </StackLayout>
+            </pancakeview:PancakeView>
+             <StackLayout VerticalOptions="Start">
+                 <pancakeview:PancakeView VerticalOptions="StartAndExpand" HasShadow="False" BackgroundGradientStartColor="#EDE7F6" BackgroundGradientEndColor="#EDE7F6" Padding="10" CornerRadius="0,30,0,30">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Label Grid.Row="0" Grid.Column="0" Text="Critical Cases" FontSize="Medium" HorizontalTextAlignment="End" Style="{StaticResource SubHeaderLabel}" TextColor="#616C6F"></Label>
+                <Label Grid.Row="0" Grid.Column="1" Text="78687" FontSize="Medium" HorizontalTextAlignment="Center" Style="{StaticResource SubHeaderLabel}" TextColor="#616C6F"></Label>
+                <Label Grid.Row="1" Grid.Column="0" Text="Cases per one million" FontSize="Medium" HorizontalTextAlignment="End" Style="{StaticResource SubHeaderLabel}" TextColor="#616C6F"></Label>
+                <Label Grid.Row="1" Grid.Column="1" Text="9898" FontSize="Medium" HorizontalTextAlignment="Center" Style="{StaticResource SubHeaderLabel}" TextColor="#616C6F"></Label>
+            </Grid>
+        </pancakeview:PancakeView>
+
+
+
+             <pancakeview:PancakeView HasShadow="False" BackgroundGradientStartColor="#E0F7FA" BackgroundGradientEndColor="#E0F7FA" Padding="10" CornerRadius="0,30,0,30">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Label Grid.Row="0" Grid.Column="0" Text="Test Per One Million" FontSize="Medium" HorizontalTextAlignment="End" Style="{StaticResource SubHeaderLabel}" TextColor="#616C6F"></Label>
+                <Label Grid.Row="0" Grid.Column="1" Text="78687" FontSize="Medium" HorizontalTextAlignment="Center" Style="{StaticResource SubHeaderLabel}" TextColor="#616C6F"></Label>
+                <Label Grid.Row="1" Grid.Column="0" Text="Deaths per one million" FontSize="Medium" HorizontalTextAlignment="End" Style="{StaticResource SubHeaderLabel}" TextColor="#616C6F"></Label>
+                <Label Grid.Row="1" Grid.Column="1" Text="9898" FontSize="Medium" HorizontalTextAlignment="Center" Style="{StaticResource SubHeaderLabel}" TextColor="#616C6F"></Label>
+               
+            </Grid>
+        </pancakeview:PancakeView>
+            </StackLayout>
+       
+        <Grid Padding="10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                 <RowDefinition Height="*"></RowDefinition>
+                 <RowDefinition Height="*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+          <pancakeview:PancakeView  Grid.Row="0" Grid.Column="0" Style="{StaticResource PancakeStyle}" BackgroundGradientStartColor="#AB47BC" BackgroundGradientEndColor="#CE93D8" Padding="10" HorizontalOptions="FillAndExpand" CornerRadius="30">
+                <StackLayout>
+                    <Image Source="ic_tab1selected" HeightRequest="20" WidthRequest="20"></Image>
+                    <Label Text="Total Cases" FontSize="Medium" HorizontalTextAlignment="Center" Style="{StaticResource SubHeaderLabel}" TextColor="White"></Label>
+                    <Label Text="245656" FontSize="Medium" HorizontalTextAlignment="Center" Style="{StaticResource SubHeaderLabel}" TextColor="White"></Label>
+                </StackLayout>
+            </pancakeview:PancakeView>
+            <pancakeview:PancakeView Grid.Row="0" Grid.Column="1" Style="{StaticResource PancakeStyle}" BackgroundGradientStartColor="#E91E63" BackgroundGradientEndColor="#F48FB1" Padding="10" HorizontalOptions="FillAndExpand" CornerRadius="30">
+                <StackLayout>
+                    <Image Source="ic_tab1selected" HeightRequest="20" WidthRequest="20"></Image>
+                    <Label Text="Todays Cases" FontSize="Medium" HorizontalTextAlignment="Center" Style="{StaticResource SubHeaderLabel}" TextColor="White"></Label>
+                    <Label Text="245656" FontSize="Medium" HorizontalTextAlignment="Center" Style="{StaticResource SubHeaderLabel}" TextColor="White"></Label>
+                </StackLayout>
+            </pancakeview:PancakeView>
+            <pancakeview:PancakeView Grid.Row="1" Grid.Column="0" Style="{StaticResource PancakeStyle}" BackgroundGradientStartColor="#F44336" BackgroundGradientEndColor="#EF9A9A" Padding="10" HorizontalOptions="FillAndExpand" CornerRadius="30">
+                <StackLayout>
+                    <Image Source="ic_tab1selected" HeightRequest="20" WidthRequest="20"></Image>
+                    <Label Text="Deaths" FontSize="Medium" HorizontalTextAlignment="Center" Style="{StaticResource SubHeaderLabel}" TextColor="White"></Label>
+                    <Label Text="245656" FontSize="Medium" HorizontalTextAlignment="Center" Style="{StaticResource SubHeaderLabel}" TextColor="White"></Label>
+                </StackLayout>
+            </pancakeview:PancakeView>
+
+
+
+             <pancakeview:PancakeView Grid.Row="1" Grid.Column="1" Style="{StaticResource PancakeStyle}" BackgroundGradientStartColor="#2196F3" BackgroundGradientEndColor="#90CAF9" Padding="10" HorizontalOptions="FillAndExpand" CornerRadius="30">
+                <StackLayout>
+                    <Image Source="ic_tab1selected" HeightRequest="20" WidthRequest="20"></Image>
+                    <Label Text="Todays Deaths" FontSize="Medium" HorizontalTextAlignment="Center" Style="{StaticResource SubHeaderLabel}" TextColor="White"></Label>
+                    <Label Text="245656" FontSize="Medium" HorizontalTextAlignment="Center" Style="{StaticResource SubHeaderLabel}" TextColor="White"></Label>
+                </StackLayout>
+            </pancakeview:PancakeView>
+            <pancakeview:PancakeView Grid.Row="2" Grid.Column="0" Style="{StaticResource PancakeStyle}" BackgroundGradientStartColor="#3949AB" BackgroundGradientEndColor="#9FA8DA" Padding="10" HorizontalOptions="FillAndExpand" CornerRadius="30">
+                <StackLayout>
+                    <Image Source="ic_tab1selected" HeightRequest="20" WidthRequest="20"></Image>
+                    <Label Text="Recovered" FontSize="Medium" HorizontalTextAlignment="Center" Style="{StaticResource SubHeaderLabel}" TextColor="White"></Label>
+                    <Label Text="245656" FontSize="Medium" HorizontalTextAlignment="Center" Style="{StaticResource SubHeaderLabel}" TextColor="White"></Label>
+                </StackLayout>
+            </pancakeview:PancakeView>
+            <pancakeview:PancakeView  Grid.Row="2" Grid.Column="1" Style="{StaticResource PancakeStyle}" BackgroundGradientStartColor="#5E35B1" BackgroundGradientEndColor="#9575CD" Padding="10" HorizontalOptions="FillAndExpand" CornerRadius="30">
+                <StackLayout>
+                    <Image Source="ic_tab1selected" HeightRequest="20" WidthRequest="20"></Image>
+                    <Label Text="Active" FontSize="Medium" HorizontalTextAlignment="Center" Style="{StaticResource SubHeaderLabel}" TextColor="White"></Label>
+                    <Label Text="245656" FontSize="Medium" HorizontalTextAlignment="Center" Style="{StaticResource SubHeaderLabel}" TextColor="White"></Label>
+                </StackLayout>
+            </pancakeview:PancakeView>
+        </Grid>
+           
+       
+
+            </StackLayout>
+            </ScrollView>
+    </StackLayout>
+</ContentPage>

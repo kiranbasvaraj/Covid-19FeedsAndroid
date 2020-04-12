@@ -27,6 +27,11 @@
             <Setter Property="HasShadow" Value="{OnPlatform Android=true,iOS=false}"/>
         </Style>
 
+         <Style TargetType="NavigationPage">
+            <Setter Property="BarBackgroundColor" Value="#1976D2"/>
+             <Setter Property="HeightRequest" Value="5.0"></Setter>
+        </Style>
+
         <Style x:Key="PageTileLabel"  TargetType="Label">
             <Setter Property="FontFamily" Value="{StaticResource Key=ExtraBold}" />
         </Style>

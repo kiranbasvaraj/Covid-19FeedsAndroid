@@ -13,7 +13,7 @@ namespace Covid19Feeds
         {
             InitializeComponent();
             //Core.initializeKit(typeof(App).GetTypeInfo().Assembly);
-            MainPage = new DashboardPage();
+            MainPage = new NavigationPage( new DashboardPage());
         }
 
         protected override void OnStart()
