@@ -5,7 +5,7 @@
                     
                     <StackLayout>
                         <Image x:Name="image" HeightRequest="50" WidthRequest="50" />
-                        <Label x:Name="label"  HorizontalTextAlignment="Center" VerticalTextAlignment="Center" TextColor="White" FontSize="Large" FontAttributes="Bold"></Label>
+                        <Label x:Name="label" Style="{StaticResource PageTileLabel}"  HorizontalTextAlignment="Center" VerticalTextAlignment="Center" TextColor="White" FontSize="Large" FontAttributes="Bold"></Label>
                     </StackLayout>
                 </yummy:PancakeView>
     </ContentView.Content>

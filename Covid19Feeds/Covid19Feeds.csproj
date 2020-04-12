@@ -29,5 +29,6 @@
     <Folder Include="Views\ContentViews\" />
     <Folder Include="Controls\" />
     <Folder Include="Behaviours\" />
+    <Folder Include="Views\Cards\" />
   </ItemGroup>
 </Project>

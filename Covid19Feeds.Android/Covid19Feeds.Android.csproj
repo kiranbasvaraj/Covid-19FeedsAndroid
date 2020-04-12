@@ -131,6 +131,14 @@
       <SubType></SubType>
       <Generator></Generator>
     </AndroidResource>
+    <AndroidResource Include="Resources\drawable\earth.gif">
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\drawable\covid_image.jpg">
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable\" />
@@ -140,6 +148,13 @@
       <Project>{5E33E58F-B95A-46F5-A9A0-A2C11666A1A5}</Project>
       <Name>Covid19Feeds</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\BalooBhaina2-Bold.ttf" />
+    <AndroidAsset Include="Assets\BalooBhaina2-ExtraBold.ttf" />
+    <AndroidAsset Include="Assets\BalooBhaina2-Medium.ttf" />
+    <AndroidAsset Include="Assets\BalooBhaina2-Regular.ttf" />
+    <AndroidAsset Include="Assets\BalooBhaina2-SemiBold.ttf" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>

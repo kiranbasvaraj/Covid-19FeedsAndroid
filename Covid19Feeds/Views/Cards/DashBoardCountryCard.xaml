@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView" x:Class="Covid19Feeds.Views.Cards.DashBoardCountryCard">
+    <!--<ContentView.Content>
+         <yummy:PancakeView BackgroundColor="#EAF0F1" CornerRadius="5" HasShadow="True">
+             <Grid>
+                 <Image Aspect="Fill" Source="https://upload.wikimedia.org/wikipedia/en/4/41/Flag_of_India.svg"></Image>
+                  <StackLayout>
+                 <Label Text="INDIA" HorizontalTextAlignment="Center" TextColor="#616C6F" Style="{StaticResource Key=HeaderLabel}" FontSize="Large"></Label>
+                      <Grid>
+                          <Grid.RowDefinitions>
+                              <RowDefinition Height="Auto"></RowDefinition>
+                              <RowDefinition Height="Auto"></RowDefinition>
+                          </Grid.RowDefinitions>
+                          <Grid.ColumnDefinitions>
+                              <ColumnDefinition Width="*"></ColumnDefinition>
+                              <ColumnDefinition Width="*"></ColumnDefinition>
+                              <ColumnDefinition Width="*"></ColumnDefinition>
+                          </Grid.ColumnDefinitions>
+
+                          <Label Grid.Row="0" Grid.Column="0" Text="Total" HorizontalTextAlignment="Center" TextColor="#0A79DF" Style="{StaticResource Key=HeaderLabel}" FontSize="Medium"></Label>
+                       <Label Grid.Row="0" Grid.Column="1" Text="Deaths" HorizontalTextAlignment="Center" TextColor="#FF3031" Style="{StaticResource Key=HeaderLabel}" FontSize="Medium"></Label>
+                       <Label Grid.Row="0" Grid.Column="2" Text="Recovered" HorizontalTextAlignment="Center" TextColor="#26ae60" Style="{StaticResource Key=HeaderLabel}" FontSize="Medium"></Label>
+
+                        <Label Grid.Row="1" Grid.Column="0" Text="123" HorizontalTextAlignment="Center" TextColor="#0A79DF" Style="{StaticResource Key=PageTileLabel}" FontSize="Medium"></Label>
+                       <Label Grid.Row="1" Grid.Column="1" Text="2332" HorizontalTextAlignment="Center" TextColor="#FF3031" Style="{StaticResource Key=PageTileLabel}" FontSize="Medium"></Label>
+                       <Label Grid.Row="1" Grid.Column="2" Text="22444" HorizontalTextAlignment="Center" TextColor="#26ae60" Style="{StaticResource Key=PageTileLabel}" FontSize="Medium"></Label>
+                      </Grid>
+                      
+
+                  </StackLayout>
+             </Grid>
+            
+         </yummy:PancakeView>
+    </ContentView.Content>-->
+</ContentView>

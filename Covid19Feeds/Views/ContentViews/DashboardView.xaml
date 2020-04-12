@@ -1,6 +1,147 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentView xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Covid19Feeds.Views.ContentViews.DashboardView">
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:card="clr-namespace:Covid19Feeds.Views.ContentViews" xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView" x:Class="Covid19Feeds.Views.ContentViews.DashboardView">
     <ContentView.Content>
-          <Label Text="Tab3"></Label>
+        <ScrollView>
+        <StackLayout Padding="10">
+           
+            <yummy:PancakeView BackgroundGradientStartColor="White" BackgroundGradientAngle="180" BorderColor="Red" BackgroundGradientEndColor="White" CornerRadius="15" HasShadow="True" >
+             <Grid>
+                 <!--<Image Aspect="AspectFit" Source="https://images-na.ssl-images-amazon.com/images/I/51FzkaCMaGL._AC_SX425_.jpg"></Image>-->
+                 <!--<Image Aspect="AspectFit" IsAnimationPlaying="True" Source="earth.gif" HeightRequest="50"></Image>-->
+                 <StackLayout>
+                 <Label Text="GLOBE" HorizontalTextAlignment="Center" TextColor="Gray" Style="{StaticResource Key=HeaderLabel}" FontSize="Large"></Label>
+                      <yummy:PancakeView   BackgroundGradientEndColor="#EAF0F1">
+                     <Grid >
+                          <Grid.RowDefinitions>
+                              <RowDefinition Height="Auto"></RowDefinition>
+                              <RowDefinition Height="Auto"></RowDefinition>
+                          </Grid.RowDefinitions>
+                          <Grid.ColumnDefinitions>
+                              <ColumnDefinition Width="*"></ColumnDefinition>
+                              <ColumnDefinition Width="*"></ColumnDefinition>
+                              <ColumnDefinition Width="*"></ColumnDefinition>
+                          </Grid.ColumnDefinitions>
+
+                          <Label Grid.Row="0" Grid.Column="0" Text="Total" HorizontalTextAlignment="Center" TextColor="#0A79DF" Style="{StaticResource Key=HeaderLabel}" FontSize="Medium"></Label>
+                       <Label Grid.Row="0" Grid.Column="1" Text="Deaths" HorizontalTextAlignment="Center" TextColor="#EC4849" Style="{StaticResource Key=HeaderLabel}" FontSize="Medium"></Label>
+                       <Label Grid.Row="0" Grid.Column="2" Text="Recovered" HorizontalTextAlignment="Center" TextColor="#26ae60" Style="{StaticResource Key=HeaderLabel}" FontSize="Medium"></Label>
+
+                        <Label Grid.Row="1" Grid.Column="0" Text="123" HorizontalTextAlignment="Center" TextColor="#0A79DF" Style="{StaticResource Key=PageTileLabel}" FontSize="Medium"></Label>
+                       <Label Grid.Row="1" Grid.Column="1" Text="2332" HorizontalTextAlignment="Center" TextColor="#EC4849" Style="{StaticResource Key=PageTileLabel}" FontSize="Medium"></Label>
+                       <Label Grid.Row="1" Grid.Column="2" Text="22444" HorizontalTextAlignment="Center" TextColor="#26ae60" Style="{StaticResource Key=PageTileLabel}" FontSize="Medium"></Label>
+                      </Grid>
+                      </yummy:PancakeView>
+
+                  </StackLayout>
+             </Grid>
+            
+         </yummy:PancakeView>
+
+          <yummy:PancakeView CornerRadius="15" HasShadow="True" BackgroundGradientStartColor="White"  BackgroundGradientEndColor="White">
+             <Grid>
+                 <!--<Image Aspect="Fill" HeightRequest="50" Source="https://cdn.webshopapp.com/shops/94414/files/54025310/india-flag-icon-free-download.jpg"></Image>-->
+                  <StackLayout>
+                 <Label Text="INDIA" HorizontalTextAlignment="Center" TextColor="#616C6F" Style="{StaticResource Key=HeaderLabel}" FontSize="Large"></Label>
+
+                       <yummy:PancakeView  >
+                           <Grid>
+                          <Grid.RowDefinitions>
+                              <RowDefinition Height="Auto"></RowDefinition>
+                              <RowDefinition Height="Auto"></RowDefinition>
+                          </Grid.RowDefinitions>
+                          <Grid.ColumnDefinitions>
+                              <ColumnDefinition Width="*"></ColumnDefinition>
+                              <ColumnDefinition Width="*"></ColumnDefinition>
+                              <ColumnDefinition Width="*"></ColumnDefinition>
+                          </Grid.ColumnDefinitions>
+
+                          <Label Grid.Row="0" Grid.Column="0" Text="Total" HorizontalTextAlignment="Center" TextColor="#0A79DF" Style="{StaticResource Key=HeaderLabel}" FontSize="Medium"></Label>
+                       <Label Grid.Row="0" Grid.Column="1" Text="Deaths" HorizontalTextAlignment="Center" TextColor="#FF3031" Style="{StaticResource Key=HeaderLabel}" FontSize="Medium"></Label>
+                       <Label Grid.Row="0" Grid.Column="2" Text="Recovered" HorizontalTextAlignment="Center" TextColor="#26ae60" Style="{StaticResource Key=HeaderLabel}" FontSize="Medium"></Label>
+
+                        <Label Grid.Row="1" Grid.Column="0" Text="123" HorizontalTextAlignment="Center" TextColor="#0A79DF" Style="{StaticResource Key=PageTileLabel}" FontSize="Medium"></Label>
+                       <Label Grid.Row="1" Grid.Column="1" Text="2332" HorizontalTextAlignment="Center" TextColor="#FF3031" Style="{StaticResource Key=PageTileLabel}" FontSize="Medium"></Label>
+                       <Label Grid.Row="1" Grid.Column="2" Text="22444" HorizontalTextAlignment="Center" TextColor="#26ae60" Style="{StaticResource Key=PageTileLabel}" FontSize="Medium"></Label>
+                      </Grid>
+                      </yummy:PancakeView>
+
+                  </StackLayout>
+             </Grid>
+            
+         </yummy:PancakeView>
+
+            <StackLayout Orientation="Horizontal" Padding="0,10,0,10">
+                 <Label Text="Top Affected Countries" FontSize="Medium" VerticalTextAlignment="Center" Style="{StaticResource Key=HeaderLabel}" TextColor="#74B9FF"></Label>
+                <Label BackgroundColor="Transparent" Text="ViewAll" HorizontalOptions="EndAndExpand" Style="{StaticResource SubHeaderLabel}" VerticalTextAlignment="Center"></Label>
+            </StackLayout>
+
+         
+          <ScrollView Orientation="Horizontal">
+            <StackLayout Orientation="Horizontal">
+                <yummy:PancakeView BackgroundGradientStartColor="#F4C724" HasShadow="True" BackgroundGradientEndColor="#F0DF87" HeightRequest="120" WidthRequest="200" CornerRadius="30,5,5,30">
+                    <StackLayout>
+
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Spacing="10">
+                            <Image Source="https://raw.githubusercontent.com/NovelCOVID/API/master/assets/flags/ir.png" HeightRequest="50" WidthRequest="50"></Image>
+                           <Label Text="IRAN" FontSize="Large" VerticalTextAlignment="Center" Style="{StaticResource Key=PageTileLabel}" TextColor="Black"></Label>
+                        </StackLayout>
+                         <Grid RowSpacing="-10">
+                          <Grid.RowDefinitions>
+                              <RowDefinition Height="Auto"></RowDefinition>
+                              <RowDefinition Height="Auto"></RowDefinition>
+                          </Grid.RowDefinitions>
+                          <Grid.ColumnDefinitions>
+                              <ColumnDefinition Width="*"></ColumnDefinition>
+                              <ColumnDefinition Width="*"></ColumnDefinition>
+                             
+                          </Grid.ColumnDefinitions>
+                              <Label HorizontalTextAlignment="Center" Grid.Row="0" Grid.Column="0" Text="Active" FontSize="Medium" VerticalTextAlignment="Center" Style="{StaticResource Key=HeaderLabel}" TextColor="#616C6F"></Label>
+                              <Label HorizontalTextAlignment="Center" Grid.Row="1" Grid.Column="0"  Text="1575" FontSize="Large" VerticalTextAlignment="Center" Style="{StaticResource Key=PageTileLabel}" TextColor="#2C3335"></Label>
+                              <Label HorizontalTextAlignment="Center" Grid.Row="0" Grid.Column="1"  Text="Recovered" FontSize="Medium" VerticalTextAlignment="Center" Style="{StaticResource Key=HeaderLabel}" TextColor="#616C6F"></Label>
+                              <Label HorizontalTextAlignment="Center" Grid.Row="1" Grid.Column="1"  Text="12565" FontSize="Large" VerticalTextAlignment="Center" Style="{StaticResource Key=PageTileLabel}" TextColor="#2C3335"></Label>
+                             </Grid>
+                    </StackLayout>
+                </yummy:PancakeView>
+                 <yummy:PancakeView BackgroundGradientStartColor="#74B9FF" HasShadow="True" BackgroundGradientEndColor="#0A79DF" HeightRequest="180" WidthRequest="200" CornerRadius="30,5,5,30">
+                    <StackLayout>
+
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Spacing="10">
+                            <Image Source="https://raw.githubusercontent.com/NovelCOVID/API/master/assets/flags/ir.png" HeightRequest="50" WidthRequest="50"></Image>
+                           <Label Text="IRAN" FontSize="Large" VerticalTextAlignment="Center" Style="{StaticResource Key=PageTileLabel}" TextColor="Black"></Label>
+                        </StackLayout>
+                    </StackLayout>
+                </yummy:PancakeView>
+                 <yummy:PancakeView BackgroundGradientStartColor="Red" HasShadow="True" BackgroundGradientEndColor="Orange" HeightRequest="180" WidthRequest="200" CornerRadius="30,5,5,30">
+                    <StackLayout>
+
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Spacing="10">
+                            <Image Source="https://raw.githubusercontent.com/NovelCOVID/API/master/assets/flags/ir.png" HeightRequest="50" WidthRequest="50"></Image>
+                           <Label Text="IRAN" FontSize="Large" VerticalTextAlignment="Center" Style="{StaticResource Key=PageTileLabel}" TextColor="Black"></Label>
+                        </StackLayout>
+                    </StackLayout>
+                </yummy:PancakeView>
+                 <yummy:PancakeView BackgroundGradientStartColor="#4834DF" HasShadow="True" BackgroundGradientEndColor="#0A79DF" HeightRequest="180" WidthRequest="200" CornerRadius="30,5,5,30">
+                    <StackLayout>
+
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Spacing="10">
+                            <Image Source="https://raw.githubusercontent.com/NovelCOVID/API/master/assets/flags/ir.png" HeightRequest="50" WidthRequest="50"></Image>
+                           <Label Text="IRAN" FontSize="Large" VerticalTextAlignment="Center" Style="{StaticResource Key=PageTileLabel}" TextColor="Black"></Label>
+                        </StackLayout>
+                    </StackLayout>
+                </yummy:PancakeView>
+              
+                </StackLayout>
+         </ScrollView>
+            <yummy:PancakeView HasShadow="True" CornerRadius="30">
+            <Grid>
+                
+                 <Image Source="covid_image"></Image>
+                 <Label Text="Know More About COVID-19" HorizontalTextAlignment="Center" VerticalOptions="Start" FontSize="Large" VerticalTextAlignment="Center" Style="{StaticResource Key=PageTileLabel}" TextColor="Black"></Label>
+                 <yummy:PancakeView HasShadow="True" HeightRequest="20" WidthRequest="20" CornerRadius="0" BackgroundColor="OrangeRed" Sides="3" HorizontalOptions="EndAndExpand" VerticalOptions="EndAndExpand" Padding="20"/>
+
+            </Grid>
+           </yummy:PancakeView>
+            </StackLayout>
+            </ScrollView>
     </ContentView.Content>
 </ContentView>

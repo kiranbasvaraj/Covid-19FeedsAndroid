@@ -13,5 +13,54 @@
                 <yummy:GradientStop Color="#33c6ee" Offset="0.8" />
                 <yummy:GradientStop Color="#c652ba" Offset="1" />
             </yummy:GradientStopCollection>
+
+
+
+        <OnPlatform  x:Key="BoldFont" x:TypeArguments="x:String" Android="BalooBhaina2-Bold.ttf#BalooBhaina2-Bold" iOS="BalooBhaina2-Bold" />
+        <OnPlatform  x:Key="ExtraBold" x:TypeArguments="x:String" Android="BalooBhaina2-ExtraBold.ttf#BalooBhaina2-ExtraBold" iOS="BalooBhaina2-ExtraBold" />
+        <OnPlatform  x:Key="Medium" x:TypeArguments="x:String" Android="BalooBhaina2-Medium.ttf#BalooBhaina2-Medium" iOS="BalooBhaina2-Medium" />
+        <OnPlatform  x:Key="Regular" x:TypeArguments="x:String" Android="BalooBhaina2-Regular.ttf#BalooBhaina2-Regular" iOS="BalooBhaina2-Regular" />
+        <OnPlatform  x:Key="SemiBlod" x:TypeArguments="x:String" Android="BalooBhaina2-SemiBold" iOS="BalooBhaina2-SemiBold" />
+
+
+        <Style x:Key="PageTileLabel"  TargetType="Label">
+            <Setter Property="FontFamily" Value="{StaticResource Key=ExtraBold}" />
+        </Style>
+
+         <Style x:Key="HeaderLabel"  TargetType="Label">
+            <Setter Property="FontFamily" Value="{StaticResource Key=BoldFont}" />
+        </Style>
+
+         <Style x:Key="SubHeaderLabel"  TargetType="Label">
+            <Setter Property="FontFamily" Value="{StaticResource Key=Medium}" />
+        </Style>
+
+
+         <Style x:Key="DescriptionLabel"  TargetType="Label">
+            <Setter Property="FontFamily" Value="{StaticResource Key=Regular}" />
+        </Style>
+
+
+
+         <Style  TargetType="Button">
+            <Setter Property="FontFamily" Value="{StaticResource Key=SemiBlod}" />
+        </Style>
+
+         <Style  TargetType="Picker">
+            <Setter Property="FontFamily" Value="{StaticResource Key=Regular}" />
+        </Style>
+
+        <Style  TargetType="Entry">
+            <Setter Property="FontFamily" Value="{StaticResource Key=Regular}" />
+        </Style>
+
+        <Style  TargetType="Editor">
+            <Setter Property="FontFamily" Value="{StaticResource Key=Regular}" />
+        </Style>
+        <Style  TargetType="SearchBar">
+            <Setter Property="FontFamily" Value="{StaticResource Key=Regular}" />
+        </Style>
+
+
     </Application.Resources>
 </Application>

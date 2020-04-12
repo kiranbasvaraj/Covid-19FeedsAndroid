@@ -161,5 +161,11 @@
     <BundleResource Include="Resources\ic_tab2unselected.png" />
     <BundleResource Include="Resources\ic_tab3selected.png" />
     <BundleResource Include="Resources\ic_tab3unselected.png" />
+    <BundleResource Include="Resources\BalooBhaina2-Bold.ttf" />
+    <BundleResource Include="Resources\BalooBhaina2-ExtraBold.ttf" />
+    <BundleResource Include="Resources\BalooBhaina2-Medium.ttf" />
+    <BundleResource Include="Resources\BalooBhaina2-Regular.ttf" />
+    <BundleResource Include="Resources\BalooBhaina2-SemiBold.ttf" />
+    <BundleResource Include="Resources\covid_image.jpg" />
   </ItemGroup>
 </Project>

@@ -19,14 +19,11 @@
                                  Text="{Binding PageTitle}"
                                
                                  MoveImageLeftSide="{Binding ShouldMoveTitleToLeft}"/>
-                 <!--<ctrl:HeaderView 
-                                 Text="covid"
-                                 MoveImageLeftSide="True"/>-->
-               
+
+
 
                 <Grid VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
                     <local:DashboardView IsVisible="{Binding IsDashboardVisible}" x:Name="dashboard"/>
-                       
                     <local:CountriesView IsVisible="{Binding IsCountriesVisible}" x:Name="countires"/>
                     <local:AboutView IsVisible="{Binding IsAboutVisible}" x:Name="about"/>
                 </Grid>
