@@ -70,14 +70,14 @@
             
          </yummy:PancakeView>
 
-            <StackLayout Orientation="Horizontal" Padding="0,10,0,10">
+            <StackLayout Orientation="Horizontal" Padding="0,20,0,5">
                  <Label Text="Top Affected Countries" FontSize="Medium" VerticalTextAlignment="Center" Style="{StaticResource Key=HeaderLabel}" TextColor="#74B9FF"></Label>
                 <Label BackgroundColor="Transparent" Text="ViewAll" HorizontalOptions="EndAndExpand" Style="{StaticResource SubHeaderLabel}" VerticalTextAlignment="Center"></Label>
             </StackLayout>
 
          
-          <ScrollView Orientation="Horizontal">
-            <StackLayout Orientation="Horizontal">
+          <ScrollView Orientation="Horizontal"  HorizontalScrollBarVisibility="Never">
+            <StackLayout Orientation="Horizontal" Padding="0,10,0,50">
                 <yummy:PancakeView BackgroundGradientStartColor="#F4C724" HasShadow="True" BackgroundGradientEndColor="#F0DF87" HeightRequest="120" WidthRequest="200" CornerRadius="30,5,5,30">
                     <StackLayout>
 
@@ -99,7 +99,9 @@
                               <Label HorizontalTextAlignment="Center" Grid.Row="1" Grid.Column="0"  Text="1575" FontSize="Large" VerticalTextAlignment="Center" Style="{StaticResource Key=PageTileLabel}" TextColor="#2C3335"></Label>
                               <Label HorizontalTextAlignment="Center" Grid.Row="0" Grid.Column="1"  Text="Recovered" FontSize="Medium" VerticalTextAlignment="Center" Style="{StaticResource Key=HeaderLabel}" TextColor="#616C6F"></Label>
                               <Label HorizontalTextAlignment="Center" Grid.Row="1" Grid.Column="1"  Text="12565" FontSize="Large" VerticalTextAlignment="Center" Style="{StaticResource Key=PageTileLabel}" TextColor="#2C3335"></Label>
-                             </Grid>
+                             
+                         </Grid>
+                       
                     </StackLayout>
                 </yummy:PancakeView>
                  <yummy:PancakeView BackgroundGradientStartColor="#74B9FF" HasShadow="True" BackgroundGradientEndColor="#0A79DF" HeightRequest="180" WidthRequest="200" CornerRadius="30,5,5,30">
@@ -137,7 +139,7 @@
                 
                  <Image Source="covid_image"></Image>
                  <Label Text="Know More About COVID-19" HorizontalTextAlignment="Center" VerticalOptions="Start" FontSize="Large" VerticalTextAlignment="Center" Style="{StaticResource Key=PageTileLabel}" TextColor="Black"></Label>
-                 <yummy:PancakeView HasShadow="True" HeightRequest="20" WidthRequest="20" CornerRadius="0" BackgroundColor="OrangeRed" Sides="3" HorizontalOptions="EndAndExpand" VerticalOptions="EndAndExpand" Padding="20"/>
+                 <!--<yummy:PancakeView HasShadow="True" HeightRequest="20" WidthRequest="20" CornerRadius="0" BackgroundColor="OrangeRed" Sides="3" HorizontalOptions="EndAndExpand" VerticalOptions="EndAndExpand" Padding="20"/>-->
 
             </Grid>
            </yummy:PancakeView>

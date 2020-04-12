@@ -2,7 +2,7 @@
 <ContentView xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView" x:Class="Covid19Feeds.Controls.FooterView">
     <ContentView.Content>
           <yummy:PancakeView HasShadow="True" Sides="4" BackgroundColor="#1976D2" BorderIsDashed="true" CornerRadius="50,50,0,0" HorizontalOptions="FillAndExpand" HeightRequest="60" VerticalOptions="EndAndExpand">
-                    <StackLayout Orientation="Horizontal" Padding="20,0,20,0">
+                    <StackLayout Orientation="Horizontal" Padding="20,0,20,0" BackgroundColor="Transparent">
                         <Image Scale="{Binding Scalevalue}" Source="{Binding TabIcon1}" HeightRequest="40" WidthRequest="40" HorizontalOptions="StartAndExpand">
                             
                             <Image.GestureRecognizers>
