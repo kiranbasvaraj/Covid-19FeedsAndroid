@@ -21,10 +21,7 @@ namespace Covid19Feeds.ViewModels
             IsHeaderImageVisible = true;
         }
 
-        private void CVSelection()
-        {
-            //var x = input;
-        }
+      
 
         private string tabIcon1 { get; set; } = "ic_tab1unselected.png";
         public string TabIcon1
@@ -293,16 +290,7 @@ namespace Covid19Feeds.ViewModels
         }
 
 
-        private List<AllCountriesCasesModel> _seletedItem { get; set; }
-        public List<AllCountriesCasesModel> SeletedItem
-        {
-            get { return _seletedItem; }
-            set
-            {
-                _seletedItem = value;
-                NotifyChage();
-            }
-        }
+      
 
         public async Task LoadAllCountryCases()
         {
@@ -313,7 +301,9 @@ namespace Covid19Feeds.ViewModels
                 if (res != null)
                 {
                     GlobalCountryCaseDataModel = res;
-                    TopInfectedCountries= res.OrderByDescending(x=>x.cases).Take(5).ToList();
+                    RefreshCV();
+
+
                 }
             }
             catch (Exception ex)
@@ -325,6 +315,29 @@ namespace Covid19Feeds.ViewModels
                 IsBusy = false;
 
             }
+        }
+
+        public void RefreshCV()
+        {
+            TopInfectedCountries = GlobalCountryCaseDataModel.OrderByDescending(x => x.cases).Take(5).ToList();
+        }
+
+
+        private AllCountriesCasesModel _seletedItem { get; set; }
+        public AllCountriesCasesModel SeletedItem
+        {
+            get { return _seletedItem; }
+            set
+            {
+                _seletedItem = value;
+                NotifyChage();
+            }
+        }
+
+        public event EventHandler ItemSelectionHandler;
+        private void CVSelection()
+        {
+            ItemSelectionHandler?.Invoke(this,new EventArgs());
         }
     }
 }

@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-
+using Covid19Feeds.ViewModels;
 using Xamarin.Forms;
 
 namespace Covid19Feeds.Views
@@ -10,7 +10,7 @@ namespace Covid19Feeds.Views
         public CovidDetailsPage()
         {
             InitializeComponent();
-            
+          
         }
     }
 }

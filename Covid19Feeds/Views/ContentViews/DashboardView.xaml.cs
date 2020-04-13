@@ -10,14 +10,11 @@ namespace Covid19Feeds.Views.ContentViews
         public DashboardView()
         {
             InitializeComponent();
-            cv.SelectionChanged += Cv_SelectionChanged;
+            // cv.SelectionChanged += Cv_SelectionChanged;
 
-
+            
         }
 
-        private void Cv_SelectionChanged(object s, SelectionChangedEventArgs e)
-        {
-            ItemTappedHandler?.Invoke(s, e);
-        }
+       
     }
 }
