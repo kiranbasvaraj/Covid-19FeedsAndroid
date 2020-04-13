@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Covid19Feeds.Models;
 using Xamarin.Forms;
 
 namespace Covid19Feeds.Views.ContentViews
@@ -15,7 +16,10 @@ namespace Covid19Feeds.Views.ContentViews
 
         private async void ListItemTapped(object s,ItemTappedEventArgs e)
         {
-            ItemTappedHandler?.Invoke(s,e);
+            // ItemTappedHandler?.Invoke(s,e);
+      
+          var  item=  e.Item as AllCountriesCasesModel;
+            await Navigation.PushModalAsync(new CovidDetailsPage(item));
 
         }
     }

@@ -7,17 +7,27 @@ using Covid19Feeds.Services;
 using WantToWork.Helpers;
 using Xamarin.Forms;
 using System.Linq;
+using Rg.Plugins.Popup.Extensions;
+using Covid19Feeds.Views.Popups;
+using Covid19Feeds.Views;
+using Covid19Feeds.Helpers;
 
 namespace Covid19Feeds.ViewModels
 {
     public class DashboardViewModel : BaseViewModel
     {
+        
         public Command<string> ChangeTabCommand { get; set; }
+
+        public Command ViewAllCommand { get; set; }
         public Command CVSelectionCommand { get; set; }
+        public Command SettingTappedCommand { get; set; }
         public DashboardViewModel()
         {
             ChangeTabCommand = new Command<string>((input) => ChangeTabs(input));
-            CVSelectionCommand = new Command(()=>CVSelection());
+            CVSelectionCommand = new Command(async()=>await CVSelection());
+            SettingTappedCommand = new Command(async() =>await SettingTapped());
+            ViewAllCommand = new Command( () =>  ViewAllCountries());
             IsHeaderImageVisible = true;
         }
 
@@ -173,7 +183,22 @@ namespace Covid19Feeds.ViewModels
                 NotifyChage();
             }
         }
-
+        private void ViewAllCountries()
+        {
+            TabIcon1 = "ic_tab1unselected.png";
+            TabIcon2 = "ic_tab2selected.png";
+            TabIcon3 = "ic_tab3unselected.png";
+            IsDashboardVisible = false;
+            IsAboutVisible = false;
+            IsCountriesVisible = true;
+            Scalevalue = 0.8;
+            Scalevalue1 = 1;
+            Scalevalue2 = 0.8;
+            HeaderImage = "https://cdn0.iconfinder.com/data/icons/small-n-flat/24/678111-map-marker-512.png";
+            PageTitle = "Countries";
+            ShouldMoveTitleToLeft = false;
+            IsHeaderImageVisible = false;
+        }
         private void ChangeTabs(string CommandParam)
         {
             switch (CommandParam)
@@ -290,10 +315,26 @@ namespace Covid19Feeds.ViewModels
         }
 
 
-      
+        private async Task SettingTapped()
+        {
+            MessagingCenter.Send<object>(this, "PopupEvent");
+        }
 
         public async Task LoadAllCountryCases()
         {
+            TabIcon1 = "ic_tab1selected.png";
+            TabIcon2 = "ic_tab2unselected.png";
+            TabIcon3 = "ic_tab3unselected.png";
+            Scalevalue = 1;
+            Scalevalue1 = 0.8;
+            Scalevalue2 = 0.8;
+            IsDashboardVisible = true;
+            IsAboutVisible = false;
+            IsCountriesVisible = false;
+            HeaderImage = "https://cdn2.iconfinder.com/data/icons/covid-19-solid/64/virus-06-512.png";
+            PageTitle = "Covid-19 Feeds";
+            ShouldMoveTitleToLeft = false;
+            IsHeaderImageVisible = true;
             try
             {
                 IsBusy = true;
@@ -302,7 +343,7 @@ namespace Covid19Feeds.ViewModels
                 {
                     GlobalCountryCaseDataModel = res;
                     RefreshCV();
-
+                   await ChooseDEaflutCountry();
 
                 }
             }
@@ -323,6 +364,28 @@ namespace Covid19Feeds.ViewModels
         }
 
 
+        public async Task ChooseDEaflutCountry()
+        {
+            try
+            {
+               
+                if (Setting.SelectedCountry != string.Empty)
+                {
+                   
+                    CurrentDefaultCountry = GlobalCountryCaseDataModel?.Where(x => x.country.ToUpper() == Setting.SelectedCountry.ToUpper()).FirstOrDefault();
+                }
+                else
+                {
+                    await SettingTapped();
+                }
+            }
+            catch (Exception ex)
+            {
+
+            }
+           
+        }
+
         private AllCountriesCasesModel _seletedItem { get; set; }
         public AllCountriesCasesModel SeletedItem
         {
@@ -334,10 +397,25 @@ namespace Covid19Feeds.ViewModels
             }
         }
 
-        public event EventHandler ItemSelectionHandler;
-        private void CVSelection()
+
+        private AllCountriesCasesModel currentDefaultCountry { get; set; }
+        public AllCountriesCasesModel CurrentDefaultCountry
         {
-            ItemSelectionHandler?.Invoke(this,new EventArgs());
+            get { return currentDefaultCountry; }
+            set
+            {
+                currentDefaultCountry = value;
+                NotifyChage();
+            }
+        }
+
+
+
+        public event EventHandler ItemSelectionHandler;
+        private async Task CVSelection()
+        {
+          
+            await Application.Current.MainPage.Navigation.PushModalAsync(new CovidDetailsPage(SeletedItem));
         }
     }
 }

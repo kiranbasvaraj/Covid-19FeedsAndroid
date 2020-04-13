@@ -30,5 +30,11 @@ namespace Covid19Feeds.Models
         public int? deathsPerOneMillion { get; set; }
         public int? tests { get; set; }
         public int? testsPerOneMillion { get; set; }
+
+        [JsonIgnore]
+        public string StartColor { get; set; }
+        [JsonIgnore]
+        public string EndColor { get; set; }
+
     }
 }

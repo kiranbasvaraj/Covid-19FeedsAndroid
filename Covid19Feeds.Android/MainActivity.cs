@@ -25,6 +25,7 @@ namespace Covid19Feeds.Droid
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
             Abstractions.Init(this);
             CachedImageRenderer.Init(false);
+            Rg.Plugins.Popup.Popup.Init(this, savedInstanceState);
             LoadApplication(new App());
         }
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)

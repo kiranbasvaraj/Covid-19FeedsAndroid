@@ -148,6 +148,12 @@
     <PackageReference Include="Xam.Plugin.Connectivity">
       <Version>3.2.0</Version>
     </PackageReference>
+    <PackageReference Include="Xam.Plugins.Settings">
+      <Version>3.1.1</Version>
+    </PackageReference>
+    <PackageReference Include="Rg.Plugins.Popup">
+      <Version>2.0.0.2</Version>
+    </PackageReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
@@ -173,5 +179,7 @@
       <SubType></SubType>
       <Generator></Generator>
     </BundleResource>
+    <BundleResource Include="Resources\ic_action_settings.png" />
+    <BundleResource Include="Resources\ic_action_location_on.png" />
   </ItemGroup>
 </Project>

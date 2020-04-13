@@ -2,7 +2,7 @@
 <Application xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView" mc:Ignorable="d"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView" xmlns:local="clr-namespace:Covid19Feeds.Helpers" mc:Ignorable="d"
              x:Class="Covid19Feeds.App">
     <Application.Resources>
         <yummy:GradientStopCollection x:Key="Rainbow">
@@ -15,7 +15,9 @@
             </yummy:GradientStopCollection>
 
 
-     
+      <local:ColorCovertor x:Key="colorConvertor" />
+
+
         <OnPlatform  x:Key="BoldFont" x:TypeArguments="x:String" Android="BalooBhaina2-Bold.ttf#BalooBhaina2-Bold" iOS="BalooBhaina2-Bold" />
         <OnPlatform  x:Key="ExtraBold" x:TypeArguments="x:String" Android="BalooBhaina2-ExtraBold.ttf#BalooBhaina2-ExtraBold" iOS="BalooBhaina2-ExtraBold" />
         <OnPlatform  x:Key="Medium" x:TypeArguments="x:String" Android="BalooBhaina2-Medium.ttf#BalooBhaina2-Medium" iOS="BalooBhaina2-Medium" />

@@ -26,6 +26,7 @@ namespace Covid19Feeds.iOS
             global::Xamarin.Forms.Forms.Init();
             Abstractions.Init();
             CachedImageRenderer.Init();
+            Rg.Plugins.Popup.Popup.Init();
             LoadApplication(new App());
 
             return base.FinishedLaunching(app, options);
