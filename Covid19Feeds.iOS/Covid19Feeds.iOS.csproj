@@ -129,7 +129,7 @@
       <Version>12.0.3</Version>
     </PackageReference>
     <PackageReference Include="Xamarin.FFImageLoading.Forms">
-      <Version>2.4.11.982</Version>
+      <Version>2.4.9.961</Version>
     </PackageReference>
     <PackageReference Include="Xamarin.FFImageLoading.Transformations">
       <Version>2.4.11.982</Version>
@@ -181,5 +181,6 @@
     </BundleResource>
     <BundleResource Include="Resources\ic_action_settings.png" />
     <BundleResource Include="Resources\ic_action_location_on.png" />
+    <BundleResource Include="Resources\ic_loading.gif" />
   </ItemGroup>
 </Project>

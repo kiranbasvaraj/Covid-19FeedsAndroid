@@ -1,32 +1,34 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentView xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:pancakeview="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView" x:Class="Covid19Feeds.Views.Cards.CountiresCardView">
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:pancakeview="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView" xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms" x:Class="Covid19Feeds.Views.Cards.CountiresCardView">
     <ContentView.Content>
         <pancakeview:PancakeView Style="{StaticResource Key=PancakeStyle}" CornerRadius="20" BackgroundColor="#ffffff">
-           
-                <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="Auto"></RowDefinition>
-                        <RowDefinition Height="Auto"></RowDefinition>
-                    </Grid.RowDefinitions>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*"></ColumnDefinition>
-                        <ColumnDefinition Width="*"></ColumnDefinition>
-                        <ColumnDefinition Width="*"></ColumnDefinition>
-                         <ColumnDefinition Width="15"></ColumnDefinition>
-                    </Grid.ColumnDefinitions>
-                    <Image Grid.Row="0" Grid.Column="0" HeightRequest="50" WidthRequest="50" HorizontalOptions="Center" Source="{Binding countryInfo.flag}" ></Image>
-                    <Label Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2"  HorizontalTextAlignment="Start" FontSize="Large" Text="{Binding country}" Style="{StaticResource Key=PageTileLabel}"></Label>
-                    <Label Grid.Row="1" Grid.Column="0" HorizontalTextAlignment="Center" FontSize="Medium" Text="Active" TextColor="#f76f6f" Style="{StaticResource Key=SubHeaderLabel}"></Label>
-                    <Label Grid.Row="1" Grid.Column="1"  HorizontalTextAlignment="Center" FontSize="Medium" Text="Recovred" TextColor="#26ae60" Style="{StaticResource Key=SubHeaderLabel}"></Label>
-                    <Label Grid.Row="1" Grid.Column="2" HorizontalTextAlignment="Center" FontSize="Medium" Text="Deaths" TextColor="#B83227" Style="{StaticResource Key=SubHeaderLabel}"></Label>
 
-                    <Label Grid.Row="2" Grid.Column="0" HorizontalTextAlignment="Center" FontSize="Medium" TextColor="#616C6F" Text="{Binding active}" Style="{StaticResource Key=HeaderLabel}"></Label>
-                    <Label Grid.Row="2" Grid.Column="1" HorizontalTextAlignment="Center" FontSize="Medium" TextColor="#616C6F" Text="{Binding recovered}" Style="{StaticResource Key=HeaderLabel}"></Label>
-                    <Label Grid.Row="2" Grid.Column="2" HorizontalTextAlignment="Center" FontSize="Medium" TextColor="#616C6F" Text="{Binding deaths}" Style="{StaticResource Key=HeaderLabel}"></Label>
-                    <BoxView Grid.Row="0" Grid.Column="3" Grid.RowSpan="3" BackgroundColor="#74B9FF"></BoxView>
-           
-                </Grid>
-                
+            <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="15"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <ffimageloading:CachedImage Grid.Row="0" Grid.Column="0" Source="{Binding countryInfo.flag}" HorizontalOptions="Center" HeightRequest="50" WidthRequest="50" DownsampleToViewSize="true" LoadingPlaceholder="ic_loadging.gif" />
+
+                <!--<Image   HorizontalOptions="Center" Source="{Binding countryInfo.flag}"></Image>-->
+                <Label Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" HorizontalTextAlignment="Start" FontSize="Large" Text="{Binding country}" Style="{StaticResource Key=PageTileLabel}"></Label>
+                <Label Grid.Row="1" Grid.Column="0" HorizontalTextAlignment="Center" FontSize="Medium" Text="Active" TextColor="#f76f6f" Style="{StaticResource Key=SubHeaderLabel}"></Label>
+                <Label Grid.Row="1" Grid.Column="1" HorizontalTextAlignment="Center" FontSize="Medium" Text="Recovred" TextColor="#26ae60" Style="{StaticResource Key=SubHeaderLabel}"></Label>
+                <Label Grid.Row="1" Grid.Column="2" HorizontalTextAlignment="Center" FontSize="Medium" Text="Deaths" TextColor="#B83227" Style="{StaticResource Key=SubHeaderLabel}"></Label>
+
+                <Label Grid.Row="2" Grid.Column="0" HorizontalTextAlignment="Center" FontSize="Medium" TextColor="#616C6F" Text="{Binding active}" Style="{StaticResource Key=HeaderLabel}"></Label>
+                <Label Grid.Row="2" Grid.Column="1" HorizontalTextAlignment="Center" FontSize="Medium" TextColor="#616C6F" Text="{Binding recovered}" Style="{StaticResource Key=HeaderLabel}"></Label>
+                <Label Grid.Row="2" Grid.Column="2" HorizontalTextAlignment="Center" FontSize="Medium" TextColor="#616C6F" Text="{Binding deaths}" Style="{StaticResource Key=HeaderLabel}"></Label>
+                <BoxView Grid.Row="0" Grid.Column="3" Grid.RowSpan="3" BackgroundColor="#74B9FF"></BoxView>
+
+            </Grid>
+
         </pancakeview:PancakeView>
     </ContentView.Content>
 </ContentView>
