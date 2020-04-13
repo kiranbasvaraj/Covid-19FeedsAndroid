@@ -1,5 +1,8 @@
 ﻿using Covid19Feeds.Views;
 using eliteKit;
+using Microsoft.AppCenter;
+using Microsoft.AppCenter.Analytics;
+using Microsoft.AppCenter.Crashes;
 using System;
 using System.Reflection;
 using Xamarin.Forms;
@@ -18,6 +21,10 @@ namespace Covid19Feeds
 
         protected override void OnStart()
         {
+            AppCenter.Start("android=fa695725-0735-4187-a13b-e98239762a8a;" +
+                     "uwp={Your UWP App secret here};" +
+                     "ios={Your iOS App secret here}",
+                     typeof(Analytics), typeof(Crashes));
         }
 
         protected override void OnSleep()
