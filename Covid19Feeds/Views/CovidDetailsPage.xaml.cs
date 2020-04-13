@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using Covid19Feeds.Models;
 using Covid19Feeds.ViewModels;
 using Xamarin.Forms;
@@ -34,10 +35,14 @@ namespace Covid19Feeds.Views
             todaysdeaths.Text = item.todayDeaths.ToString();
             recovered.Text = item.recovered.ToString();
             active.Text = item.active.ToString();
-
-
-
-
+           
         }
+
+        private async void OnSwiped(object s, SwipedEventArgs e)
+        {
+            await Navigation.PopModalAsync();
+        }
+
+
     }
 }

@@ -3,11 +3,11 @@
     <ContentView.Content>
         <ScrollView x:Name="scrollview" VerticalScrollBarVisibility="Never">
             <StackLayout Padding="10">
+               
+                <!--Global-->
 
                 <yummy:PancakeView BackgroundGradientStartColor="White" BackgroundGradientAngle="180" BorderColor="Red" BackgroundGradientEndColor="White" CornerRadius="15" Style="{StaticResource Key=PancakeStyle}">
                     <Grid>
-                        <!--<Image Aspect="AspectFit" Source="https://images-na.ssl-images-amazon.com/images/I/51FzkaCMaGL._AC_SX425_.jpg"></Image>-->
-                        <!--<Image Aspect="AspectFit" IsAnimationPlaying="True" Source="earth.gif" HeightRequest="50"></Image>-->
                         <StackLayout>
                             <Label Text="GLOBAL" HorizontalTextAlignment="Center" TextColor="Gray" Style="{StaticResource Key=HeaderLabel}" FontSize="Large"></Label>
                             <yummy:PancakeView   BackgroundGradientEndColor="#EAF0F1">
@@ -30,7 +30,6 @@
                                     <Label Grid.Row="1" Grid.Column="0" Text="{Binding GlobalCaseDataModel.todayCases,FallbackValue=Loading}" HorizontalTextAlignment="Center" TextColor="#0A79DF" Style="{StaticResource Key=PageTileLabel}" FontSize="Medium"></Label>
                                     <Label Grid.Row="1" Grid.Column="1" Text="{Binding GlobalCaseDataModel.deaths,FallbackValue=Loading}" HorizontalTextAlignment="Center" TextColor="#EC4849" Style="{StaticResource Key=PageTileLabel}" FontSize="Medium"></Label>
                                     <Label Grid.Row="1" Grid.Column="2" Text="{Binding GlobalCaseDataModel.recovered,FallbackValue=Loading}" HorizontalTextAlignment="Center" TextColor="#26ae60" Style="{StaticResource Key=PageTileLabel}" FontSize="Medium"></Label>
-                                    <!--<ActivityIndicator Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" Grid.RowSpan="2" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Color="OrangeRed" HeightRequest="150" WidthRequest="150" IsRunning="{Binding IsBusy}" IsVisible="{Binding IsBusy}"></ActivityIndicator>-->
                                 </Grid>
                             </yummy:PancakeView>
 
@@ -39,21 +38,24 @@
 
                 </yummy:PancakeView>
 
-                <yummy:PancakeView CornerRadius="15" Style="{StaticResource Key=PancakeStyle}" BackgroundGradientStartColor="White" BackgroundGradientEndColor="White">
-                    <Grid>
-                        <!--<Image Aspect="Fill" HeightRequest="50" Source="https://cdn.webshopapp.com/shops/94414/files/54025310/india-flag-icon-free-download.jpg"></Image>-->
-                        <StackLayout>
-                            <StackLayout Orientation="Horizontal"
-                                         Padding="10,0,20,0">
+                <!--Current-->
 
-                                <Label Text="{Binding CurrentDefaultCountry.country}" HorizontalTextAlignment="Center" Margin="50,0,0,0" HorizontalOptions="EndAndExpand" TextColor="#616C6F" Style="{StaticResource Key=HeaderLabel}" FontSize="Large"></Label>
-                                 <Image Source="ic_action_location_on"  HorizontalOptions="EndAndExpand" VerticalOptions="Center" HeightRequest="30" WidthRequest="30">
-                                     <Image.GestureRecognizers>
-                                         <TapGestureRecognizer Command="{Binding SettingTappedCommand}"></TapGestureRecognizer>
-                                     </Image.GestureRecognizers>
-                                 </Image>
+                <yummy:PancakeView CornerRadius="15" Style="{StaticResource Key=PancakeStyle}" BackgroundGradientStartColor="White" BackgroundGradientEndColor="White">
+                    <yummy:PancakeView.GestureRecognizers>
+                        <TapGestureRecognizer NumberOfTapsRequired="1" Command="{Binding MyCountryDetailsCommand}"></TapGestureRecognizer>
+                    </yummy:PancakeView.GestureRecognizers>
+                    <Grid>
+                        <StackLayout>
+                            <StackLayout Orientation="Horizontal" Padding="10,0,20,0">
+
+                                <Label Text="{Binding CurrentDefaultCountry.country,FallbackValue=Loading}" HorizontalTextAlignment="Center" Margin="50,0,0,0" HorizontalOptions="EndAndExpand" TextColor="#616C6F" Style="{StaticResource Key=HeaderLabel}" FontSize="Large"></Label>
+                                <Image Source="ic_action_location_on" HorizontalOptions="EndAndExpand" VerticalOptions="Center" HeightRequest="30" WidthRequest="30">
+                                    <Image.GestureRecognizers>
+                                        <TapGestureRecognizer Command="{Binding SettingTappedCommand}"></TapGestureRecognizer>
+                                    </Image.GestureRecognizers>
+                                </Image>
                             </StackLayout>
-                            
+
 
                             <yummy:PancakeView>
                                 <Grid>
@@ -65,17 +67,17 @@
                                         <ColumnDefinition Width="*"></ColumnDefinition>
                                         <ColumnDefinition Width="*"></ColumnDefinition>
                                         <ColumnDefinition Width="*"></ColumnDefinition>
-                                       
+
                                     </Grid.ColumnDefinitions>
 
                                     <Label Grid.Row="0" Grid.Column="0" Text="Total" HorizontalTextAlignment="Center" TextColor="#0A79DF" Style="{StaticResource Key=HeaderLabel}" FontSize="Medium"></Label>
                                     <Label Grid.Row="0" Grid.Column="1" Text="Deaths" HorizontalTextAlignment="Center" TextColor="#FF3031" Style="{StaticResource Key=HeaderLabel}" FontSize="Medium"></Label>
                                     <Label Grid.Row="0" Grid.Column="2" Text="Recovered" HorizontalTextAlignment="Center" TextColor="#26ae60" Style="{StaticResource Key=HeaderLabel}" FontSize="Medium"></Label>
 
-                                    <Label Grid.Row="1" Grid.Column="0" Text="{Binding CurrentDefaultCountry.cases}" HorizontalTextAlignment="Center" TextColor="#0A79DF" Style="{StaticResource Key=PageTileLabel}" FontSize="Medium"></Label>
-                                    <Label Grid.Row="1" Grid.Column="1" Text="{Binding CurrentDefaultCountry.deaths}" HorizontalTextAlignment="Center" TextColor="#FF3031" Style="{StaticResource Key=PageTileLabel}" FontSize="Medium"></Label>
-                                    <Label Grid.Row="1" Grid.Column="2" Text="{Binding CurrentDefaultCountry.recovered}" HorizontalTextAlignment="Center" TextColor="#26ae60" Style="{StaticResource Key=PageTileLabel}" FontSize="Medium"></Label>
-                                   
+                                    <Label Grid.Row="1" Grid.Column="0" Text="{Binding CurrentDefaultCountry.cases,FallbackValue=Loading}" HorizontalTextAlignment="Center" TextColor="#0A79DF" Style="{StaticResource Key=PageTileLabel}" FontSize="Medium"></Label>
+                                    <Label Grid.Row="1" Grid.Column="1" Text="{Binding CurrentDefaultCountry.deaths,FallbackValue=Loading}" HorizontalTextAlignment="Center" TextColor="#FF3031" Style="{StaticResource Key=PageTileLabel}" FontSize="Medium"></Label>
+                                    <Label Grid.Row="1" Grid.Column="2" Text="{Binding CurrentDefaultCountry.recovered,FallbackValue=Loading}" HorizontalTextAlignment="Center" TextColor="#26ae60" Style="{StaticResource Key=PageTileLabel}" FontSize="Medium"></Label>
+
                                 </Grid>
                             </yummy:PancakeView>
 
@@ -84,6 +86,9 @@
 
                 </yummy:PancakeView>
 
+
+                <!--Top most affected-->
+
                 <StackLayout Orientation="Horizontal" Padding="0,20,0,5">
                     <Label Text="Top Affected Countries" FontSize="Medium" VerticalTextAlignment="Center" Style="{StaticResource Key=HeaderLabel}" TextColor="#74B9FF"></Label>
                     <Label BackgroundColor="Transparent" Text="ViewAll" HorizontalOptions="EndAndExpand" Style="{StaticResource SubHeaderLabel}" VerticalTextAlignment="Center"></Label>
@@ -91,13 +96,12 @@
                         <TapGestureRecognizer Command="{Binding ViewAllCommand}"></TapGestureRecognizer>
                     </StackLayout.GestureRecognizers>
                 </StackLayout>
+
+                <!--horizontal list top most affected-->
+
                 <StackLayout Padding="0,20,0,20" BackgroundColor="Transparent">
 
-
-
-
-
-                    <CollectionView x:Name="cv" BackgroundColor="Transparent"  ItemsSource="{Binding TopInfectedCountries}" SelectionChangedCommand="{Binding CVSelectionCommand}" SelectedItem="{Binding SeletedItem,Mode=TwoWay}" SelectionMode="Single" HeightRequest="150">
+                    <CollectionView x:Name="cv" BackgroundColor="Transparent" ItemsSource="{Binding TopInfectedCountries}" SelectionChangedCommand="{Binding CVSelectionCommand}" SelectedItem="{Binding SeletedItem,Mode=TwoWay}" SelectionMode="Single" HeightRequest="150">
                         <CollectionView.ItemsLayout>
                             <LinearItemsLayout Orientation="Horizontal"></LinearItemsLayout>
                         </CollectionView.ItemsLayout>
@@ -135,15 +139,20 @@
                         </CollectionView.ItemTemplate>
                     </CollectionView>
                 </StackLayout>
+
+
+
+                <!--about covid 19-->
+
                 <yummy:PancakeView CornerRadius="30" Style="{StaticResource Key=PancakeStyle}">
                     <Grid>
 
                         <Image Source="covid_image"></Image>
                         <Label Text="Know More About COVID-19" HorizontalTextAlignment="Center" VerticalOptions="Start" FontSize="Large" VerticalTextAlignment="Center" Style="{StaticResource Key=PageTileLabel}" TextColor="Black"></Label>
-                        <!--<yummy:PancakeView HasShadow="True" HeightRequest="20" WidthRequest="20" CornerRadius="0" BackgroundColor="OrangeRed" Sides="3" HorizontalOptions="EndAndExpand" VerticalOptions="EndAndExpand" Padding="20"/>-->
-
                     </Grid>
                 </yummy:PancakeView>
+
+
             </StackLayout>
         </ScrollView>
     </ContentView.Content>

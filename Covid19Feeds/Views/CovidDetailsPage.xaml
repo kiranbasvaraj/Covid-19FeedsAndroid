@@ -14,7 +14,13 @@
         <ScrollView>
         <StackLayout Spacing="10"
                      Padding="10">
-        <Image x:Name="flag"></Image>
+             <StackLayout.GestureRecognizers>
+                    <SwipeGestureRecognizer Swiped="OnSwiped" Direction="Down"></SwipeGestureRecognizer>
+                </StackLayout.GestureRecognizers>
+            <pancakeview:PancakeView x:Name="flagframe" Style="{StaticResource PancakeStyle}" VerticalOptions="StartAndExpand" CornerRadius="15" WidthRequest="200"  HeightRequest="100" HorizontalOptions="CenterAndExpand">
+                <Image x:Name="flag"  Aspect="Fill"></Image>
+            </pancakeview:PancakeView>
+        
           
        
         <Grid Padding="10" VerticalOptions="Start">

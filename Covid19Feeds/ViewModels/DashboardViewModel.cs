@@ -16,22 +16,34 @@ namespace Covid19Feeds.ViewModels
 {
     public class DashboardViewModel : BaseViewModel
     {
-        
-        public Command<string> ChangeTabCommand { get; set; }
 
+        #region Field Variables
+
+        public Command<string> ChangeTabCommand { get; set; }
+        public Command MyCountryDetailsCommand { get; set; }
         public Command ViewAllCommand { get; set; }
         public Command CVSelectionCommand { get; set; }
         public Command SettingTappedCommand { get; set; }
+        public event EventHandler ItemSelectionHandler;
+        #endregion
+
+
+        #region Constructors
+
         public DashboardViewModel()
         {
             ChangeTabCommand = new Command<string>((input) => ChangeTabs(input));
-            CVSelectionCommand = new Command(async()=>await CVSelection());
-            SettingTappedCommand = new Command(async() =>await SettingTapped());
-            ViewAllCommand = new Command( () =>  ViewAllCountries());
+            CVSelectionCommand = new Command(async () => await CVSelection());
+            SettingTappedCommand = new Command(async () => await SettingTapped());
+            ViewAllCommand = new Command(() => ViewAllCountries());
+            MyCountryDetailsCommand = new Command(async () => await NavigateToMyCovidDetailsPage());
             IsHeaderImageVisible = true;
         }
+        #endregion
 
-      
+
+
+        #region Getter Setters
 
         private string tabIcon1 { get; set; } = "ic_tab1unselected.png";
         public string TabIcon1
@@ -183,6 +195,95 @@ namespace Covid19Feeds.ViewModels
                 NotifyChage();
             }
         }
+
+
+        private GlobalCaseModel _globalCaseDataModel { get; set; }
+        public GlobalCaseModel GlobalCaseDataModel
+        {
+            get { return _globalCaseDataModel; }
+            set
+            {
+                _globalCaseDataModel = value;
+                NotifyChage();
+            }
+        }
+
+        private List<AllCountriesCasesModel> _globalCountryCaseDataModel { get; set; }
+        public List<AllCountriesCasesModel> GlobalCountryCaseDataModel
+        {
+            get { return _globalCountryCaseDataModel; }
+            set
+            {
+                _globalCountryCaseDataModel = value;
+                NotifyChage();
+            }
+        }
+
+        private AllCountriesCasesModel _seletedItem { get; set; }
+        public AllCountriesCasesModel SeletedItem
+        {
+            get { return _seletedItem; }
+            set
+            {
+                _seletedItem = value;
+                NotifyChage();
+            }
+        }
+
+
+        private AllCountriesCasesModel currentDefaultCountry { get; set; }
+        public AllCountriesCasesModel CurrentDefaultCountry
+        {
+            get { return currentDefaultCountry; }
+            set
+            {
+                currentDefaultCountry = value;
+                NotifyChage();
+            }
+        }
+
+
+        private List<AllCountriesCasesModel> _topInfectedCountries { get; set; }
+        public List<AllCountriesCasesModel> TopInfectedCountries
+        {
+            get { return _topInfectedCountries; }
+            set
+            {
+                _topInfectedCountries = value;
+                NotifyChage();
+            }
+        }
+
+
+        private List<AllCountriesCasesModel> _searchedList { get; set; }
+        public List<AllCountriesCasesModel> SearchedList
+        {
+            get { return _searchedList; }
+            set
+            {
+                _searchedList = value;
+                NotifyChage();
+            }
+        }
+
+        private bool isNoResultLabelVisilbe { get; set; }
+        public bool IsNoResultLabelVisilbe
+        {
+            get { return isNoResultLabelVisilbe; }
+            set
+            {
+                isNoResultLabelVisilbe = value;
+                NotifyChage();
+            }
+        }
+
+        #endregion
+
+
+
+
+        #region Functions
+
         private void ViewAllCountries()
         {
             TabIcon1 = "ic_tab1unselected.png";
@@ -199,6 +300,8 @@ namespace Covid19Feeds.ViewModels
             ShouldMoveTitleToLeft = false;
             IsHeaderImageVisible = false;
         }
+
+
         private void ChangeTabs(string CommandParam)
         {
             switch (CommandParam)
@@ -254,19 +357,6 @@ namespace Covid19Feeds.ViewModels
         }
 
 
-
-
-        private GlobalCaseModel _globalCaseDataModel { get; set; }
-        public GlobalCaseModel GlobalCaseDataModel
-        {
-            get { return _globalCaseDataModel; }
-            set
-            {
-                _globalCaseDataModel = value;
-                NotifyChage();
-            }
-        }
-
         public async Task LoadGlobalCases()
         {
             try
@@ -286,31 +376,6 @@ namespace Covid19Feeds.ViewModels
             {
                 IsBusy = false;
 
-            }
-        }
-
-
-
-        private List<AllCountriesCasesModel> _globalCountryCaseDataModel { get; set; }
-        public List<AllCountriesCasesModel> GlobalCountryCaseDataModel
-        {
-            get { return _globalCountryCaseDataModel; }
-            set
-            {
-                _globalCountryCaseDataModel = value;
-                NotifyChage();
-            }
-        }
-
-
-        private List<AllCountriesCasesModel> _topInfectedCountries { get; set; }
-        public List<AllCountriesCasesModel> TopInfectedCountries
-        {
-            get { return _topInfectedCountries; }
-            set
-            {
-                _topInfectedCountries = value;
-                NotifyChage();
             }
         }
 
@@ -341,9 +406,9 @@ namespace Covid19Feeds.ViewModels
                 var res = await RestClient.RestClientInstance.GetAsync<List<AllCountriesCasesModel>>(AppConstants.LoadAllCountryCasesAPi);
                 if (res != null)
                 {
-                    GlobalCountryCaseDataModel = res;
+                    SearchedList = GlobalCountryCaseDataModel = res;
                     RefreshCV();
-                   await ChooseDEaflutCountry();
+                    await ChooseDEaflutCountry();
 
                 }
             }
@@ -368,10 +433,10 @@ namespace Covid19Feeds.ViewModels
         {
             try
             {
-               
+
                 if (Setting.SelectedCountry != string.Empty)
                 {
-                   
+
                     CurrentDefaultCountry = GlobalCountryCaseDataModel?.Where(x => x.country.ToUpper() == Setting.SelectedCountry.ToUpper()).FirstOrDefault();
                 }
                 else
@@ -383,39 +448,49 @@ namespace Covid19Feeds.ViewModels
             {
 
             }
-           
-        }
 
-        private AllCountriesCasesModel _seletedItem { get; set; }
-        public AllCountriesCasesModel SeletedItem
-        {
-            get { return _seletedItem; }
-            set
-            {
-                _seletedItem = value;
-                NotifyChage();
-            }
         }
 
 
-        private AllCountriesCasesModel currentDefaultCountry { get; set; }
-        public AllCountriesCasesModel CurrentDefaultCountry
-        {
-            get { return currentDefaultCountry; }
-            set
-            {
-                currentDefaultCountry = value;
-                NotifyChage();
-            }
-        }
-
-
-
-        public event EventHandler ItemSelectionHandler;
         private async Task CVSelection()
         {
-          
+
             await Application.Current.MainPage.Navigation.PushModalAsync(new CovidDetailsPage(SeletedItem));
+
+
         }
+
+        private async Task NavigateToMyCovidDetailsPage()
+        {
+            await Application.Current.MainPage.Navigation.PushModalAsync(new CovidDetailsPage(CurrentDefaultCountry));
+        }
+
+
+        public void SearchCountries(string SearchKey)
+        {
+            try
+            {
+               
+                //SearchedList.Clear();
+                var list = GlobalCountryCaseDataModel.Where(x => x.country.ToUpper().StartsWith(SearchKey.ToUpper())).ToList();
+                if (list.Count > 0)
+                {
+                    SearchedList = list;
+                    IsNoResultLabelVisilbe = false;
+                }
+                else
+                {
+                    SearchedList.Clear();
+                    NotifyChage("SearchedList");
+                    IsNoResultLabelVisilbe = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex.StackTrace);
+            }
+
+        }
+        #endregion
     }
 }
