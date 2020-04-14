@@ -4,6 +4,7 @@
          <yummy:PancakeView HasShadow="True" Sides="4" BackgroundGradientEndColor="#1976D2" BackgroundGradientStartColor="#74B9FF" BackgroundGradientAngle="180" BorderIsDashed="true" CornerRadius="0,0,50,50" HorizontalOptions="FillAndExpand" HeightRequest="100" VerticalOptions="StartAndExpand">
                     
                     <StackLayout>
+
                          <ffimageloading:CachedImage  x:Name="image" HeightRequest="50" WidthRequest="50" DownsampleToViewSize="true" LoadingPlaceholder="ic_loadging.gif" />
                         <!--<Image  IsAnimationPlaying="True" HeightRequest="50" WidthRequest="50">
                             <Image.Source>

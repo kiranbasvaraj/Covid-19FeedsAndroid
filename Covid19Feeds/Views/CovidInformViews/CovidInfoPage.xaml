@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView" xmlns:forms="clr-namespace:Lottie.Forms;assembly=Lottie.Forms" x:Class="Covid19Feeds.Views.CovidInformViews.CovidInfoPage">
+    <NavigationPage.HasNavigationBar>
+        <x:Boolean>False</x:Boolean>
+    </NavigationPage.HasNavigationBar>
+    <ContentPage.Content>
+        <StackLayout>
+            <yummy:PancakeView Padding="0" HasShadow="True" Sides="4" BackgroundGradientEndColor="#1976D2" BackgroundGradientStartColor="#74B9FF" BackgroundGradientAngle="180" BorderIsDashed="true" CornerRadius="0,0,50,50" HorizontalOptions="FillAndExpand" HeightRequest="200" VerticalOptions="Start">
+
+                <Grid>
+                    <forms:AnimationView  Animation="Faq.json" Loop="True" AutoPlay="True" HeightRequest="200" WidthRequest="400" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" />
+                    <Label FontSize="Medium" VerticalOptions="EndAndExpand" Style="{StaticResource PageTileLabel}" TextColor="White" HorizontalOptions="CenterAndExpand" Text="All You Need To Know About Covid"></Label>
+                    <Label Margin="20" FontSize="Medium" Style="{StaticResource PageTileLabel}" TextColor="White" VerticalOptions="StartAndExpand" HorizontalOptions="EndAndExpand" Text="FAQ's">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnFaqTapped" NumberOfTapsRequired="1"></TapGestureRecognizer>
+                        </Label.GestureRecognizers>
+                    </Label>
+                </Grid>
+            </yummy:PancakeView>
+            <ScrollView Padding="10,0,10,0">
+                <StackLayout VerticalOptions="FillAndExpand">
+                    <Label HorizontalOptions="StartAndExpand" FontSize="Medium" Style="{StaticResource PageTileLabel}" TextColor="Black">
+                        <Label.FormattedText>
+                            <FormattedString>
+
+                                <Span Text="Symptoms" TextColor="Black"></Span>
+                                <Span Text="(Source WHO)" TextColor="Gray" FontSize="Small" FontAttributes="Italic"></Span>
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+
+                    <forms:AnimationView  Animation="Faq.json" Loop="True" AutoPlay="True" HeightRequest="200" WidthRequest="400" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" />
+
+
+                    <forms:AnimationView  Animation="Faq.json" Loop="True" AutoPlay="True" HeightRequest="200" WidthRequest="400" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" />
+                    <!--<FlexLayout Wrap="Wrap" JustifyContent="SpaceEvenly" HeightRequest="500">
+                        <yummy:PancakeView Padding="0" HasShadow="True" Sides="4" BackgroundGradientEndColor="White" BackgroundGradientStartColor="WhiteSmoke" CornerRadius="10" HorizontalOptions="FillAndExpand" HeightRequest="100" WidthRequest="100">
+                            <forms:AnimationView  Animation="creative.json" Loop="True" AutoPlay="True" HeightRequest="200" WidthRequest="200" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" />
+                        </yummy:PancakeView>
+                        <yummy:PancakeView Padding="0" HasShadow="True" Sides="4" BackgroundGradientEndColor="White" BackgroundGradientStartColor="WhiteSmoke" CornerRadius="10" HorizontalOptions="FillAndExpand" HeightRequest="100" WidthRequest="100">
+                            <forms:AnimationView  Animation="working.json" Loop="True" AutoPlay="True" HeightRequest="200" WidthRequest="200" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" />
+                        </yummy:PancakeView>
+                        <yummy:PancakeView Padding="0" HasShadow="True" Sides="4" BackgroundGradientEndColor="White" BackgroundGradientStartColor="WhiteSmoke" CornerRadius="10" HorizontalOptions="FillAndExpand" HeightRequest="100" WidthRequest="100">
+                            <forms:AnimationView  Animation="corona.json" Loop="True" AutoPlay="True" HeightRequest="200" WidthRequest="200" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" />
+                        </yummy:PancakeView>
+                        <yummy:PancakeView Padding="0" HasShadow="True" Sides="4" BackgroundGradientEndColor="White" BackgroundGradientStartColor="WhiteSmoke" CornerRadius="10" HorizontalOptions="FillAndExpand" HeightRequest="100" WidthRequest="100">
+                            <forms:AnimationView  Animation="Faq.json" Loop="True" AutoPlay="True" HeightRequest="200" WidthRequest="200" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" />
+                        </yummy:PancakeView>
+                          <yummy:PancakeView Padding="0" HasShadow="True" Sides="4" BackgroundGradientEndColor="White" BackgroundGradientStartColor="WhiteSmoke" CornerRadius="10" HorizontalOptions="FillAndExpand" HeightRequest="100" WidthRequest="100">
+                            <forms:AnimationView  Animation="creative.json" Loop="True" AutoPlay="True" HeightRequest="200" WidthRequest="200" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" />
+                        </yummy:PancakeView>
+                        <yummy:PancakeView Padding="0" HasShadow="True" Sides="4" BackgroundGradientEndColor="White" BackgroundGradientStartColor="WhiteSmoke" CornerRadius="10" HorizontalOptions="FillAndExpand" HeightRequest="100" WidthRequest="100">
+                            <forms:AnimationView  Animation="working.json" Loop="True" AutoPlay="True" HeightRequest="200" WidthRequest="200" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" />
+                        </yummy:PancakeView>
+                        <yummy:PancakeView Padding="0" HasShadow="True" Sides="4" BackgroundGradientEndColor="White" BackgroundGradientStartColor="WhiteSmoke" CornerRadius="10" HorizontalOptions="FillAndExpand" HeightRequest="100" WidthRequest="100">
+                            <forms:AnimationView  Animation="corona.json" Loop="True" AutoPlay="True" HeightRequest="200" WidthRequest="200" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" />
+                        </yummy:PancakeView>
+                        <yummy:PancakeView Padding="0" HasShadow="True" Sides="4" BackgroundGradientEndColor="White" BackgroundGradientStartColor="WhiteSmoke" CornerRadius="10" HorizontalOptions="FillAndExpand" HeightRequest="100" WidthRequest="100">
+                            <forms:AnimationView  Animation="Faq.json" Loop="True" AutoPlay="True" HeightRequest="200" WidthRequest="200" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" />
+                        </yummy:PancakeView>
+
+                    </FlexLayout>-->
+
+                </StackLayout>
+
+            </ScrollView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

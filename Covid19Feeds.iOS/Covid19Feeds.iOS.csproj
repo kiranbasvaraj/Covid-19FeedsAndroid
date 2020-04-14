@@ -194,5 +194,8 @@
     <BundleResource Include="corona.json" />
     <BundleResource Include="covid_loader.json" />
     <BundleResource Include="Resources\ic_downarrow.png" />
+    <BundleResource Include="Faq.json" />
+    <BundleResource Include="working.json" />
+    <BundleResource Include="creative.json" />
   </ItemGroup>
 </Project>

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Covid19Feeds.Views.CovidInformViews;
 using Xamarin.Forms;
 
 namespace Covid19Feeds.Views.ContentViews
@@ -15,6 +16,12 @@ namespace Covid19Feeds.Views.ContentViews
             
         }
 
-       
+        private async void OnKnowMoreTapped(object s,EventArgs e)
+        {
+            await Application.Current.MainPage.Navigation.PushAsync(new CovidInfoPage());
+        }
+
+
+
     }
 }

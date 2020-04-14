@@ -147,7 +147,9 @@
 
                 <yummy:PancakeView CornerRadius="30" Style="{StaticResource Key=PancakeStyle}">
                     <Grid>
-
+                        <Grid.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnKnowMoreTapped"></TapGestureRecognizer>
+                        </Grid.GestureRecognizers>
                         <Image Source="covid_image"></Image>
                         <Label Text="Know More About COVID-19" HorizontalTextAlignment="Center" VerticalOptions="Start" FontSize="Large" VerticalTextAlignment="Center" Style="{StaticResource Key=PageTileLabel}" TextColor="Black"></Label>
                     </Grid>

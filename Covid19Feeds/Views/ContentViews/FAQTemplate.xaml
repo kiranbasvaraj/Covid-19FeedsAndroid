@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:Covid19Feeds.Controls" x:Class="Covid19Feeds.Views.ContentViews.FAQTemplate">
+    <ContentView.Content>
+         <StackLayout x:Name="sl" BindableLayout.ItemsSource="{Binding QusetionList}" >
+                    
+                    <BindableLayout.ItemTemplate>
+                        <DataTemplate>
+                            <StackLayout Padding="0,2,0,2">
+                            <local:Accordion  Text="{Binding Question}">
+
+                                <local:Accordion.AccordionContentView>
+                                    <StackLayout>
+                                        <Label Text="{Binding Answer}" TextColor="Black" Style="{StaticResource DescriptionLabel}" />
+                                    </StackLayout>
+                                </local:Accordion.AccordionContentView>
+
+                                <local:Accordion.IndicatorView>
+                                    <Image Source="ic_downarrow"  HeightRequest="40" WidthRequest="40"></Image>
+                                </local:Accordion.IndicatorView>
+
+                            </local:Accordion>
+                                </StackLayout>
+                        </DataTemplate>
+                    </BindableLayout.ItemTemplate>
+                </StackLayout>
+
+    </ContentView.Content>
+</ContentView>
