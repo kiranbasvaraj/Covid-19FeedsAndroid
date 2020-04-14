@@ -4,6 +4,7 @@ using System.Linq;
 using eliteKit.iOSCore;
 using FFImageLoading.Forms.Platform;
 using Foundation;
+using Lottie.Forms.iOS.Renderers;
 using UIKit;
 
 namespace Covid19Feeds.iOS
@@ -26,6 +27,7 @@ namespace Covid19Feeds.iOS
             global::Xamarin.Forms.Forms.Init();
             Abstractions.Init();
             CachedImageRenderer.Init();
+            AnimationViewRenderer.Init();
             Rg.Plugins.Popup.Popup.Init();
             LoadApplication(new App());
 

@@ -1,36 +1,24 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<pages:PopupPage BackgroundColor="Transparent" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:animations="clr-namespace:Rg.Plugins.Popup.Animations;assembly=Rg.Plugins.Popup"  xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms" x:Class="Covid19Feeds.Views.Popups.ChangeCountryPopup">
-    <!--<pages:PopupPage.Animation>
-        <animations:ScaleAnimation 
-            PositionIn="Center"
-            PositionOut="Center"
-            ScaleIn="5.2"
-            ScaleOut="5.8"
-            DurationIn="200"
-            DurationOut="200"
-            EasingIn="Linear"
-            EasingOut="Linear'"
-            HasBackgroundAnimation="True"/>
-    </pages:PopupPage.Animation>-->
+<pages:PopupPage BackgroundColor="Transparent" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:animations="clr-namespace:Rg.Plugins.Popup.Animations;assembly=Rg.Plugins.Popup" xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms" x:Class="Covid19Feeds.Views.Popups.ChangeCountryPopup">
 
-    <Frame HorizontalOptions="CenterAndExpand"  CornerRadius="10" BackgroundColor="White" WidthRequest="250" VerticalOptions="CenterAndExpand" Padding="5" HeightRequest="500">
-    <StackLayout HorizontalOptions="CenterAndExpand"  BackgroundColor="White" VerticalOptions="StartAndExpand" Padding="5">
 
-      <CollectionView x:Name="cv" ItemsSource="{Binding GlobalCountryCaseDataModel}" SelectionMode="Single">
-          <CollectionView.ItemTemplate>
-              <DataTemplate>
-                 
-                      <StackLayout Orientation="Horizontal" HeightRequest="50" Spacing="15">
-                           <ffimageloading:CachedImage Source="{Binding countryInfo.flag}" HorizontalOptions="Center" HeightRequest="30" WidthRequest="30" DownsampleToViewSize="true" LoadingPlaceholder="ic_loadging" />
-                           <!--<Image Source="{Binding countryInfo.flag}" HeightRequest="30" WidthRequest="30" VerticalOptions="CenterAndExpand"></Image>-->
-                          <Label Text="{Binding country}" VerticalOptions="CenterAndExpand" FontSize="15" Style="{StaticResource DescriptionLabel}"></Label>
-                      </StackLayout>
-                     
-               
-              </DataTemplate>
-          </CollectionView.ItemTemplate>
-      </CollectionView>
+    <Frame HorizontalOptions="CenterAndExpand" CornerRadius="10" BackgroundColor="White" WidthRequest="250" VerticalOptions="CenterAndExpand" Padding="5" HeightRequest="500">
+        <StackLayout HorizontalOptions="CenterAndExpand" BackgroundColor="White" VerticalOptions="StartAndExpand" Padding="5">
+
+            <CollectionView x:Name="cv" ItemsSource="{Binding GlobalCountryCaseDataModel}" SelectionMode="Single">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+
+                        <StackLayout Orientation="Horizontal" HeightRequest="50" Spacing="15">
+                            <ffimageloading:CachedImage Source="{Binding countryInfo.flag}" HorizontalOptions="Center" HeightRequest="30" WidthRequest="30" DownsampleToViewSize="true" LoadingPlaceholder="ic_loadging" />
+                            <Label Text="{Binding country}" VerticalOptions="CenterAndExpand" FontSize="15" Style="{StaticResource DescriptionLabel}"></Label>
+                        </StackLayout>
+
+
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
         </StackLayout>
-        </Frame>
+    </Frame>
 </pages:PopupPage>
 

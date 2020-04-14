@@ -304,55 +304,63 @@ namespace Covid19Feeds.ViewModels
 
         private void ChangeTabs(string CommandParam)
         {
-            switch (CommandParam)
+            try
             {
-                case "dashboard":
-                    TabIcon1 = "ic_tab1selected.png";
-                    TabIcon2 = "ic_tab2unselected.png";
-                    TabIcon3 = "ic_tab3unselected.png";
-                    Scalevalue = 1;
-                    Scalevalue1 = 0.8;
-                    Scalevalue2 = 0.8;
-                    IsDashboardVisible = true;
-                    IsAboutVisible = false;
-                    IsCountriesVisible = false;
-                    HeaderImage = "https://cdn2.iconfinder.com/data/icons/covid-19-solid/64/virus-06-512.png";
-                    PageTitle = "Covid-19 Feeds";
-                    ShouldMoveTitleToLeft = false;
-                    IsHeaderImageVisible = true;
-                    break;
-                case "countires":
-                    TabIcon1 = "ic_tab1unselected.png";
-                    TabIcon2 = "ic_tab2selected.png";
-                    TabIcon3 = "ic_tab3unselected.png";
-                    IsDashboardVisible = false;
-                    IsAboutVisible = false;
-                    IsCountriesVisible = true;
-                    Scalevalue = 0.8;
-                    Scalevalue1 = 1;
-                    Scalevalue2 = 0.8;
-                    HeaderImage = "https://cdn0.iconfinder.com/data/icons/small-n-flat/24/678111-map-marker-512.png";
-                    PageTitle = "Countries";
-                    ShouldMoveTitleToLeft = false;
-                    IsHeaderImageVisible = false;
-                    break;
-                case "about":
-                    TabIcon1 = "ic_tab1unselected.png";
-                    TabIcon2 = "ic_tab2unselected.png";
-                    TabIcon3 = "ic_tab3selected.png";
-                    IsDashboardVisible = false;
-                    IsAboutVisible = true;
-                    IsCountriesVisible = false;
-                    Scalevalue = 0.8;
-                    Scalevalue1 = 0.8;
-                    Scalevalue2 = 1;
-                    PageTitle = "About";
-                    HeaderImage = "http://files.softicons.com/download/system-icons/phuzion-icons-by-kyo-tux/png/256/Info.png";
-                    ShouldMoveTitleToLeft = false;
-                    IsHeaderImageVisible = false;
-                    break;
+                /**/
+                switch (CommandParam)
+                {
+                    case "dashboard":
+                        TabIcon1 = "ic_tab1selected.png";
+                        TabIcon2 = "ic_tab2unselected.png";
+                        TabIcon3 = "ic_tab3unselected.png";
+                        Scalevalue = 1;
+                        Scalevalue1 = 0.8;
+                        Scalevalue2 = 0.8;
+                        IsDashboardVisible = true;
+                        IsAboutVisible = false;
+                        IsCountriesVisible = false;
+                        HeaderImage = "https://cdn2.iconfinder.com/data/icons/covid-19-solid/64/virus-06-512.png";
+                        PageTitle = "Covid-19 Feeds";
+                        ShouldMoveTitleToLeft = false;
+                        IsHeaderImageVisible = true;
+                        break;
+                    case "countires":
+                        TabIcon1 = "ic_tab1unselected.png";
+                        TabIcon2 = "ic_tab2selected.png";
+                        TabIcon3 = "ic_tab3unselected.png";
+                        IsDashboardVisible = false;
+                        IsAboutVisible = false;
+                        IsCountriesVisible = true;
+                        Scalevalue = 0.8;
+                        Scalevalue1 = 1;
+                        Scalevalue2 = 0.8;
+                        HeaderImage = "https://cdn0.iconfinder.com/data/icons/small-n-flat/24/678111-map-marker-512.png";
+                        PageTitle = "Countries";
+                        ShouldMoveTitleToLeft = false;
+                        IsHeaderImageVisible = false;
+                        break;
+                    case "about":
+                        TabIcon1 = "ic_tab1unselected.png";
+                        TabIcon2 = "ic_tab2unselected.png";
+                        TabIcon3 = "ic_tab3selected.png";
+                        IsDashboardVisible = false;
+                        IsAboutVisible = true;
+                        IsCountriesVisible = false;
+                        Scalevalue = 0.8;
+                        Scalevalue1 = 0.8;
+                        Scalevalue2 = 1;
+                        PageTitle = "About";
+                        HeaderImage = "http://files.softicons.com/download/system-icons/phuzion-icons-by-kyo-tux/png/256/Info.png";
+                        ShouldMoveTitleToLeft = false;
+                        IsHeaderImageVisible = false;
+                        break;
 
 
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex.StackTrace);
             }
         }
 

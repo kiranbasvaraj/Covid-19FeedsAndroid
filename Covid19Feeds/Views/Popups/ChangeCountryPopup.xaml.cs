@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using Covid19Feeds.Helpers;
 using Covid19Feeds.Models;
 using Covid19Feeds.ViewModels;
@@ -19,16 +20,26 @@ namespace Covid19Feeds.Views.Popups
 
         private async void Cv_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            var vm = this.BindingContext as DashboardViewModel;
-            Setting.SelectedCountry = (cv.SelectedItem as AllCountriesCasesModel).country;
-            await vm.ChooseDEaflutCountry();
-            await Navigation.PopPopupAsync();
+            try
+            {
+
+                var vm = this.BindingContext as DashboardViewModel;
+                Setting.SelectedCountry = (cv.SelectedItem as AllCountriesCasesModel).country;
+                await vm.ChooseDEaflutCountry();
+                await Navigation.PopPopupAsync();
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex.StackTrace);
+            }
         }
 
         protected override bool OnBackgroundClicked()
         {
-           return  base.OnBackgroundClicked();
-           
+            base.OnBackgroundClicked();
+            return false;
+
+
         }
     }
-} 
+}

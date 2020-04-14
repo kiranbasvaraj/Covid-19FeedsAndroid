@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Threading.Tasks;
 using Covid19Feeds.ViewModels;
 using Covid19Feeds.Views.ContentViews;
@@ -13,28 +14,31 @@ namespace Covid19Feeds.Views
     {
         public DashboardPage()
         {
-            InitializeComponent();
-            NavigationPage.SetHasNavigationBar(this, false);
-          
-            var vm = this.BindingContext as DashboardViewModel;
-            Task.Run(async () =>
+            try
             {
-                await vm.LoadGlobalCases();
-                await vm.LoadAllCountryCases();
-               // 
+                /**/
+                InitializeComponent();
+                NavigationPage.SetHasNavigationBar(this, false);
+
+                var vm = this.BindingContext as DashboardViewModel;
+                Task.Run(async () =>
+                {
+                    await vm.LoadGlobalCases();
+                    await vm.LoadAllCountryCases();
+                // 
 
             }).GetAwaiter();
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex.StackTrace);
+            }
 
            // vm.ItemSelectionHandler += Vm_ItemSelectionHandler;
            
         }
 
-        //private async void Vm_ItemSelectionHandler(object sender, EventArgs e)
-        //{
-            
-        //    //vm.SeletedItem = null;
-        //    await Navigation.PushModalAsync(new CovidDetailsPage());
-        //}
+     
 
         private void CountriesView_ItemTappedHandler(object sender, EventArgs e)
         {
@@ -43,30 +47,47 @@ namespace Covid19Feeds.Views
 
         protected async override void OnAppearing()
         {
-            base.OnAppearing();
-            var vm = this.BindingContext as DashboardViewModel;
-            MessagingCenter.Subscribe<Object>(this, "PopupEvent", async (s) =>
+            try
             {
+                /**/
+                base.OnAppearing();
+                var vm = this.BindingContext as DashboardViewModel;
+                MessagingCenter.Subscribe<Object>(this, "PopupEvent", async (s) =>
+                {
 
-                var page = new ChangeCountryPopup();
-                page.BindingContext = vm;
-                await Navigation.PushPopupAsync(page);
+                    var page = new ChangeCountryPopup();
+                    page.BindingContext = vm;
+                    await Navigation.PushPopupAsync(page);
 
 
 
-            });
-           // CountriesView.ItemTappedHandler += CountriesView_ItemTappedHandler;
-            await vm.ChooseDEaflutCountry();
+                });
+                // CountriesView.ItemTappedHandler += CountriesView_ItemTappedHandler;
+                await vm.ChooseDEaflutCountry();
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex.StackTrace);
+            }
 
 
         }
         protected override void OnDisappearing()
         {
-            base.OnDisappearing();
-            CountriesView.ItemTappedHandler -= CountriesView_ItemTappedHandler;
-            MessagingCenter.Unsubscribe<object>(this, "PopupEvent");
+            try
+            {
+
+                base.OnDisappearing();
+                CountriesView.ItemTappedHandler -= CountriesView_ItemTappedHandler;
+                MessagingCenter.Unsubscribe<object>(this, "PopupEvent");
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex.StackTrace);
+            }
+        }
         }
 
 
     }
-}
+

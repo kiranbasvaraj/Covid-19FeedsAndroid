@@ -8,6 +8,7 @@ using Android.Widget;
 using Android.OS;
 using eliteKit.AndroidCore;
 using FFImageLoading.Forms.Platform;
+using Lottie.Forms.Droid;
 
 namespace Covid19Feeds.Droid
 {
@@ -25,6 +26,7 @@ namespace Covid19Feeds.Droid
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
             Abstractions.Init(this);
             CachedImageRenderer.Init(false);
+            AnimationViewRenderer.Init();
             Rg.Plugins.Popup.Popup.Init(this, savedInstanceState);
             LoadApplication(new App());
         }

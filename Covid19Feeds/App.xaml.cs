@@ -1,4 +1,5 @@
 ﻿using Covid19Feeds.Views;
+using Covid19Feeds.Views.CovidInformViews;
 using eliteKit;
 using Microsoft.AppCenter;
 using Microsoft.AppCenter.Analytics;
@@ -16,7 +17,7 @@ namespace Covid19Feeds
         {
             InitializeComponent();
             //Core.initializeKit(typeof(App).GetTypeInfo().Assembly);
-            MainPage = new NavigationPage( new DashboardPage());
+            MainPage = new NavigationPage( new FAQPage());
         }
 
         protected override void OnStart()

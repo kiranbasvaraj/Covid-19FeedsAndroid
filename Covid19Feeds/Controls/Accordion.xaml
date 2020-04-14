@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" x:Name="_accordion_view_123" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:pancakeview="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView" x:Class="Covid19Feeds.Controls.Accordion">
+    <ContentView.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+
+            <ContentView Grid.Row="1" Margin="5" x:Name="_accContent" Content="{Binding Source={x:Reference _accordion_view_123}, Path=AccordionContentView}" />
+
+            <Grid Margin="5" BackgroundColor="{Binding Source={x:Reference _accordion_view_123}, Path=HeaderBackgroundColor}">
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+
+                <Grid.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TitleTapped" />
+                </Grid.GestureRecognizers>
+                <StackLayout Orientation="Horizontal">
+                    <pancakeview:PancakeView HorizontalOptions="Start" VerticalOptions="CenterAndExpand" Sides="4" BackgroundGradientStartColor="#0A79DF" CornerRadius="80" BackgroundGradientEndColor="White" HeightRequest="15" WidthRequest="15"/>
+                    <!--<Image Source="ic_tab1selected" HeightRequest="20" WidthRequest="20"></Image>-->
+                    <Label x:Name="titlelbl" FontSize="Subtitle" VerticalTextAlignment="Center" HorizontalOptions="Start" VerticalOptions="Start" Margin="5,0,0,0" Style="{StaticResource PageTileLabel}" />
+                </StackLayout>
+
+                <ContentView x:Name="_indicatorContainer" Content="{Binding Source={x:Reference _accordion_view_123}, Path=IndicatorView}" HorizontalOptions="End" Grid.Column="1" VerticalOptions="Center" />
+            </Grid>
+            <!--IsVisible="{Binding Source={x:Reference _accordion_view_123}, Path=IsOpen}"-->
+        </Grid>
+    </ContentView.Content>
+</ContentView>

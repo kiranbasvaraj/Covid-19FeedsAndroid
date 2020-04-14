@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:Covid19Feeds.Controls" xmlns:vm="clr-namespace:Covid19Feeds.ViewModels" xmlns:pancakeview="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView" xmlns:forms="clr-namespace:Lottie.Forms;assembly=Lottie.Forms" x:Class="Covid19Feeds.Views.CovidInformViews.CovidInfoPage">
+    <ContentPage.BindingContext>
+        <vm:CovidInformationViewModel />
+    </ContentPage.BindingContext>
+    <NavigationPage.HasNavigationBar>
+        <x:Boolean>False</x:Boolean>
+    </NavigationPage.HasNavigationBar>
+    <ContentPage.Content>
+        <StackLayout Padding="0">
+             <pancakeview:PancakeView HasShadow="True" Sides="4" BackgroundGradientEndColor="#1976D2" BackgroundGradientStartColor="#74B9FF" BackgroundGradientAngle="180" BorderIsDashed="true" CornerRadius="0,0,50,50" HeightRequest="200" VerticalOptions="StartAndExpand">
+                    
+                    <forms:AnimationView  Animation="corona.json" Loop="True" AutoPlay="True" HeightRequest="400" WidthRequest="800" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" />
+                </pancakeview:PancakeView>
+            <ScrollView>
+                <StackLayout BindableLayout.ItemsSource="{Binding QusetionList}">
+                    <BindableLayout.ItemTemplate>
+                        <DataTemplate>
+                            <StackLayout Padding="0,10,0,10">
+                                <local:Accordion Text="{Binding Question}">
+
+                                    <local:Accordion.AccordionContentView>
+                                        <StackLayout>
+                                            <Label Text="{Binding Answer}" Style="{StaticResource DescriptionLabel}" TextColor="Black" />
+
+                                        </StackLayout>
+                                    </local:Accordion.AccordionContentView>
+
+                                    <local:Accordion.IndicatorView>
+                                        <Image Source="ic_downarrow" VerticalOptions="Center" HeightRequest="30" WidthRequest="30"></Image>
+                                    </local:Accordion.IndicatorView>
+
+                                </local:Accordion>
+                            </StackLayout>
+                        </DataTemplate>
+                    </BindableLayout.ItemTemplate>
+                </StackLayout>
+            </ScrollView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

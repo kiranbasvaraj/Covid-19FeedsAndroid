@@ -1,10 +1,10 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:ffimageloadingsvg="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"  xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView" xmlns:vm="clr-namespace:Covid19Feeds.ViewModels" xmlns:ctrl="clr-namespace:Covid19Feeds.Controls" xmlns:local="clr-namespace:Covid19Feeds.Views.ContentViews" xmlns:bvr="clr-namespace:Covid19Feeds.Behaviours" xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms" x:Class="Covid19Feeds.Views.DashboardPage">
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"  xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView" xmlns:vm="clr-namespace:Covid19Feeds.ViewModels" xmlns:ctrl="clr-namespace:Covid19Feeds.Controls" xmlns:local="clr-namespace:Covid19Feeds.Views.ContentViews" xmlns:bvr="clr-namespace:Covid19Feeds.Behaviours" xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms" xmlns:forms="clr-namespace:Lottie.Forms;assembly=Lottie.Forms" x:Class="Covid19Feeds.Views.DashboardPage">
     <ContentPage.BindingContext>
-        <vm:DashboardViewModel/>
+        <vm:DashboardViewModel />
     </ContentPage.BindingContext>
     <ContentPage.Content>
-   
+
         <yummy:PancakeView>
             <yummy:PancakeView.BackgroundGradientStops>
                 <yummy:GradientStopCollection>
@@ -14,33 +14,25 @@
                 </yummy:GradientStopCollection>
             </yummy:PancakeView.BackgroundGradientStops>
             <StackLayout>
-               
-                <ctrl:HeaderView HeaderImage="{Binding HeaderImage}"
-                                 Text="{Binding PageTitle}"
-                               
-                                 MoveImageLeftSide="{Binding ShouldMoveTitleToLeft}"/>
+
+                <ctrl:HeaderView HeaderImage="{Binding HeaderImage}" Text="{Binding PageTitle}" MoveImageLeftSide="{Binding ShouldMoveTitleToLeft}" />
 
 
-                <!--<ffimageloading:CachedImage HorizontalOptions="Center" VerticalOptions="Center"
-	WidthRequest="300" HeightRequest="300"
-	DownsampleToViewSize="true"
-    LoadingPlaceholder="covid_image.jpg"
-	Source = "http://loremflickr.com/600/600/nature?filename=simple.jpg">
-	
-</ffimageloading:CachedImage>-->
                 <Grid VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
-                    <local:DashboardView IsVisible="{Binding IsDashboardVisible}" x:Name="dashboard"/>
-                    <local:CountriesView IsVisible="{Binding IsCountriesVisible}" x:Name="countires"/>
-                    <local:AboutView IsVisible="{Binding IsAboutVisible}" x:Name="about"/>
-                    <!--<ffimageloadingsvg:SvgCachedImage WidthRequest="200" HeightRequest="200" Source="sample.svg"/>-->	
-                    <ActivityIndicator HeightRequest="80" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" WidthRequest="80" IsRunning="{Binding IsBusy}" IsVisible="{Binding IsBusy}"></ActivityIndicator>
+                    <local:DashboardView IsVisible="{Binding IsDashboardVisible}" x:Name="dashboard" />
+                    <local:CountriesView IsVisible="{Binding IsCountriesVisible}" x:Name="countires" />
+                    <local:AboutView IsVisible="{Binding IsAboutVisible}" x:Name="about" />
+                    <!--<ffimageloadingsvg:SvgCachedImage WidthRequest="200" HeightRequest="200" Source="sample.svg"/>-->
+                    <!--<ActivityIndicator HeightRequest="80" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" WidthRequest="80" IsRunning="{Binding IsBusy}" IsVisible="{Binding IsBusy}"></ActivityIndicator>-->
+
+                    <forms:AnimationView IsVisible="{Binding IsBusy}" Animation="covid_loader.json" Loop="True" AutoPlay="True" HeightRequest="400" WidthRequest="400" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" />
                 </Grid>
-                 <ctrl:FooterView VerticalOptions="EndAndExpand"/>
+                <ctrl:FooterView VerticalOptions="EndAndExpand" />
 
 
-            
 
-              
+
+
             </StackLayout>
         </yummy:PancakeView>
 
