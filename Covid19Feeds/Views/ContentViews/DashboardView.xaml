@@ -3,7 +3,7 @@
     <ContentView.Content>
         <ScrollView x:Name="scrollview" VerticalScrollBarVisibility="Never">
             <StackLayout Padding="10">
-               
+
                 <!--Global-->
 
                 <yummy:PancakeView BackgroundGradientStartColor="White" BackgroundGradientAngle="180" BorderColor="Red" BackgroundGradientEndColor="White" CornerRadius="15" Style="{StaticResource Key=PancakeStyle}">
@@ -27,7 +27,7 @@
                                     <Label Grid.Row="0" Grid.Column="1" Text="Deaths" HorizontalTextAlignment="Center" TextColor="#EC4849" Style="{StaticResource Key=HeaderLabel}" FontSize="Medium"></Label>
                                     <Label Grid.Row="0" Grid.Column="2" Text="Recovered" HorizontalTextAlignment="Center" TextColor="#26ae60" Style="{StaticResource Key=HeaderLabel}" FontSize="Medium"></Label>
 
-                                    <Label Grid.Row="1" Grid.Column="0" Text="{Binding GlobalCaseDataModel.todayCases,FallbackValue=Loading}" HorizontalTextAlignment="Center" TextColor="#0A79DF" Style="{StaticResource Key=PageTileLabel}" FontSize="Medium"></Label>
+                                    <Label Grid.Row="1" Grid.Column="0" Text="{Binding GlobalCaseDataModel.cases,FallbackValue=Loading}" HorizontalTextAlignment="Center" TextColor="#0A79DF" Style="{StaticResource Key=PageTileLabel}" FontSize="Medium"></Label>
                                     <Label Grid.Row="1" Grid.Column="1" Text="{Binding GlobalCaseDataModel.deaths,FallbackValue=Loading}" HorizontalTextAlignment="Center" TextColor="#EC4849" Style="{StaticResource Key=PageTileLabel}" FontSize="Medium"></Label>
                                     <Label Grid.Row="1" Grid.Column="2" Text="{Binding GlobalCaseDataModel.recovered,FallbackValue=Loading}" HorizontalTextAlignment="Center" TextColor="#26ae60" Style="{StaticResource Key=PageTileLabel}" FontSize="Medium"></Label>
                                 </Grid>
@@ -40,20 +40,25 @@
 
                 <!--Current-->
 
-                <yummy:PancakeView CornerRadius="15" Style="{StaticResource Key=PancakeStyle}" BackgroundGradientStartColor="White" BackgroundGradientEndColor="White">
+                <yummy:PancakeView  CornerRadius="15" Style="{StaticResource Key=PancakeStyle}" BackgroundGradientStartColor="White" BackgroundGradientEndColor="White">
                     <yummy:PancakeView.GestureRecognizers>
                         <TapGestureRecognizer NumberOfTapsRequired="1" Command="{Binding MyCountryDetailsCommand}"></TapGestureRecognizer>
                     </yummy:PancakeView.GestureRecognizers>
                     <Grid>
                         <StackLayout>
                             <StackLayout Orientation="Horizontal" Padding="10,0,20,0">
-
+                                 <ffimageloading:CachedImage  Source="{Binding CurrentDefaultCountry.countryInfo.flag}" HeightRequest="50" WidthRequest="50" DownsampleToViewSize="true" LoadingPlaceholder="ic_loading" />
                                 <Label Text="{Binding CurrentDefaultCountry.country,FallbackValue=Loading}" HorizontalTextAlignment="Center" Margin="50,0,0,0" HorizontalOptions="EndAndExpand" TextColor="#616C6F" Style="{StaticResource Key=HeaderLabel}" FontSize="Large"></Label>
-                                <Image Source="ic_action_location_on" HorizontalOptions="EndAndExpand" VerticalOptions="Center" HeightRequest="30" WidthRequest="30">
-                                    <Image.GestureRecognizers>
-                                        <TapGestureRecognizer Command="{Binding SettingTappedCommand}"></TapGestureRecognizer>
-                                    </Image.GestureRecognizers>
-                                </Image>
+
+                                <StackLayout HorizontalOptions="EndAndExpand">
+                                    <StackLayout.GestureRecognizers>
+                                            <TapGestureRecognizer Command="{Binding SettingTappedCommand}"></TapGestureRecognizer>
+                                        </StackLayout.GestureRecognizers>
+                                    <Image Source="ic_action_location_on" HorizontalOptions="CenterAndExpand" VerticalOptions="Center" HeightRequest="30" WidthRequest="30">
+                                        
+                                    </Image>
+                                    <Label Text="Change Country" VerticalTextAlignment="Start" HorizontalTextAlignment="Center" Style="{StaticResource DescriptionLabel}" FontSize="Small"></Label>
+                                </StackLayout>
                             </StackLayout>
 
 
@@ -112,7 +117,7 @@
                                         <StackLayout>
 
                                             <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Spacing="10">
-                                                 <ffimageloading:CachedImage Source="{Binding countryInfo.flag}" HorizontalOptions="Center" HeightRequest="50" WidthRequest="50" DownsampleToViewSize="true" LoadingPlaceholder="ic_loadging.gif" />
+                                                <ffimageloading:CachedImage Source="{Binding countryInfo.flag}" HorizontalOptions="Center" HeightRequest="50" WidthRequest="50" DownsampleToViewSize="true" LoadingPlaceholder="ic_loading" />
                                                 <!--<Image Source="{Binding countryInfo.flag}" HeightRequest="50" WidthRequest="50"></Image>-->
                                                 <Label Text="{Binding country}" FontSize="Large" VerticalTextAlignment="Center" Style="{StaticResource Key=PageTileLabel}" TextColor="Black"></Label>
                                             </StackLayout>

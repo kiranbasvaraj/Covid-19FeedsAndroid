@@ -391,6 +391,7 @@ namespace Covid19Feeds.ViewModels
         private async Task SettingTapped()
         {
             MessagingCenter.Send<object>(this, "PopupEvent");
+           // await Application.Current.MainPage.Navigation.PushPopupAsync(new ChangeCountryPopup.xa());
         }
 
         public async Task LoadAllCountryCases()

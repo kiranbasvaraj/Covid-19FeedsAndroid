@@ -1,16 +1,22 @@
 ﻿using System;
 using System.Collections.ObjectModel;
+using System.Threading.Tasks;
 using Covid19Feeds.Models;
 
 namespace Covid19Feeds.ViewModels
 {
-    public class CovidInformationViewModel
+    public class CovidInformationViewModel:BaseViewModel
     {
-        public ObservableCollection<FAQModel> QusetionList { get; set; }
+        public Lazy<ObservableCollection<FAQModel>> QusetionList { get; set; }
         public CovidInformationViewModel()
         {
-            QusetionList = new ObservableCollection<FAQModel>();
-            QusetionList.Add(
+            QusetionList = new Lazy<ObservableCollection<FAQModel>>();
+        }
+        public async Task LoadFaqs()
+        {
+
+          
+            QusetionList.Value.Add(
 
             new FAQModel()
             {
@@ -20,7 +26,7 @@ namespace Covid19Feeds.ViewModels
 
 
 
-            QusetionList.Add(
+            QusetionList.Value.Add(
 
            new FAQModel()
            {
@@ -29,7 +35,7 @@ namespace Covid19Feeds.ViewModels
            });
 
 
-            QusetionList.Add(
+            QusetionList.Value.Add(
 
            new FAQModel()
            {
@@ -39,7 +45,7 @@ namespace Covid19Feeds.ViewModels
 
 
 
-            QusetionList.Add(
+            QusetionList.Value.Add(
 
            new FAQModel()
            {
@@ -50,7 +56,7 @@ namespace Covid19Feeds.ViewModels
 
 
 
-            QusetionList.Add(
+            QusetionList.Value.Add(
 
            new FAQModel()
            {
@@ -61,7 +67,7 @@ namespace Covid19Feeds.ViewModels
 
 
 
-            QusetionList.Add(
+            QusetionList.Value.Add(
 
            new FAQModel()
            {
@@ -71,7 +77,7 @@ namespace Covid19Feeds.ViewModels
 
 
 
-            QusetionList.Add(
+            QusetionList.Value.Add(
 
            new FAQModel()
            {
@@ -82,7 +88,7 @@ namespace Covid19Feeds.ViewModels
 
 
 
-            QusetionList.Add(
+            QusetionList.Value.Add(
 
            new FAQModel()
            {
@@ -92,7 +98,7 @@ namespace Covid19Feeds.ViewModels
 
 
 
-            QusetionList.Add(
+            QusetionList.Value.Add(
 
            new FAQModel()
            {
@@ -102,7 +108,7 @@ namespace Covid19Feeds.ViewModels
 
 
 
-            QusetionList.Add(
+            QusetionList.Value.Add(
 
            new FAQModel()
            {
@@ -112,7 +118,7 @@ namespace Covid19Feeds.ViewModels
 
 
 
-            QusetionList.Add(
+            QusetionList.Value.Add(
 
            new FAQModel()
            {
@@ -120,7 +126,7 @@ namespace Covid19Feeds.ViewModels
                Answer = "Not yet. To date, there is no vaccine and no specific antiviral medicine to prevent or treat COVID-2019. However, those affected should receive care to relieve symptoms. People with serious illness should be hospitalized. Most patients recover thanks to supportive care.Possible vaccines and some specific drug treatments are under investigation. They are being tested through clinical trials. WHO is coordinating efforts to develop vaccines and medicines to prevent and treat COVID-19.The most effective ways to protect yourself and others against COVID-19 are to frequently clean your hands, cover your cough with the bend of elbow or tissue, and maintain a distance of at least 1 meter (3 feet) from people who are coughing or sneezing."
            });
 
-            QusetionList.Add(
+            QusetionList.Value.Add(
 
            new FAQModel()
            {
@@ -128,7 +134,7 @@ namespace Covid19Feeds.ViewModels
                Answer = "No. The virus that causes COVID-19 and the one that caused the outbreak of Severe Acute Respiratory Syndrome (SARS) in 2003 are related to each other genetically, but the diseases they cause are quite different.SARS was more deadly but much less infectious than COVID-19. There have been no outbreaks of SARS anywhere in the world since 2003."
            });
 
-            QusetionList.Add(
+            QusetionList.Value.Add(
 
            new FAQModel()
            {
@@ -136,7 +142,7 @@ namespace Covid19Feeds.ViewModels
                Answer = "Only wear a mask if you are ill with COVID-19 symptoms (especially coughing) or looking after someone who may have COVID-19. Disposable face mask can only be used once. If you are not ill or looking after someone who is ill then you are wasting a mask. There is a world-wide shortage of masks, so WHO urges people to use masks wisely.WHO advises rational use of medical masks to avoid unnecessary wastage of precious resources and mis-use of masks.The most effective ways to protect yourself and others against COVID-19 are to frequently clean your hands, cover your cough with the bend of elbow or tissue and maintain a distance of at least 1 meter (3 feet) from people who are coughing or sneezing"
            });
 
-            QusetionList.Add(
+            QusetionList.Value.Add(
 
            new FAQModel()
            {
@@ -144,7 +150,7 @@ namespace Covid19Feeds.ViewModels
                Answer = "The “incubation period” means the time between catching the virus and beginning to have symptoms of the disease. Most estimates of the incubation period for COVID-19 range from 1-14 days, most commonly around five days. These estimates will be updated as more data become available."
            });
 
-            QusetionList.Add(
+            QusetionList.Value.Add(
 
            new FAQModel()
            {
@@ -152,7 +158,7 @@ namespace Covid19Feeds.ViewModels
                Answer = "Coronaviruses are a large family of viruses that are common in animals. Occasionally, people get infected with these viruses which may then spread to other people. For example, SARS-CoV was associated with civet cats and MERS-CoV is transmitted by dromedary camels. Possible animal sources of COVID-19 have not yet been confirmed.  To protect yourself, such as when visiting live animal markets, avoid direct contact with animals and surfaces in contact with animals. Ensure good food safety practices at all times. Handle raw meat, milk or animal organs with care to avoid contamination of uncooked foods and avoid consuming raw or undercooked animal products."
            });
 
-            QusetionList.Add(
+            QusetionList.Value.Add(
 
            new FAQModel()
            {
@@ -160,7 +166,7 @@ namespace Covid19Feeds.ViewModels
                Answer = "1.We are aware of instances of animals and pets of COVID-19 patients being infected with the disease;  2.As the intergovernmental body responsible for improving animal health worldwide, the World Organisation for Animal Health (OIE) has been developing technical guidance on specialised topics related to animal health, dedicated to veterinary services and technical experts (including on testing and quarantine); 3.Based on current evidence, human to human transmission remains the main driver;  4.There is a possibility for some animals to become infected through close contact with infected humans.Further evidence is needed to understand if animals and pets can spread the disease; 4.It is still too early to say whether cats could be the intermediate host in the transmission of the COVID-19."
            });
 
-            QusetionList.Add(
+            QusetionList.Value.Add(
 
            new FAQModel()
            {
@@ -169,7 +175,7 @@ namespace Covid19Feeds.ViewModels
            });
 
 
-            QusetionList.Add(
+            QusetionList.Value.Add(
 
            new FAQModel()
            {
@@ -178,16 +184,16 @@ namespace Covid19Feeds.ViewModels
            });
 
 
-            QusetionList.Add(
+            QusetionList.Value.Add(
 
            new FAQModel()
            {
                Question = "Is there anything I should not do?",
                Answer = "1.Smoking   2.Wearing multiple masks 3. Taking antibiotics(See question 10"
-           }); 
+           });
 
 
-            QusetionList.Add(
+            QusetionList.Value.Add(
 
            new FAQModel()
            {
@@ -195,7 +201,9 @@ namespace Covid19Feeds.ViewModels
                Answer = "The virus that causes COVID-19 is mainly transmitted through droplets generated when an infected person coughs, sneezes, or speaks. These droplets are too heavy to hang in the air. They quickly fall on floors or surfaces.  You can be infected by breathing in the virus if you are within 1 metre of a person who has COVID-19, or by touching a contaminated surface and then touching your eyes, nose or mouth before washing your hands"
            });
 
-
+            NotifyChage("QusetionList");
+            //Task.Delay();
         }
+
     }
 }

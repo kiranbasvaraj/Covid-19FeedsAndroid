@@ -202,5 +202,6 @@
     <BundleResource Include="cough.json" />
     <BundleResource Include="fever.json" />
     <BundleResource Include="virus.json" />
+    <BundleResource Include="Resources\ic_loading.png" />
   </ItemGroup>
 </Project>

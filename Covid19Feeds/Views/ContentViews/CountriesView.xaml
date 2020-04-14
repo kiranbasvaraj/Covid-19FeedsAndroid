@@ -3,11 +3,11 @@
 
     <ContentView.Content>
         <StackLayout Padding="5">
-            <pancakeview:PancakeView CornerRadius="20" BackgroundColor="#ffffff" BorderColor="SkyBlue" BorderThickness="5">
-            <SearchBar Placeholder="Search" PlaceholderColor="SkyBlue" BackgroundColor="#fffff" TextChanged="OnSearch" ></SearchBar>
+            <pancakeview:PancakeView CornerRadius="20" BackgroundColor="#ffffff" BorderColor="SkyBlue" BorderThickness="5" HorizontalOptions="CenterAndExpand">
+            <SearchBar Placeholder="Search" PlaceholderColor="SkyBlue" BackgroundColor="#fffff" TextChanged="OnSearch" WidthRequest="385"></SearchBar>
                 </pancakeview:PancakeView>
              <Grid>
-            <ListView x:Name="list" ItemTapped="ListItemTapped" ItemsSource="{Binding SearchedList}" HasUnevenRows="True" BackgroundColor="Transparent" SeparatorVisibility="None" SeparatorColor="Transparent" CachingStrategy="RecycleElement">
+            <ListView x:Name="list" ItemTapped="ListItemTapped" ItemsSource="{Binding SearchedList}" HasUnevenRows="True" BackgroundColor="Transparent" SeparatorVisibility="None" SeparatorColor="Transparent" CachingStrategy="RecycleElementAndDataTemplate">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>

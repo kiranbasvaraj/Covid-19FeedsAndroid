@@ -10,7 +10,7 @@
                     <DataTemplate>
 
                         <StackLayout Orientation="Horizontal" HeightRequest="50" Spacing="15">
-                            <ffimageloading:CachedImage Source="{Binding countryInfo.flag}" HorizontalOptions="Center" HeightRequest="30" WidthRequest="30" DownsampleToViewSize="true" LoadingPlaceholder="ic_loadging" />
+                            <ffimageloading:CachedImage  Source="{Binding countryInfo.flag}" HorizontalOptions="Center" HeightRequest="30" WidthRequest="30" DownsampleToViewSize="true" LoadingPlaceholder="ic_loading" />
                             <Label Text="{Binding country}" VerticalOptions="CenterAndExpand" FontSize="15" Style="{StaticResource DescriptionLabel}"></Label>
                         </StackLayout>
 

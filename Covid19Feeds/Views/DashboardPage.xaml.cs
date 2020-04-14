@@ -62,8 +62,8 @@ namespace Covid19Feeds.Views
 
 
                 });
-                // CountriesView.ItemTappedHandler += CountriesView_ItemTappedHandler;
-                await vm.ChooseDEaflutCountry();
+               
+                //await vm.ChooseDEaflutCountry();
             }
             catch (Exception ex)
             {

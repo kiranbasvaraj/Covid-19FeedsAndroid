@@ -10,11 +10,9 @@
                 <Grid>
                     <forms:AnimationView  Animation="Faq.json" Loop="True" AutoPlay="True" HeightRequest="200" WidthRequest="400" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" />
                     <Label FontSize="Medium" VerticalOptions="EndAndExpand" Style="{StaticResource PageTileLabel}" TextColor="White" HorizontalOptions="CenterAndExpand" Text="All You Need To Know About Covid"></Label>
-                    <Label Margin="20" FontSize="Medium" Style="{StaticResource PageTileLabel}" TextColor="White" VerticalOptions="StartAndExpand" HorizontalOptions="EndAndExpand" Text="FAQ's">
-                        <Label.GestureRecognizers>
-                            <TapGestureRecognizer Tapped="OnFaqTapped" NumberOfTapsRequired="1"></TapGestureRecognizer>
-                        </Label.GestureRecognizers>
-                    </Label>
+                    <Button BackgroundColor="White" CornerRadius="30" Margin="20" Clicked="OnFaqTapped" FontSize="Medium" Style="{StaticResource PageTileLabel}" TextColor="#0A79DF" VerticalOptions="StartAndExpand" HorizontalOptions="EndAndExpand" Text="FAQ's >">
+                      
+                    </Button>
                 </Grid>
             </yummy:PancakeView>
             <ScrollView Padding="10,0,10,0">
@@ -35,7 +33,7 @@
                         <yummy:PancakeView Padding="0" HasShadow="True" Sides="4" BackgroundGradientEndColor="White" BackgroundGradientStartColor="WhiteSmoke" CornerRadius="10" HorizontalOptions="FillAndExpand" HeightRequest="150" WidthRequest="150">
                             <StackLayout VerticalOptions="FillAndExpand" Padding="5">
                                 <forms:AnimationView  Animation="fever.json" Loop="True" AutoPlay="True"  VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" />
-                                <Label Text="difficulty in breathing" Style="{StaticResource DescriptionLabel}" HorizontalTextAlignment="Center"></Label>
+                                <Label Text="Difficulty in Breathing" Style="{StaticResource DescriptionLabel}" HorizontalTextAlignment="Center"></Label>
                             </StackLayout>
 
                         </yummy:PancakeView>
@@ -54,8 +52,8 @@
 
                         <yummy:PancakeView Padding="0" HasShadow="True" Sides="4" BackgroundGradientEndColor="White" BackgroundGradientStartColor="WhiteSmoke" CornerRadius="10" HorizontalOptions="FillAndExpand" HeightRequest="150" WidthRequest="150">
                             <StackLayout VerticalOptions="FillAndExpand" Padding="5">
-                                <forms:AnimationView  Animation="cough.json" Loop="True" AutoPlay="True"  VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" />
-                                <Label Text="cough" Style="{StaticResource DescriptionLabel}" HorizontalTextAlignment="Center"></Label>
+                                <forms:AnimationView  Animation="cough.json" Loop="True" AutoPlay="True" HeightRequest="100" WidthRequest="200"  VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" />
+                                <Label Text="Cough" Style="{StaticResource DescriptionLabel}" HorizontalTextAlignment="Center"></Label>
                             </StackLayout>
 
                         </yummy:PancakeView>
@@ -65,7 +63,7 @@
                         <yummy:PancakeView Padding="0" HasShadow="True" Sides="4" BackgroundGradientEndColor="White" BackgroundGradientStartColor="WhiteSmoke" CornerRadius="10" HorizontalOptions="FillAndExpand" HeightRequest="150" WidthRequest="150">
                             <StackLayout VerticalOptions="FillAndExpand" Padding="5">
                                 <forms:AnimationView  Animation="tired.json" Loop="True" AutoPlay="True"  VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" />
-                                <Label Text="tiredness" Style="{StaticResource DescriptionLabel}" HorizontalTextAlignment="Center"></Label>
+                                <Label Text="Tiredness" Style="{StaticResource DescriptionLabel}" HorizontalTextAlignment="Center"></Label>
                             </StackLayout>
 
                         </yummy:PancakeView>

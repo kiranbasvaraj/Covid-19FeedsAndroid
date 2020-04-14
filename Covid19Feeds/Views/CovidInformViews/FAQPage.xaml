@@ -16,7 +16,31 @@
                     </StackLayout>-->
                 </yummy:PancakeView>
             <ScrollView x:Name="SV">
-              
+               <CollectionView  ItemsSource="{Binding QusetionList.Value}" >
+                    
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                           
+                            <StackLayout Padding="0,2,0,2">
+                            <local:Accordion  Text="{Binding Question}">
+
+                                <local:Accordion.AccordionContentView>
+                                    <StackLayout>
+                                        <Label Text="{Binding Answer}" TextColor="Black" Style="{StaticResource DescriptionLabel}" />
+                                    </StackLayout>
+                                </local:Accordion.AccordionContentView>
+
+                                <local:Accordion.IndicatorView>
+                                    <Image Source="ic_downarrow"  HeightRequest="40" WidthRequest="40"></Image>
+                                </local:Accordion.IndicatorView>
+
+                            </local:Accordion>
+                                </StackLayout>
+                              
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+
               
             </ScrollView>
         </StackLayout>

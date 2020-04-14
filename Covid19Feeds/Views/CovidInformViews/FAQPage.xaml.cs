@@ -12,35 +12,11 @@ namespace Covid19Feeds.Views.CovidInformViews
         public FAQPage()
         {
             InitializeComponent();
-            //    Task addUI = new Task(() =>
-            //    {
-            //        var vm = this.BindingContext as CovidInformationViewModel;
-            //        var x = new FAQTemplate();
-            //        x.BindingContext = vm;
-            //        SV.Content = x;
-            //    }
-
-            //    )};
-            //Device.b
-
-
-            Device.BeginInvokeOnMainThread(async() => {
-                var vm = this.BindingContext as CovidInformationViewModel;
-                var x = new FAQTemplate();
-                x.BindingContext = vm;
-                SV.Content = x;
-            
-            });
+            var vm = this.BindingContext as CovidInformationViewModel;
+            vm.LoadFaqs();
 
         }
 
-        protected override void OnAppearing()
-        {
-            base.OnAppearing();
 
-          
-            
-
-        }
     }
 }

@@ -165,11 +165,15 @@
       <SubType></SubType>
       <Generator></Generator>
     </AndroidResource>
-    <AndroidResource Include="Resources\drawable\ic_loading.gif">
+    <AndroidResource Include="Resources\drawable\ic_downarrow.png">
       <SubType></SubType>
       <Generator></Generator>
     </AndroidResource>
-    <AndroidResource Include="Resources\drawable\ic_downarrow.png">
+    <AndroidResource Include="Resources\drawable\ic_bluevirus.jpg">
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\drawable\ic_loading.png">
       <SubType></SubType>
       <Generator></Generator>
     </AndroidResource>
