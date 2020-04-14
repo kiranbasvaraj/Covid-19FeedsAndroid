@@ -23,43 +23,107 @@
                         <Label.FormattedText>
                             <FormattedString>
 
-                                <Span Text="Symptoms" TextColor="Black"></Span>
+                                <Span Text="Symptoms " TextColor="Black"></Span>
                                 <Span Text="(Source WHO)" TextColor="Gray" FontSize="Small" FontAttributes="Italic"></Span>
                             </FormattedString>
                         </Label.FormattedText>
                     </Label>
 
-                    <forms:AnimationView  Animation="Faq.json" Loop="True" AutoPlay="True" HeightRequest="200" WidthRequest="400" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" />
+
+                    <FlexLayout Wrap="Wrap" JustifyContent="SpaceEvenly" HeightRequest="350">
+
+                        <yummy:PancakeView Padding="0" HasShadow="True" Sides="4" BackgroundGradientEndColor="White" BackgroundGradientStartColor="WhiteSmoke" CornerRadius="10" HorizontalOptions="FillAndExpand" HeightRequest="150" WidthRequest="150">
+                            <StackLayout VerticalOptions="FillAndExpand" Padding="5">
+                                <forms:AnimationView  Animation="fever.json" Loop="True" AutoPlay="True"  VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" />
+                                <Label Text="difficulty in breathing" Style="{StaticResource DescriptionLabel}" HorizontalTextAlignment="Center"></Label>
+                            </StackLayout>
+
+                        </yummy:PancakeView>
 
 
-                    <forms:AnimationView  Animation="Faq.json" Loop="True" AutoPlay="True" HeightRequest="200" WidthRequest="400" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" />
-                    <!--<FlexLayout Wrap="Wrap" JustifyContent="SpaceEvenly" HeightRequest="500">
-                        <yummy:PancakeView Padding="0" HasShadow="True" Sides="4" BackgroundGradientEndColor="White" BackgroundGradientStartColor="WhiteSmoke" CornerRadius="10" HorizontalOptions="FillAndExpand" HeightRequest="100" WidthRequest="100">
-                            <forms:AnimationView  Animation="creative.json" Loop="True" AutoPlay="True" HeightRequest="200" WidthRequest="200" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" />
-                        </yummy:PancakeView>
-                        <yummy:PancakeView Padding="0" HasShadow="True" Sides="4" BackgroundGradientEndColor="White" BackgroundGradientStartColor="WhiteSmoke" CornerRadius="10" HorizontalOptions="FillAndExpand" HeightRequest="100" WidthRequest="100">
-                            <forms:AnimationView  Animation="working.json" Loop="True" AutoPlay="True" HeightRequest="200" WidthRequest="200" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" />
-                        </yummy:PancakeView>
-                        <yummy:PancakeView Padding="0" HasShadow="True" Sides="4" BackgroundGradientEndColor="White" BackgroundGradientStartColor="WhiteSmoke" CornerRadius="10" HorizontalOptions="FillAndExpand" HeightRequest="100" WidthRequest="100">
-                            <forms:AnimationView  Animation="corona.json" Loop="True" AutoPlay="True" HeightRequest="200" WidthRequest="200" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" />
-                        </yummy:PancakeView>
-                        <yummy:PancakeView Padding="0" HasShadow="True" Sides="4" BackgroundGradientEndColor="White" BackgroundGradientStartColor="WhiteSmoke" CornerRadius="10" HorizontalOptions="FillAndExpand" HeightRequest="100" WidthRequest="100">
-                            <forms:AnimationView  Animation="Faq.json" Loop="True" AutoPlay="True" HeightRequest="200" WidthRequest="200" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" />
-                        </yummy:PancakeView>
-                          <yummy:PancakeView Padding="0" HasShadow="True" Sides="4" BackgroundGradientEndColor="White" BackgroundGradientStartColor="WhiteSmoke" CornerRadius="10" HorizontalOptions="FillAndExpand" HeightRequest="100" WidthRequest="100">
-                            <forms:AnimationView  Animation="creative.json" Loop="True" AutoPlay="True" HeightRequest="200" WidthRequest="200" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" />
-                        </yummy:PancakeView>
-                        <yummy:PancakeView Padding="0" HasShadow="True" Sides="4" BackgroundGradientEndColor="White" BackgroundGradientStartColor="WhiteSmoke" CornerRadius="10" HorizontalOptions="FillAndExpand" HeightRequest="100" WidthRequest="100">
-                            <forms:AnimationView  Animation="working.json" Loop="True" AutoPlay="True" HeightRequest="200" WidthRequest="200" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" />
-                        </yummy:PancakeView>
-                        <yummy:PancakeView Padding="0" HasShadow="True" Sides="4" BackgroundGradientEndColor="White" BackgroundGradientStartColor="WhiteSmoke" CornerRadius="10" HorizontalOptions="FillAndExpand" HeightRequest="100" WidthRequest="100">
-                            <forms:AnimationView  Animation="corona.json" Loop="True" AutoPlay="True" HeightRequest="200" WidthRequest="200" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" />
-                        </yummy:PancakeView>
-                        <yummy:PancakeView Padding="0" HasShadow="True" Sides="4" BackgroundGradientEndColor="White" BackgroundGradientStartColor="WhiteSmoke" CornerRadius="10" HorizontalOptions="FillAndExpand" HeightRequest="100" WidthRequest="100">
-                            <forms:AnimationView  Animation="Faq.json" Loop="True" AutoPlay="True" HeightRequest="200" WidthRequest="200" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" />
+
+                        <yummy:PancakeView Padding="0" HasShadow="True" Sides="4" BackgroundGradientEndColor="White" BackgroundGradientStartColor="WhiteSmoke" CornerRadius="10" HorizontalOptions="FillAndExpand" HeightRequest="150" WidthRequest="150">
+                            <StackLayout VerticalOptions="FillAndExpand" Padding="5">
+                                <forms:AnimationView  Animation="temperature.json" Loop="True" AutoPlay="True"  VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" />
+                                <Label Text="Fever" Style="{StaticResource DescriptionLabel}" HorizontalTextAlignment="Center"></Label>
+                            </StackLayout>
+
                         </yummy:PancakeView>
 
-                    </FlexLayout>-->
+
+
+                        <yummy:PancakeView Padding="0" HasShadow="True" Sides="4" BackgroundGradientEndColor="White" BackgroundGradientStartColor="WhiteSmoke" CornerRadius="10" HorizontalOptions="FillAndExpand" HeightRequest="150" WidthRequest="150">
+                            <StackLayout VerticalOptions="FillAndExpand" Padding="5">
+                                <forms:AnimationView  Animation="cough.json" Loop="True" AutoPlay="True"  VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" />
+                                <Label Text="cough" Style="{StaticResource DescriptionLabel}" HorizontalTextAlignment="Center"></Label>
+                            </StackLayout>
+
+                        </yummy:PancakeView>
+
+
+
+                        <yummy:PancakeView Padding="0" HasShadow="True" Sides="4" BackgroundGradientEndColor="White" BackgroundGradientStartColor="WhiteSmoke" CornerRadius="10" HorizontalOptions="FillAndExpand" HeightRequest="150" WidthRequest="150">
+                            <StackLayout VerticalOptions="FillAndExpand" Padding="5">
+                                <forms:AnimationView  Animation="tired.json" Loop="True" AutoPlay="True"  VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" />
+                                <Label Text="tiredness" Style="{StaticResource DescriptionLabel}" HorizontalTextAlignment="Center"></Label>
+                            </StackLayout>
+
+                        </yummy:PancakeView>
+
+
+
+                    </FlexLayout>
+
+
+                     <Label HorizontalOptions="StartAndExpand" FontSize="Medium" Style="{StaticResource PageTileLabel}" TextColor="Black">
+                        <Label.FormattedText>
+                            <FormattedString>
+
+                                <Span Text="Precautions " TextColor="Black"></Span>
+                                <Span Text="(Source WHO)" TextColor="Gray" FontSize="Small" FontAttributes="Italic"></Span>
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                    <Grid HorizontalOptions="FillAndExpand">
+                        <forms:AnimationView Margin="0,0,0,50" VerticalOptions="StartAndExpand" HorizontalOptions="EndAndExpand" HeightRequest="120" WidthRequest="120" Animation="virus.json" Loop="True" AutoPlay="True"/>
+                        <StackLayout>
+                             <StackLayout Orientation="Horizontal">
+                        <yummy:PancakeView BackgroundGradientStartColor="#0A79DF" BackgroundGradientEndColor="White" CornerRadius="50" Sides="4" HeightRequest="20" WidthRequest="20" VerticalOptions="CenterAndExpand"></yummy:PancakeView>
+                        <Label Text="Wash Your Hands" Style="{StaticResource   HeaderLabel}" FontSize="Medium"></Label>
+                    </StackLayout>
+
+                    <StackLayout Orientation="Horizontal">
+                        <yummy:PancakeView BackgroundGradientStartColor="#0A79DF" BackgroundGradientEndColor="White" CornerRadius="50" Sides="4" HeightRequest="20" WidthRequest="20" VerticalOptions="CenterAndExpand"></yummy:PancakeView>
+                        <Label Text="Social Distancing" Style="{StaticResource   HeaderLabel}" FontSize="Medium"></Label>
+                    </StackLayout>
+
+
+                    <StackLayout Orientation="Horizontal">
+                        <yummy:PancakeView BackgroundGradientStartColor="#0A79DF" BackgroundGradientEndColor="White" CornerRadius="50" Sides="4" HeightRequest="20" WidthRequest="20" VerticalOptions="CenterAndExpand"></yummy:PancakeView>
+                        <Label Text="Avoid Touching Eyes/Nose/Face" Style="{StaticResource   HeaderLabel}" FontSize="Medium"></Label>
+                    </StackLayout>
+
+
+
+                    <StackLayout Orientation="Horizontal">
+                        <yummy:PancakeView BackgroundGradientStartColor="#0A79DF" BackgroundGradientEndColor="White" CornerRadius="50" Sides="4" HeightRequest="20" WidthRequest="20" VerticalOptions="CenterAndExpand"></yummy:PancakeView>
+                        <Label Text="follow good respiratory hygiene" Style="{StaticResource   HeaderLabel}" FontSize="Medium"></Label>
+                    </StackLayout>
+
+                      <StackLayout Orientation="Horizontal">
+                        <yummy:PancakeView BackgroundGradientStartColor="#0A79DF" BackgroundGradientEndColor="White" CornerRadius="50" Sides="4" HeightRequest="20" WidthRequest="20" VerticalOptions="CenterAndExpand"></yummy:PancakeView>
+                        <Label Text="Stay home if you feel unwell" Style="{StaticResource   HeaderLabel}" FontSize="Medium"></Label>
+                    </StackLayout>
+
+                      <StackLayout Orientation="Horizontal">
+                        <yummy:PancakeView BackgroundGradientStartColor="#0A79DF" BackgroundGradientEndColor="White" CornerRadius="50" Sides="4" HeightRequest="20" WidthRequest="20" VerticalOptions="CenterAndExpand"></yummy:PancakeView>
+                        <Label Style="{StaticResource   HeaderLabel}" FontSize="Medium" Text="Keep up to date on the latest COVID-19 hotspots"></Label>
+                    </StackLayout>
+                        </StackLayout>
+                    </Grid>
+                     
+
+                   
 
                 </StackLayout>
 

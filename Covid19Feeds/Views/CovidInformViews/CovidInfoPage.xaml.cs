@@ -15,7 +15,7 @@ namespace Covid19Feeds.Views.CovidInformViews
 
         private async void OnFaqTapped(object s,EventArgs e)
         {
-            await Navigation.PushModalAsync(new FAQPage());
+           await  Navigation.PushAsync(new FAQPage());
 
         }
     }

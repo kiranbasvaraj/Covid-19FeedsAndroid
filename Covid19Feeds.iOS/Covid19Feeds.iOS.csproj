@@ -197,5 +197,10 @@
     <BundleResource Include="Faq.json" />
     <BundleResource Include="working.json" />
     <BundleResource Include="creative.json" />
+    <BundleResource Include="tired.json" />
+    <BundleResource Include="temperature.json" />
+    <BundleResource Include="cough.json" />
+    <BundleResource Include="fever.json" />
+    <BundleResource Include="virus.json" />
   </ItemGroup>
 </Project>
