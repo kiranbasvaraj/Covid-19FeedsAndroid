@@ -203,5 +203,13 @@
     <BundleResource Include="fever.json" />
     <BundleResource Include="virus.json" />
     <BundleResource Include="Resources\ic_loading.png" />
+    <BundleResource Include="Resources\twitter.json" />
+    <BundleResource Include="Resources\instagram.json" />
+    <BundleResource Include="Resources\facebook.json" />
+    <BundleResource Include="Resources\ic_share.png" />
+    <BundleResource Include="Resources\ic_aboutme.png" />
+    <BundleResource Include="Resources\ic_feedbacknw.png" />
+    <BundleResource Include="Resources\ic_action_ic_globe.png" />
+    <BundleResource Include="internetsearch.json" />
   </ItemGroup>
 </Project>

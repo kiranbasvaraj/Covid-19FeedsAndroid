@@ -1,6 +1,42 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <ContentView xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Covid19Feeds.Views.ContentViews.AboutView">
     <ContentView.Content>
-        <Label Text="Tab1"></Label>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="4*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Image Source="ic_action_ic_globe.png" Grid.Row="0" Grid.Column="0" HeightRequest="30" WidthRequest="30" VerticalOptions="CenterAndExpand"></Image>
+            <Image Source="ic_feedbacknw" Grid.Row="1" Grid.Column="0" HeightRequest="30" WidthRequest="30" VerticalOptions="CenterAndExpand"></Image>
+            <Image Source="ic_share.png" Grid.Row="2" Grid.Column="0" HeightRequest="30" WidthRequest="30" VerticalOptions="CenterAndExpand"></Image>
+            <Image Source="ic_aboutme.png" Grid.Row="3" Grid.Column="0" HeightRequest="30" WidthRequest="30" VerticalOptions="CenterAndExpand"></Image>
+            <Label FontSize="Medium" Text="Resource Used"  Grid.Row="0" Grid.Column="1" TextColor="Gray" Style="{StaticResource SubHeaderLabel}">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnResourceTapped"></TapGestureRecognizer>
+                </Label.GestureRecognizers>
+            </Label>
+             <Label FontSize="Medium" Text="Feedback|Report Bug" Grid.Row="1" Grid.Column="1" TextColor="Gray" Style="{StaticResource SubHeaderLabel}">
+                  <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnFeedbackTapped"></TapGestureRecognizer>
+                </Label.GestureRecognizers>
+             </Label>
+             <Label FontSize="Medium" Text="Share" TextColor="Gray" Grid.Row="2" Grid.Column="1" Style="{StaticResource SubHeaderLabel}">
+                  <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnShareTapped"></TapGestureRecognizer>
+                </Label.GestureRecognizers>
+             </Label>
+             <Label FontSize="Medium" Text="About Me" TextColor="Gray" Grid.Row="3" Grid.Column="1" Style="{StaticResource SubHeaderLabel}">
+                  <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnAboutmeTapped"></TapGestureRecognizer>
+                </Label.GestureRecognizers>
+             </Label>
+        </Grid>
+        
     </ContentView.Content>
 </ContentView>

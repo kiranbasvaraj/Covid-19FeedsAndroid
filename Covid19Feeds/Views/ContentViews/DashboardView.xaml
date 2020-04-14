@@ -157,6 +157,7 @@
                         </Grid.GestureRecognizers>
                         <Image Source="covid_image"></Image>
                         <Label Text="Know More About COVID-19" HorizontalTextAlignment="Center" VerticalOptions="Start" FontSize="Large" VerticalTextAlignment="Center" Style="{StaticResource Key=PageTileLabel}" TextColor="Black"></Label>
+                        <Label Margin="0,30,0,0" Text="Tap Here" HorizontalTextAlignment="Center" VerticalOptions="Start" FontSize="Small" VerticalTextAlignment="End" Style="{StaticResource Key=DescriptionLabel}" TextColor="Black"></Label>
                     </Grid>
                 </yummy:PancakeView>
 

@@ -13,6 +13,7 @@
                     <yummy:GradientStop Color="Transparent" Offset="1" />
                 </yummy:GradientStopCollection>
             </yummy:PancakeView.BackgroundGradientStops>
+            
             <StackLayout>
 
                 <ctrl:HeaderView HeaderImage="{Binding HeaderImage}" Text="{Binding PageTitle}" MoveImageLeftSide="{Binding ShouldMoveTitleToLeft}" />
@@ -26,6 +27,7 @@
                     <!--<ActivityIndicator HeightRequest="80" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" WidthRequest="80" IsRunning="{Binding IsBusy}" IsVisible="{Binding IsBusy}"></ActivityIndicator>-->
 
                     <forms:AnimationView IsVisible="{Binding IsBusy}" Animation="covid_loader.json" Loop="True" AutoPlay="True" HeightRequest="400" WidthRequest="400" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" />
+                   
                 </Grid>
                 <ctrl:FooterView VerticalOptions="EndAndExpand" />
 
