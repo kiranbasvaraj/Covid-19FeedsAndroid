@@ -33,7 +33,7 @@
                 <Image Aspect="Fill" Source="ic_profilenw" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" HeightRequest="80" WidthRequest="80"></Image>
             </pancakeview:PancakeView>
             <Label Text="KIRAN KUMAR" FontSize="Medium" HorizontalTextAlignment="Center" Style="{StaticResource Key=HeaderLabel}" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" ></Label>
-            <Label Text="XAMARIN DEVELOPER|ANDROID|IOS|UWP" FontSize="Medium" HorizontalTextAlignment="Center" Style="{StaticResource Key=HeaderLabel}" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="4" ></Label>
+            <Label Text="Xamarin Developer |Android|Ios|Uwp" FontSize="Medium" HorizontalTextAlignment="Center" Style="{StaticResource Key=DescriptionLabel}" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="4" ></Label>
 
             <BoxView BackgroundColor="#0A79DF" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="4" HeightRequest="2"></BoxView>
              <Label Text="Reach me on" TextColor="#EA425C" FontSize="Medium" HorizontalTextAlignment="Center" Style="{StaticResource Key=HeaderLabel}" Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="2"></Label>

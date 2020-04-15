@@ -216,5 +216,6 @@
     <BundleResource Include="instagram.json" />
     <BundleResource Include="facebook.json" />
     <BundleResource Include="linkedin.json" />
+    <BundleResource Include="Resources\ic_nwvirus.png" />
   </ItemGroup>
 </Project>

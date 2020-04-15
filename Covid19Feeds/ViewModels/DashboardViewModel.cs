@@ -51,7 +51,7 @@ namespace Covid19Feeds.ViewModels
 
         private async Task SendEmailAboutFeedback(string input)
         {
-            await SendEmail("COVID-19 Feeds Feedack", "", new List<string>() { "reachkirankumarb@gmail.com" });
+            await SendEmail("COVID-19 Feeds Feedback", "", new List<string>() { "reachkirankumarb@gmail.com" });
         }
         #endregion
 
@@ -310,7 +310,9 @@ namespace Covid19Feeds.ViewModels
             Scalevalue = 0.8;
             Scalevalue1 = 1;
             Scalevalue2 = 0.8;
-            HeaderImage = "https://cdn0.iconfinder.com/data/icons/small-n-flat/24/678111-map-marker-512.png";
+            // HeaderImage = "https://cdn0.iconfinder.com/data/icons/small-n-flat/24/678111-map-marker-512.png";
+            // headerImage = "https://cdn3.iconfinder.com/data/icons/coronavirus-12/64/coronavirus-virus-pandemic-disease-infection-covid19-512.png";
+            HeaderImage = "ic_nwvirus";
             PageTitle = "Countries";
             ShouldMoveTitleToLeft = false;
             IsHeaderImageVisible = false;
@@ -334,7 +336,9 @@ namespace Covid19Feeds.ViewModels
                         IsDashboardVisible = true;
                         IsAboutVisible = false;
                         IsCountriesVisible = false;
-                        HeaderImage = "https://cdn2.iconfinder.com/data/icons/covid-19-solid/64/virus-06-512.png";
+                        //HeaderImage = "https://cdn2.iconfinder.com/data/icons/covid-19-solid/64/virus-06-512.png";
+                        //headerImage = "https://cdn3.iconfinder.com/data/icons/coronavirus-12/64/coronavirus-virus-pandemic-disease-infection-covid19-512.png";
+                        HeaderImage = "ic_nwvirus";
                         PageTitle = "Covid-19 Feeds";
                         ShouldMoveTitleToLeft = false;
                         IsHeaderImageVisible = true;
@@ -420,7 +424,9 @@ namespace Covid19Feeds.ViewModels
             IsDashboardVisible = true;
             IsAboutVisible = false;
             IsCountriesVisible = false;
-            HeaderImage = "https://cdn2.iconfinder.com/data/icons/covid-19-solid/64/virus-06-512.png";
+            // HeaderImage = "https://cdn2.iconfinder.com/data/icons/covid-19-solid/64/virus-06-512.png";
+            // headerImage = "https://cdn3.iconfinder.com/data/icons/coronavirus-12/64/coronavirus-virus-pandemic-disease-infection-covid19-512.png";
+            HeaderImage = "ic_nwvirus";
             PageTitle = "Covid-19 Feeds";
             ShouldMoveTitleToLeft = false;
             IsHeaderImageVisible = true;
