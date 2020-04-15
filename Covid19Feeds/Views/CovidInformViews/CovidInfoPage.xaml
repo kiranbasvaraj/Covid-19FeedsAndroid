@@ -9,7 +9,7 @@
 
                 <Grid>
                     <forms:AnimationView  Animation="Faq.json" Loop="True" AutoPlay="True" HeightRequest="200" WidthRequest="400" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" />
-                    <Label FontSize="Medium" VerticalOptions="EndAndExpand" Style="{StaticResource PageTileLabel}" TextColor="White" HorizontalOptions="CenterAndExpand" Text="All You Need To Know About Covid"></Label>
+                    <Label FontSize="Medium" VerticalOptions="EndAndExpand" Style="{StaticResource PageTileLabel}" TextColor="White" HorizontalOptions="CenterAndExpand" Text="All You Need To Know About Covid-19"></Label>
                     <Button BackgroundColor="White" CornerRadius="30" Margin="20" Clicked="OnFaqTapped" FontSize="Medium" Style="{StaticResource PageTileLabel}" TextColor="#0A79DF" VerticalOptions="StartAndExpand" HorizontalOptions="EndAndExpand" Text="FAQ's >">
                       
                     </Button>

@@ -211,5 +211,10 @@
     <BundleResource Include="Resources\ic_feedbacknw.png" />
     <BundleResource Include="Resources\ic_action_ic_globe.png" />
     <BundleResource Include="internetsearch.json" />
+    <BundleResource Include="Resources\ic_profilenw.png" />
+    <BundleResource Include="twitter.json" />
+    <BundleResource Include="instagram.json" />
+    <BundleResource Include="facebook.json" />
+    <BundleResource Include="linkedin.json" />
   </ItemGroup>
 </Project>

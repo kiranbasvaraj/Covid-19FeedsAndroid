@@ -3,11 +3,11 @@ using System.Collections.Generic;
 
 using Xamarin.Forms;
 
-namespace Covid19Feeds.Views
+namespace Covid19Feeds.Views.CovidInformViews
 {
-    public partial class AboutmePage : ContentPage
+    public partial class AboutUsPage : ContentPage
     {
-        public AboutmePage()
+        public AboutUsPage()
         {
             InitializeComponent();
         }

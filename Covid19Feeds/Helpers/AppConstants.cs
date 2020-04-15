@@ -17,6 +17,16 @@ namespace WantToWork.Helpers
         public static string LoadGlobalCasesAPi = BaseUrl+"all?yesterday=true";
         public static string LoadAllCountryCasesAPi = BaseUrl + "countries?yesterday=true&sort=cases";
 
+
+        public static string InstagramUrl = "https://www.instagram.com/invites/contact/?i=1egqwqss8ta5l&utm_content=1i1ycao";
+
+
+        public static string FaceBookUrl = "https://www.facebook.com/kiran.b.kumar2";
+
+        public static string TwitterUrl = "https://twitter.com/kiranku14586425?s=08";
+
+        public static string LinkedInUrl = "https://www.linkedin.com/in/reachkirankumarb";
+
         public static List<Colors> ColorList { get;  set; }=
             new List<Colors>() { 
       

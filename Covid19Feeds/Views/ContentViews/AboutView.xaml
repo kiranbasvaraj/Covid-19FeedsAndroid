@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <ContentView xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Covid19Feeds.Views.ContentViews.AboutView">
     <ContentView.Content>
-        <Grid>
+        <Grid Padding="0,20,0,0">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"></RowDefinition>
                 <RowDefinition Height="Auto"></RowDefinition>
@@ -21,19 +21,19 @@
                     <TapGestureRecognizer Tapped="OnResourceTapped"></TapGestureRecognizer>
                 </Label.GestureRecognizers>
             </Label>
-             <Label FontSize="Medium" Text="Feedback|Report Bug" Grid.Row="1" Grid.Column="1" TextColor="Gray" Style="{StaticResource SubHeaderLabel}">
+             <Label FontSize="Medium" Text="Feedback | Report Bug" Grid.Row="1" Grid.Column="1" TextColor="Gray" Style="{StaticResource SubHeaderLabel}">
                   <Label.GestureRecognizers>
-                    <TapGestureRecognizer Tapped="OnFeedbackTapped"></TapGestureRecognizer>
+                    <TapGestureRecognizer Command="{Binding SendMailCommand}"></TapGestureRecognizer>
                 </Label.GestureRecognizers>
              </Label>
              <Label FontSize="Medium" Text="Share" TextColor="Gray" Grid.Row="2" Grid.Column="1" Style="{StaticResource SubHeaderLabel}">
                   <Label.GestureRecognizers>
-                    <TapGestureRecognizer Tapped="OnShareTapped"></TapGestureRecognizer>
+                    <TapGestureRecognizer Command="{Binding ShareAppCommand}"></TapGestureRecognizer>
                 </Label.GestureRecognizers>
              </Label>
              <Label FontSize="Medium" Text="About Me" TextColor="Gray" Grid.Row="3" Grid.Column="1" Style="{StaticResource SubHeaderLabel}">
                   <Label.GestureRecognizers>
-                    <TapGestureRecognizer Tapped="OnAboutmeTapped"></TapGestureRecognizer>
+                    <TapGestureRecognizer Tapped="OnAboutMeTapped"></TapGestureRecognizer>
                 </Label.GestureRecognizers>
              </Label>
         </Grid>

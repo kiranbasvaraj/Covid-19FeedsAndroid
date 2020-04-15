@@ -11,6 +11,8 @@ using Rg.Plugins.Popup.Extensions;
 using Covid19Feeds.Views.Popups;
 using Covid19Feeds.Views;
 using Covid19Feeds.Helpers;
+using Covid19Feeds.Views.CovidInformViews;
+using Xamarin.Essentials;
 
 namespace Covid19Feeds.ViewModels
 {
@@ -18,9 +20,13 @@ namespace Covid19Feeds.ViewModels
     {
 
         #region Field Variables
+        public Command AboutMeCommand { get; set; }
+
 
         public Command<string> ChangeTabCommand { get; set; }
         public Command MyCountryDetailsCommand { get; set; }
+        public Command<string> SendMailCommand { get; set; }
+        public Command<string> ShareAppCommand { get; set; }
         public Command ViewAllCommand { get; set; }
         public Command CVSelectionCommand { get; set; }
         public Command SettingTappedCommand { get; set; }
@@ -32,6 +38,9 @@ namespace Covid19Feeds.ViewModels
 
         public DashboardViewModel()
         {
+            //AboutMeCommand = new Command(async () => await NavigateToAboutMePage());
+            SendMailCommand = new Command<string>(async (input) => await SendEmailAboutFeedback(input));
+            ShareAppCommand = new Command<string>(async(input) =>await ShareAppLink(input));
             ChangeTabCommand = new Command<string>((input) => ChangeTabs(input));
             CVSelectionCommand = new Command(async () => await CVSelection());
             SettingTappedCommand = new Command(async () => await SettingTapped());
@@ -39,13 +48,19 @@ namespace Covid19Feeds.ViewModels
             MyCountryDetailsCommand = new Command(async () => await NavigateToMyCovidDetailsPage());
             IsHeaderImageVisible = true;
         }
+
+        private async Task SendEmailAboutFeedback(string input)
+        {
+            await SendEmail("COVID-19 Feeds Feedack", "", new List<string>() { "reachkirankumarb@gmail.com" });
+        }
         #endregion
 
 
 
         #region Getter Setters
 
-        private string tabIcon1 { get; set; } = "ic_tab1unselected.png";
+        private string tabIcon1
+        { get; set; } = "ic_tab1unselected.png";
         public string TabIcon1
         {
             get { return tabIcon1; }
@@ -391,7 +406,7 @@ namespace Covid19Feeds.ViewModels
         private async Task SettingTapped()
         {
             MessagingCenter.Send<object>(this, "PopupEvent");
-           // await Application.Current.MainPage.Navigation.PushPopupAsync(new ChangeCountryPopup.xa());
+            // await Application.Current.MainPage.Navigation.PushPopupAsync(new ChangeCountryPopup.xa());
         }
 
         public async Task LoadAllCountryCases()
@@ -479,7 +494,7 @@ namespace Covid19Feeds.ViewModels
         {
             try
             {
-               
+
                 //SearchedList.Clear();
                 var list = GlobalCountryCaseDataModel.Where(x => x.country.ToUpper().StartsWith(SearchKey.ToUpper())).ToList();
                 if (list.Count > 0)
@@ -499,6 +514,58 @@ namespace Covid19Feeds.ViewModels
                 Debug.WriteLine(ex.StackTrace);
             }
 
+        }
+
+
+
+
+
+
+       
+
+        //="Feedback COVID-19 Android Application"
+
+        public async Task SendEmail(string subject, string body, List<string> recipients)
+        {
+            try
+            {
+                var message = new EmailMessage
+                {
+                    Subject = subject,
+                    Body = body,
+                    To = recipients,
+                    //Cc = ccRecipients,
+                    //Bcc = bccRecipients
+                };
+                await Email.ComposeAsync(message);
+            }
+            catch (FeatureNotSupportedException fns)
+            {
+                Debug.WriteLine(fns.StackTrace);
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex.StackTrace);
+            }
+        }
+
+
+        public async Task ShareAppLink(string uri)
+        {
+            try
+            {
+
+                await Share.RequestAsync(new ShareTextRequest
+                {
+                    Uri = uri,
+                    Title = "Share Web Link"
+                });
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex.StackTrace);
+
+            }
         }
         #endregion
     }
