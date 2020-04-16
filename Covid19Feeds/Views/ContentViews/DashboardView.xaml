@@ -96,7 +96,7 @@
                             <TapGestureRecognizer Tapped="OnIndiaTapped"></TapGestureRecognizer>
                         </Grid.GestureRecognizers>
                         <forms:AnimationView  ClickedCommand="{Binding OpenFaceBookCommand}" Animation="arrow.json" Loop="True" AutoPlay="True" HeightRequest="30" WidthRequest="100" VerticalOptions="FillAndExpand" HorizontalOptions="Start" RotationY="180"/>
-                        <Label Text="Explore Indian StateWise Data Here" Style="{StaticResource HeaderLabel}" HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"></Label>
+                        <Label Text="Explore Indian State Wise Data Here" Style="{StaticResource HeaderLabel}" HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"></Label>
                         <forms:AnimationView  ClickedCommand="{Binding OpenFaceBookCommand}" Animation="arrow.json" Loop="True" AutoPlay="True" HeightRequest="30" WidthRequest="100" VerticalOptions="FillAndExpand" HorizontalOptions="End" />
                     </Grid>
                 </yummy:PancakeView>

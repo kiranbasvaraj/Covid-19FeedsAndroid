@@ -39,18 +39,22 @@
         <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"  Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="3">
             <local:StateDashBoardCard x:Name="frame"  Padding="10,0,10,-2" />
             <Label x:Name="indicatorlabl" TextColor="SkyBlue" Text="No States Found" FontSize="Medium" IsVisible="false" Style="{StaticResource SubHeaderLabel}" HorizontalTextAlignment="Center"></Label>
-            <ListView x:Name="list" SeparatorVisibility="None" ItemTapped="OnStateTapped" SeparatorColor="Transparent" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" HasUnevenRows="True" CachingStrategy="RecycleElementAndDataTemplate" ItemsSource="{Binding  StateDataModel.statewise}" BackgroundColor="Transparent" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
-                <ListView.ItemTemplate>
+            <CollectionView x:Name="list"  Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" ItemsSource="{Binding  StateDataModel.statewise}" BackgroundColor="Transparent" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                <CollectionView.ItemTemplate>
                     <DataTemplate>
-                        <ViewCell>
+                       
                             <StackLayout Padding="5,10,5,10">
-                                <local:StateCardView />
+                                <local:StateCardView>
+                                    <local:StateCardView.GestureRecognizers>
+                                        <TapGestureRecognizer Tapped="OnStateTapped"></TapGestureRecognizer>
+                                    </local:StateCardView.GestureRecognizers>
+                                    </local:StateCardView>
                                 <!--<local:StateDashBoardCard/>-->
                             </StackLayout>
-                        </ViewCell>
+                       
                     </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
         </StackLayout>
         <StackLayout IsVisible="{Binding IsBusy}" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="3" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
            <ActivityIndicator IsRunning="{Binding IsBusy}" Color="SkyBlue"></ActivityIndicator>

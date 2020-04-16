@@ -37,7 +37,7 @@
                 </Grid.ColumnDefinitions>
                
                 <Label x:Name="state" Grid.Row="0" Grid.Column="0" TextColor="White" Grid.ColumnSpan="4" HorizontalTextAlignment="Center" FontSize="Large" Text="{Binding state}" Style="{StaticResource Key=SubHeaderLabel}"></Label>
-                <Label x:Name="date" Grid.Row="3" Grid.Column="0"  VerticalOptions="EndAndExpand" Grid.ColumnSpan="2" HorizontalTextAlignment="Center" FontSize="Micro" Text="{Binding lastupdatedtime,StringFormat='last updated:({0})'}" Style="{StaticResource Key=DescriptionLabel}"></Label>
+                <Label x:Name="date" Grid.Row="3" Grid.Column="0"  VerticalOptions="Start" Grid.ColumnSpan="4" HorizontalTextAlignment="Center" FontSize="Medium" Text="{Binding lastupdatedtime,StringFormat='last updated:({0})'}" Style="{StaticResource Key=DescriptionLabel}"></Label>
                 <Label Grid.Row="1" Grid.Column="0" HorizontalTextAlignment="Center" FontSize="Subtitle" Text="Confirmed" TextColor="#535C68" Style="{StaticResource Key=SubHeaderLabel}"></Label>
                 <Label Grid.Row="1" Grid.Column="1" HorizontalTextAlignment="Center" FontSize="Subtitle" Text="Active" TextColor="#535C68" Style="{StaticResource Key=SubHeaderLabel}"></Label>
                 <Label Grid.Row="1" Grid.Column="2" HorizontalTextAlignment="Center" FontSize="Subtitle" Text="Recovered" TextColor="#535C68" Style="{StaticResource Key=SubHeaderLabel}"></Label>

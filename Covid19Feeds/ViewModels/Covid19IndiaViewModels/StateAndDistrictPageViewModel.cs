@@ -67,7 +67,8 @@ namespace Covid19Feeds.ViewModels.Covid19IndiaViewModels
                 {
                     StateDataModel = res;
                     Total = StateDataModel.statewise.Where(x => x.state.ToLower() == "total").FirstOrDefault();
-                    StateDataModel.statewise.RemoveAll(x => x.state.ToLower() == "total");
+                    StateDataModel.statewise= StateDataModel.statewise.Where(y => y.state.ToLower() != "total").ToList();
+                 //var x=   StateDataModel.statewise.RemoveAll(x => x.state.ToLower() == "total");
 
 
 

@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Covid19Feeds.Models;
 using Covid19Feeds.ViewModels;
 using Covid19Feeds.ViewModels.Covid19IndiaViewModels;
+using Covid19Feeds.Views.Cards.Covid19IndiaCards;
 using Xamarin.Forms;
 
 namespace Covid19Feeds.Views.Covid19IndiaViews
@@ -76,9 +77,11 @@ namespace Covid19Feeds.Views.Covid19IndiaViews
 
         }
 
-        private async void OnStateTapped(object s, ItemTappedEventArgs e)
+        private async void OnStateTapped(object s, EventArgs e)
         {
-            Statewise item = e.Item as Statewise;
+
+           
+            Statewise item = (s as StateCardView).BindingContext as  Statewise;
 
             DistrictWiseListPage page = new DistrictWiseListPage(item);
             page.BindingContext = vm;

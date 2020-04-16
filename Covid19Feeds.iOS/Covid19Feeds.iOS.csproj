@@ -218,5 +218,6 @@
     <BundleResource Include="linkedin.json" />
     <BundleResource Include="Resources\ic_nwvirus.png" />
     <BundleResource Include="arrow.json" />
+    <BundleResource Include="spinner.json" />
   </ItemGroup>
 </Project>
