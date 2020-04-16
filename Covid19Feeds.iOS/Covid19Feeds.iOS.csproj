@@ -219,5 +219,11 @@
     <BundleResource Include="Resources\ic_nwvirus.png" />
     <BundleResource Include="arrow.json" />
     <BundleResource Include="spinner.json" />
+    <BundleResource Include="eye.json" />
+    <BundleResource Include="socialdistance.json" />
+    <BundleResource Include="stayupdated.json" />
+    <BundleResource Include="washhands.json" />
+    <BundleResource Include="wearmask.json" />
+    <BundleResource Include="stayhome.json" />
   </ItemGroup>
 </Project>

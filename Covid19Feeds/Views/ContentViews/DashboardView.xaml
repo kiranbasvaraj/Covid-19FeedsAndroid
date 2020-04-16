@@ -115,7 +115,7 @@
 
                 <StackLayout Padding="0,20,0,20" BackgroundColor="Transparent">
 
-                    <CollectionView x:Name="cv" BackgroundColor="Transparent" ItemsSource="{Binding TopInfectedCountries}" SelectionChangedCommand="{Binding CVSelectionCommand}" SelectedItem="{Binding SeletedItem,Mode=TwoWay}" SelectionMode="Single" HeightRequest="150">
+                    <CollectionView x:Name="cv" BackgroundColor="Transparent" ItemsSource="{Binding TopInfectedCountries}"  SelectionMode="None" HeightRequest="150">
                         <CollectionView.ItemsLayout>
                             <LinearItemsLayout Orientation="Horizontal"></LinearItemsLayout>
                         </CollectionView.ItemsLayout>
@@ -124,6 +124,9 @@
                                 <StackLayout Padding="10,0,10,0" BackgroundColor="Transparent">
                                     <yummy:PancakeView VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" BackgroundGradientStartColor="{Binding country,Converter={StaticResource colorConvertor}}" HasShadow="False" BackgroundGradientEndColor="{Binding country,Converter={StaticResource colorConvertor}}" HeightRequest="180" WidthRequest="200" CornerRadius="30,5,5,30">
                                         <StackLayout>
+                                            <StackLayout.GestureRecognizers>
+                                                <TapGestureRecognizer Tapped="OnCVTapped"></TapGestureRecognizer>
+                                            </StackLayout.GestureRecognizers>
 
                                             <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Spacing="10">
                                                 <ffimageloading:CachedImage Source="{Binding countryInfo.flag}" HorizontalOptions="Center" HeightRequest="50" WidthRequest="50" DownsampleToViewSize="true" LoadingPlaceholder="ic_loading" />

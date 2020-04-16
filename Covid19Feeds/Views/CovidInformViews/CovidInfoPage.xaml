@@ -5,7 +5,7 @@
     </NavigationPage.HasNavigationBar>
     <ContentPage.Content>
         <StackLayout>
-            <yummy:PancakeView Padding="0" HasShadow="True" Sides="4" BackgroundGradientEndColor="#1976D2" BackgroundGradientStartColor="#74B9FF" BackgroundGradientAngle="180" BorderIsDashed="true" CornerRadius="0,0,50,50" HorizontalOptions="FillAndExpand" HeightRequest="200" VerticalOptions="Start">
+            <yummy:PancakeView Padding="2" HasShadow="True" Sides="4" BackgroundGradientEndColor="#1976D2" BackgroundGradientStartColor="#74B9FF" BackgroundGradientAngle="180" BorderIsDashed="true" CornerRadius="0,0,50,50" HorizontalOptions="FillAndExpand" HeightRequest="200" VerticalOptions="StartAndExpand">
 
                 <Grid>
                     <forms:AnimationView  Animation="Faq.json" Loop="True" AutoPlay="True" HeightRequest="200" WidthRequest="400" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" />
@@ -82,8 +82,40 @@
                             </FormattedString>
                         </Label.FormattedText>
                     </Label>
-                    <Grid HorizontalOptions="FillAndExpand">
-                        <forms:AnimationView Margin="0,0,0,50" VerticalOptions="StartAndExpand" HorizontalOptions="EndAndExpand" HeightRequest="120" WidthRequest="120" Animation="virus.json" Loop="True" AutoPlay="True"/>
+                    <Grid HorizontalOptions="EndAndExpand">
+                        <!--<Grid.RowDefinitions>
+                            <RowDefinition Height="150"></RowDefinition>
+                             <RowDefinition Height="150"></RowDefinition>
+                             <RowDefinition Height="150"></RowDefinition>
+                             <RowDefinition Height="150"></RowDefinition>
+                             <RowDefinition Height="150"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <forms:AnimationView Animation="washhands.json" Grid.Row="0" Grid.Column="0" VerticalOptions="StartAndExpand" HorizontalOptions="Start" HeightRequest="120" WidthRequest="120"  Loop="True" AutoPlay="True"/>
+                        <Label VerticalTextAlignment="Center" HorizontalTextAlignment="Start" Grid.Row="0" Grid.Column="1" Text="Wash Your Hands" Style="{StaticResource   HeaderLabel}" FontSize="Medium"></Label>
+
+
+                         <forms:AnimationView Animation="socialdistance.json" Grid.Row="1" Grid.Column="1" VerticalOptions="StartAndExpand" HorizontalOptions="EndAndExpand" HeightRequest="120" WidthRequest="120"  Loop="True" AutoPlay="True"/>
+                        <Label Grid.Row="1" VerticalTextAlignment="Center" Grid.Column="0" Text="Social Distancing" Style="{StaticResource   HeaderLabel}" FontSize="Medium" HorizontalTextAlignment="End"></Label>
+
+
+
+                         <forms:AnimationView Animation="eye.json" Grid.Row="2" Grid.Column="0" VerticalOptions="Start" HorizontalOptions="Start" HeightRequest="120" WidthRequest="120"  Loop="True" AutoPlay="True"/>
+                        <Label Grid.Row="2" VerticalTextAlignment="Center" Grid.Column="1" Text="Avoid Touching Eyes/Nose/Face" Style="{StaticResource   HeaderLabel}" FontSize="Medium" HorizontalTextAlignment="Start"></Label>
+
+
+
+                         <forms:AnimationView Animation="wearmask.json" Grid.Row="3" Grid.Column="1" VerticalOptions="StartAndExpand" HorizontalOptions="EndAndExpand" HeightRequest="120" WidthRequest="120"  Loop="True" AutoPlay="True"/>
+                        <Label Grid.Row="3" HorizontalTextAlignment="Start" VerticalTextAlignment="Center" Grid.Column="0" Text="Follow good respiratory hygiene" Style="{StaticResource   HeaderLabel}" FontSize="Medium"></Label>
+
+
+
+                         <forms:AnimationView Animation="stayhome.json" Grid.Row="4" Grid.Column="0" VerticalOptions="StartAndExpand" HorizontalOptions="Start" HeightRequest="120" WidthRequest="120"  Loop="True" AutoPlay="True"/>
+                        <Label VerticalTextAlignment="Center" Grid.Row="4" Grid.Column="1" Text="Stay home if you feel unwel" Style="{StaticResource   HeaderLabel}" FontSize="Medium" HorizontalTextAlignment="Start"></Label>-->
+
                         <StackLayout>
                              <StackLayout Orientation="Horizontal">
                         <yummy:PancakeView BackgroundGradientStartColor="#0A79DF" BackgroundGradientEndColor="White" CornerRadius="50" Sides="4" HeightRequest="20" WidthRequest="20" VerticalOptions="CenterAndExpand"></yummy:PancakeView>

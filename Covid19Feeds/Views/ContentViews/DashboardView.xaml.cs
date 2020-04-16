@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Covid19Feeds.Models;
 using Covid19Feeds.Views.Covid19IndiaViews;
 using Covid19Feeds.Views.CovidInformViews;
 using Xamarin.Forms;
@@ -25,6 +26,14 @@ namespace Covid19Feeds.Views.ContentViews
         {
             await Application.Current.MainPage.Navigation.PushAsync(new StateListPage());
         }
+
+        private async void OnCVTapped(object s, EventArgs e)
+        {
+            AllCountriesCasesModel SeletedItem = (s as StackLayout).BindingContext as AllCountriesCasesModel;
+            await Application.Current.MainPage.Navigation.PushModalAsync(new CovidDetailsPage(SeletedItem));
+        }
+
+       
 
         
 

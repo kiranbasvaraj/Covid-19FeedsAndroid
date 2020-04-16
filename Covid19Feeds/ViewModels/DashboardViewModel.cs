@@ -482,7 +482,7 @@ namespace Covid19Feeds.ViewModels
         private async Task CVSelection()
         {
 
-            await Application.Current.MainPage.Navigation.PushModalAsync(new CovidDetailsPage(SeletedItem));
+           // await Application.Current.MainPage.Navigation.PushModalAsync(new CovidDetailsPage(SeletedItem));
 
 
         }
@@ -560,8 +560,8 @@ namespace Covid19Feeds.ViewModels
 
                 await Share.RequestAsync(new ShareTextRequest
                 {
-                    Uri = uri,
-                    Title = "Share Web Link"
+                    Uri = "https://install.appcenter.ms/users/kiran.kumarb/apps/covid-19-feeds-android/distribution_groups/public",
+                    Title = "Covid-19 Feeds Android Apk Link"
                 });
             }
             catch (Exception ex)
