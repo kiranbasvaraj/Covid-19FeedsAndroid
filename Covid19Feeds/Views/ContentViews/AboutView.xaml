@@ -21,7 +21,7 @@
                     <TapGestureRecognizer Tapped="OnResourceTapped"></TapGestureRecognizer>
                 </Label.GestureRecognizers>
             </Label>
-             <Label FontSize="Medium" Text="Feedback | Report Bug" Grid.Row="1" Grid.Column="1" TextColor="Gray" Style="{StaticResource SubHeaderLabel}">
+             <Label FontSize="Medium" Text="Feedback | Report Bug(Only Mail)" Grid.Row="1" Grid.Column="1" TextColor="Gray" Style="{StaticResource SubHeaderLabel}">
                   <Label.GestureRecognizers>
                     <TapGestureRecognizer Command="{Binding SendMailCommand}"></TapGestureRecognizer>
                 </Label.GestureRecognizers>

@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentPage BackgroundColor="#EAF0F1" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:vm="clr-namespace:Covid19Feeds.ViewModels" xmlns:vm1="clr-namespace:Covid19Feeds.ViewModels.Covid19IndiaViewModels" xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView" xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms" xmlns:local="clr-namespace:Covid19Feeds.Views.Cards.Covid19IndiaCards" x:Class="Covid19Feeds.Views.Covid19IndiaViews.StateListPage">
+<ContentPage BackgroundColor="#EAF0F1" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:vm="clr-namespace:Covid19Feeds.ViewModels" xmlns:vm1="clr-namespace:Covid19Feeds.ViewModels.Covid19IndiaViewModels" xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView" xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms" xmlns:local="clr-namespace:Covid19Feeds.Views.Cards.Covid19IndiaCards" xmlns:bvr="clr-namespace:Covid19Feeds.Behaviours" x:Class="Covid19Feeds.Views.Covid19IndiaViews.StateListPage">
     <ContentPage.Resources>
         <ResourceDictionary>
             <local:CardTemplateSelector x:Key="MessageTemplateSelector" />
@@ -33,6 +33,11 @@
                 <yummy:PancakeView BorderColor="White" BorderThickness="2" WidthRequest="350" CornerRadius="30" HorizontalOptions="CenterAndExpand">
                     <SearchBar TextChanged="OnSearch" Placeholder="Search" PlaceholderColor="White" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" TextColor="White"></SearchBar>
                 </yummy:PancakeView>
+                <Label Text="No Internet"  BackgroundColor="#E84342" HeightRequest="30" TextColor="White" Style="{StaticResource DescriptionLabel}" FontSize="Medium" HorizontalTextAlignment="Center">
+                    <Label.Behaviors>
+                        <bvr:ConnectivityLabelBehaviour/>
+                    </Label.Behaviors>
+                </Label>
             </StackLayout>
         </yummy:PancakeView>
        

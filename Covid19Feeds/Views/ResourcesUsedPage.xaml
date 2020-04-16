@@ -1,84 +1,106 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"  xmlns:vm="clr-namespace:Covid19Feeds.ViewModels" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView" xmlns:forms="clr-namespace:Lottie.Forms;assembly=Lottie.Forms" x:Class="Covid19Feeds.Views.ContentViews.ResourcesUsedPage">
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:vm="clr-namespace:Covid19Feeds.ViewModels" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView" xmlns:forms="clr-namespace:Lottie.Forms;assembly=Lottie.Forms" x:Class="Covid19Feeds.Views.ContentViews.ResourcesUsedPage">
     <ContentPage.BindingContext>
-        <vm:ResourcesUsedPageViewModel/>
+        <vm:ResourcesUsedPageViewModel />
     </ContentPage.BindingContext>
     <NavigationPage.HasNavigationBar>
         <x:Boolean>False</x:Boolean>
     </NavigationPage.HasNavigationBar>
-    
+
     <ContentPage.Content>
         <StackLayout Spacing="5">
-             <yummy:PancakeView Padding="0" HasShadow="True" Sides="4" BackgroundGradientEndColor="#1976D2" BackgroundGradientStartColor="#74B9FF" BackgroundGradientAngle="180" BorderIsDashed="true" CornerRadius="0,0,50,50" HorizontalOptions="FillAndExpand" HeightRequest="200" VerticalOptions="Start">
+            <yummy:PancakeView Padding="0" HasShadow="True" Sides="4" BackgroundGradientEndColor="#1976D2" BackgroundGradientStartColor="#74B9FF" BackgroundGradientAngle="180" BorderIsDashed="true" CornerRadius="0,0,50,50" HorizontalOptions="FillAndExpand" HeightRequest="200" VerticalOptions="Start">
 
                 <Grid>
                     <forms:AnimationView  Animation="internetsearch.json" Loop="True" AutoPlay="True" HeightRequest="200" WidthRequest="400" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" />
                     <Label FontSize="Medium" VerticalOptions="EndAndExpand" Style="{StaticResource PageTileLabel}" TextColor="White" HorizontalOptions="CenterAndExpand" Text="Resources Used"></Label>
-                   
+
                 </Grid>
             </yummy:PancakeView>
             <ScrollView>
-            <StackLayout Padding="10,0,10,0">
-            <Label Text="Below Are The Resources Which Is  Used To Build This Application" FontSize="Medium" VerticalOptions="EndAndExpand" Style="{StaticResource PageTileLabel}"  TextColor="#616C6F" HorizontalTextAlignment="Center" ></Label>
-            <StackLayout Spacing="30">
+                <StackLayout Padding="10,0,10,0">
+                    <Label Text="Below Are The Resources Which Is  Used To Build This Application" FontSize="Medium" VerticalOptions="EndAndExpand" Style="{StaticResource PageTileLabel}" TextColor="#616C6F" HorizontalTextAlignment="Center"></Label>
+                    <StackLayout Spacing="30">
+                        <StackLayout>
+                        <Label  Text="API' Used:" FontSize="Medium" Style="{StaticResource SubHeaderLabel}" TextColor="Gray" HorizontalTextAlignment="Start">
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding OpenUriCommand}" CommandParameter="api"></TapGestureRecognizer>
+                            </Label.GestureRecognizers>
+                        </Label>
+                        <Label >
+                            <Label.FormattedText>
+                                <FormattedString>
+                                    <Span Text="1) NOVELCovid/API  " TextColor="#74B9FF"> </Span>
+                                    <Span Text="Check here-" TextDecorations="Underline" TextColor="Gray">
+                                        <Span.GestureRecognizers>
+                                            <TapGestureRecognizer Command="{Binding OpenUriCommand}" CommandParameter="api"></TapGestureRecognizer>
+                                        </Span.GestureRecognizers>
+                                    </Span>
+                                </FormattedString>
+                            </Label.FormattedText>
+                        </Label>
+                         <Label>
+                             <Label.FormattedText>
+                                <FormattedString>
+                                    <Span Text="2) COVID19-India API " TextColor="#74B9FF"></Span>
+                                    <Span Text="Check here-" TextDecorations="Underline" TextColor="Gray">
+                                        <Span.GestureRecognizers>
+                                            <TapGestureRecognizer Command="{Binding OpenUriCommand}" CommandParameter="api2"></TapGestureRecognizer>
+                                        </Span.GestureRecognizers>
+                                    </Span>
+                                </FormattedString>
+                            </Label.FormattedText>
+                         </Label>
 
-            <Label  FontSize="Medium" Style="{StaticResource SubHeaderLabel}" TextColor="Gray" HorizontalTextAlignment="Start" >
-                 <Label.GestureRecognizers>
-                     <TapGestureRecognizer Command="{Binding OpenUriCommand}" CommandParameter="api"></TapGestureRecognizer>
-                 </Label.GestureRecognizers>
-                 <Label.FormattedText>
-                     <FormattedString>                
-                         <Span Text="API's Used:                                                                                                                                                        "  TextColor="Gray"></Span>
-                         <Span Text="https://corona.lmao.ninja/docs/#/Countries/get_v2_countries__query_" TextDecorations="Underline" TextColor="#74B9FF" FontSize="14"></Span>
-                     </FormattedString>
-                 </Label.FormattedText>
-             </Label>
+                            </StackLayout>
+
+                        <Label FontSize="Medium" VerticalOptions="EndAndExpand" Style="{StaticResource SubHeaderLabel}" TextColor="Gray" HorizontalOptions="CenterAndExpand">
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding OpenUriCommand}" CommandParameter="who"></TapGestureRecognizer>
+                            </Label.GestureRecognizers>
+                            <Label.FormattedText>
+                                <FormattedString>
+                                    <Span Text="Used Informations from WHO:                                                                              " TextColor="Gray"></Span>
+                                    <Span Text="https://www.who.int/news-room/q-a-detail/q-a-coronaviruses" TextDecorations="Underline" TextColor="#74B9FF" FontSize="14"></Span>
+                                </FormattedString>
+                            </Label.FormattedText>
+                        </Label>
 
 
-             <Label FontSize="Medium" VerticalOptions="EndAndExpand" Style="{StaticResource SubHeaderLabel}" TextColor="Gray" HorizontalOptions="CenterAndExpand" >
-                 <Label.GestureRecognizers>
-                     <TapGestureRecognizer Command="{Binding OpenUriCommand}" CommandParameter="who"></TapGestureRecognizer>
-                 </Label.GestureRecognizers>
-                 <Label.FormattedText>
-                     <FormattedString>
-                         <Span Text="Used Informations from WHO:                                                                              "  TextColor="Gray"></Span>
-                         <Span Text="https://www.who.int/news-room/q-a-detail/q-a-coronaviruses" TextDecorations="Underline" TextColor="#74B9FF" FontSize="14"></Span>
-                     </FormattedString>
-                 </Label.FormattedText>
-             </Label>
-
-
-
-             <Label  FontSize="Medium" VerticalOptions="EndAndExpand" Style="{StaticResource SubHeaderLabel}" TextColor="Gray" HorizontalOptions="CenterAndExpand" >
-                 <Label.GestureRecognizers>
-                     <TapGestureRecognizer Command="{Binding OpenUriCommand}" CommandParameter="xamarin"></TapGestureRecognizer>
-                 </Label.GestureRecognizers>
-                 <Label.FormattedText>
-                     <FormattedString>
-                         <Span Text="Platfrom Used To Build This App:                                                                              " TextColor="Gray"></Span>
-                         <Span Text="Xamarin.Forms:  "  TextColor="#74B9FF"></Span>
-                         <Span Text="check here"  TextColor="Gray" TextDecorations="Underline" FontSize="14"></Span>
-                     </FormattedString>
-                 </Label.FormattedText>
-             </Label>
+                        <Label  FontSize="Medium" VerticalOptions="EndAndExpand" Style="{StaticResource SubHeaderLabel}" TextColor="Gray" HorizontalOptions="CenterAndExpand">
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding OpenUriCommand}" CommandParameter="xamarin"></TapGestureRecognizer>
+                            </Label.GestureRecognizers>
+                            <Label.FormattedText>
+                                <FormattedString>
+                                    <Span Text="Platfrom Used To Build This App:                                                                              " TextColor="Gray"></Span>
+                                    <Span Text="Xamarin.Forms:  " TextColor="#74B9FF"></Span>
+                                    <Span Text="check here" TextColor="Gray" TextDecorations="Underline" FontSize="14"></Span>
+                                </FormattedString>
+                            </Label.FormattedText>
+                        </Label>
 
 
 
-             <Label FontSize="Medium" VerticalOptions="EndAndExpand" Style="{StaticResource PageTileLabel}" TextColor="#EC4849" HorizontalOptions="CenterAndExpand" >
-                 <Label.GestureRecognizers>
-                     <TapGestureRecognizer></TapGestureRecognizer>
-                 </Label.GestureRecognizers>
-                 <Label.FormattedText>
-                     <FormattedString>
-                         <Span Text="Note:                                                                                                                                                                              "   TextColor="#EC4849"></Span>
-                         <Span Text="All the images,apis,animation files and anyother resources used in this application belong to their respective owners and I dose not  claim any right over them. This application is built to spread awareness and educate people about COVID-19 only!"  TextColor="#74B9FF" FontSize="14"></Span>
-                     </FormattedString>
-                 </Label.FormattedText>
-             </Label>
-        </StackLayout>
+
+
+
+
+                        <Label FontSize="Medium" VerticalOptions="EndAndExpand" Style="{StaticResource PageTileLabel}" TextColor="#EC4849" HorizontalOptions="CenterAndExpand">
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer></TapGestureRecognizer>
+                            </Label.GestureRecognizers>
+                            <Label.FormattedText>
+                                <FormattedString>
+                                    <Span Text="Note:                                                                                                                                                                              " TextColor="#EC4849"></Span>
+                                    <Span Text="All the images,apis,animation files and anyother resources used in this application belong to their respective owners and I dose not  claim any right over them. This application is built to spread awareness and educate people about COVID-19 only!" TextColor="#74B9FF" FontSize="14"></Span>
+                                </FormattedString>
+                            </Label.FormattedText>
+                        </Label>
+                    </StackLayout>
 
                 </StackLayout>
-                </ScrollView>
-            </StackLayout>
+            </ScrollView>
+        </StackLayout>
     </ContentPage.Content>
 </ContentPage>

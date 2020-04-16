@@ -541,6 +541,7 @@ namespace Covid19Feeds.ViewModels
                     //Bcc = bccRecipients
                 };
                 await Email.ComposeAsync(message);
+                
             }
             catch (FeatureNotSupportedException fns)
             {

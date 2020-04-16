@@ -20,6 +20,10 @@ namespace Covid19Feeds.ViewModels
                 case "api":
                     Launcher.OpenAsync(new Uri("https://corona.lmao.ninja/docs/#/Countries/get_v2_countries__query_"));
                     break;
+
+                case "api2":
+                    Launcher.OpenAsync(new Uri("https://api.covid19india.org/"));
+                    break;
                 case "who":
                     Launcher.OpenAsync(new Uri("https://www.who.int/news-room/q-a-detail/q-a-coronaviruses"));
                     break;
