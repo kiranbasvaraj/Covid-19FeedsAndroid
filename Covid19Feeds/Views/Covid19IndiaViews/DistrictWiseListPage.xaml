@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:vm="clr-namespace:Covid19Feeds.ViewModels.Covid19IndiaViewModels" xmlns:pancakeview="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView" x:Class="Covid19Feeds.Views.Covid19IndiaViews.DistrictWiseListPage">
+    <ContentPage.BindingContext>
+        <vm:StateAndDistrictPageViewModel />
+    </ContentPage.BindingContext>
+    <NavigationPage.HasNavigationBar>
+        <x:Boolean>False</x:Boolean>
+    </NavigationPage.HasNavigationBar>
+
+    
+    <Grid RowSpacing="0" ColumnSpacing="0" BackgroundColor="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="2"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+
+        </Grid.ColumnDefinitions>
+        <pancakeview:PancakeView Grid.Row="2" Grid.Column="0"  Grid.ColumnSpan="3" BackgroundGradientStartColor="#ffffff" BackgroundGradientEndColor="#EAF0F1"/>
+         <pancakeview:PancakeView Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="3" HasShadow="False" Sides="4" BackgroundGradientEndColor="#1976D2" BackgroundGradientStartColor="#74B9FF" BackgroundGradientAngle="180" BorderIsDashed="true" CornerRadius="0,0,50,50" HorizontalOptions="FillAndExpand" HeightRequest="90" VerticalOptions="StartAndExpand">
+
+             <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Padding="10,0,0,5" RowSpacing="-5">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                     <RowDefinition Height="Auto"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <!--<ColumnDefinition Width="0"></ColumnDefinition>-->
+                </Grid.ColumnDefinitions>
+               
+                <Label x:Name="state" Grid.Row="0" Grid.Column="0" TextColor="White" Grid.ColumnSpan="4" HorizontalTextAlignment="Center" FontSize="Large" Text="{Binding state}" Style="{StaticResource Key=SubHeaderLabel}"></Label>
+                <Label x:Name="date" Grid.Row="3" Grid.Column="0"  VerticalOptions="EndAndExpand" Grid.ColumnSpan="2" HorizontalTextAlignment="Center" FontSize="Micro" Text="{Binding lastupdatedtime,StringFormat='last updated:({0})'}" Style="{StaticResource Key=DescriptionLabel}"></Label>
+                <Label Grid.Row="1" Grid.Column="0" HorizontalTextAlignment="Center" FontSize="Subtitle" Text="Confirmed" TextColor="#535C68" Style="{StaticResource Key=SubHeaderLabel}"></Label>
+                <Label Grid.Row="1" Grid.Column="1" HorizontalTextAlignment="Center" FontSize="Subtitle" Text="Active" TextColor="#535C68" Style="{StaticResource Key=SubHeaderLabel}"></Label>
+                <Label Grid.Row="1" Grid.Column="2" HorizontalTextAlignment="Center" FontSize="Subtitle" Text="Recovered" TextColor="#535C68" Style="{StaticResource Key=SubHeaderLabel}"></Label>
+                 <Label Grid.Row="1" Grid.Column="3" HorizontalTextAlignment="Center" FontSize="Subtitle" Text="Deaths" TextColor="#535C68" Style="{StaticResource Key=SubHeaderLabel}"></Label>
+
+                <Label x:Name="confirmed" Grid.Row="2" Grid.Column="0" HorizontalTextAlignment="Center" FontSize="Medium" TextColor="#535C68" Text="{Binding confirmed}" Style="{StaticResource Key=SubHeaderLabel}"></Label>
+                <Label x:Name="active" Grid.Row="2" Grid.Column="1" HorizontalTextAlignment="Center" FontSize="Medium" TextColor="#535C68" Text="{Binding active}" Style="{StaticResource Key=SubHeaderLabel}"></Label>
+                <Label x:Name="recovered" Grid.Row="2" Grid.Column="2" HorizontalTextAlignment="Center" FontSize="Medium" TextColor="#535C68" Text="{Binding recovered}" Style="{StaticResource Key=SubHeaderLabel}"></Label>
+                 <Label  x:Name="deaths" Grid.Row="2" Grid.Column="3" HorizontalTextAlignment="Center" FontSize="Medium"  Text="{Binding deaths}" TextColor="#535C68" Style="{StaticResource Key=SubHeaderLabel}"></Label>
+                <!--<BoxView Grid.Row="0" Grid.Column="4" Grid.RowSpan="4" BackgroundColor="#E74292"></BoxView>-->
+
+            </Grid>
+        </pancakeview:PancakeView>
+        <Label Text="District" FontSize="Medium" BackgroundColor="White" TextColor="Gray" Grid.Row="1" Grid.Column="0" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Style="{StaticResource HeaderLabel}"></Label>
+        <Label Text="Confirmed" FontSize="Medium" BackgroundColor="White" TextColor="Gray" Grid.Row="1" Grid.Column="2" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Style="{StaticResource HeaderLabel}"></Label>
+        <BoxView Grid.Row="1"  Grid.Column="1" BackgroundColor="Gray"></BoxView>
+
+        <ListView x:Name="cv" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" HasUnevenRows="True" SeparatorColor="Transparent" SeparatorVisibility="None" BackgroundColor="Transparent" CachingStrategy="RecycleElement">
+           
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                    <pancakeview:PancakeView BorderColor="Gray" BorderThickness="2" BackgroundColor="Transparent">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                <ColumnDefinition Width="2"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+
+                            </Grid.ColumnDefinitions>
+                            <Label FontSize="Subtitle" Text="{Binding district}" Grid.Row="0" Grid.Column="0" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Style="{StaticResource DescriptionLabel}"></Label>
+                            <Label FontSize="Subtitle" Text="{Binding confirmed}" Grid.Row="0" Grid.Column="2" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Style="{StaticResource DescriptionLabel}"></Label>
+                            <BoxView Grid.Row="0" Grid.Column="1" BackgroundColor="Gray"></BoxView>
+                        </Grid>
+                    </pancakeview:PancakeView>
+                        </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+    </Grid>
+        
+</ContentPage>

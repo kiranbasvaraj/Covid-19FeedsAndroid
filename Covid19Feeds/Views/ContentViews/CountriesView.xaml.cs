@@ -36,12 +36,23 @@ namespace Covid19Feeds.Views.ContentViews
                 if (string.IsNullOrWhiteSpace(serachValue))
                 {
                     list.ItemsSource = vm.SearchedList;
+                    indicatorlabl.IsVisible = false;
                 }
                 else
                 {
 
-                    list.ItemsSource = vm.SearchedList.Where(x => x.country.ToLower().StartsWith(serachValue.ToLower()));
-                    
+                    var item = vm.SearchedList.Where(x => x.country.ToLower().StartsWith(serachValue.ToLower())).ToList();
+
+                    if (item.Count > 0)
+                    {
+                        list.ItemsSource = item;
+                        indicatorlabl.IsVisible = false;
+                    }
+                    else
+                    {
+                        indicatorlabl.IsVisible = true;
+                        list.ItemsSource = item;
+                    }
                 }
             }
             catch (Exception ex)

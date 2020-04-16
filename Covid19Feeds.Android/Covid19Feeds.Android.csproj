@@ -222,6 +222,10 @@
       <SubType></SubType>
       <Generator></Generator>
     </AndroidResource>
+    <AndroidResource Include="Resources\drawable\ic_recovred.svg">
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable\" />
@@ -253,6 +257,7 @@
     <AndroidAsset Include="Assets\instagram.json" />
     <AndroidAsset Include="Assets\facebook.json" />
     <AndroidAsset Include="Assets\linkedin.json" />
+    <AndroidAsset Include="Assets\arrow.json" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>

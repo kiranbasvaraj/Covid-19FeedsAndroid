@@ -19,7 +19,7 @@
                 <ctrl:HeaderView HeaderImage="{Binding HeaderImage}" Text="{Binding PageTitle}" MoveImageLeftSide="{Binding ShouldMoveTitleToLeft}" />
 
 
-                <Grid VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                <Grid VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" BackgroundColor="Transparent">
                     <local:DashboardView IsVisible="{Binding IsDashboardVisible}" x:Name="dashboard" />
                     <local:CountriesView IsVisible="{Binding IsCountriesVisible}" x:Name="countires" />
                     <local:AboutView IsVisible="{Binding IsAboutVisible}" x:Name="about" />

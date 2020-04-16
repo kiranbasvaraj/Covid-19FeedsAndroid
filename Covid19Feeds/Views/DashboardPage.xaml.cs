@@ -25,20 +25,20 @@ namespace Covid19Feeds.Views
                 {
                     await vm.LoadGlobalCases();
                     await vm.LoadAllCountryCases();
-                // 
+                    // 
 
-            }).GetAwaiter();
+                }).GetAwaiter();
             }
             catch (Exception ex)
             {
                 Debug.WriteLine(ex.StackTrace);
             }
 
-           // vm.ItemSelectionHandler += Vm_ItemSelectionHandler;
-           
+            // vm.ItemSelectionHandler += Vm_ItemSelectionHandler;
+
         }
 
-     
+
 
         private void CountriesView_ItemTappedHandler(object sender, EventArgs e)
         {
@@ -52,6 +52,7 @@ namespace Covid19Feeds.Views
                 /**/
                 base.OnAppearing();
                 var vm = this.BindingContext as DashboardViewModel;
+              
                 MessagingCenter.Subscribe<Object>(this, "PopupEvent", async (s) =>
                 {
 
@@ -62,7 +63,7 @@ namespace Covid19Feeds.Views
 
 
                 });
-               
+
                 //await vm.ChooseDEaflutCountry();
             }
             catch (Exception ex)
@@ -86,8 +87,8 @@ namespace Covid19Feeds.Views
                 Debug.WriteLine(ex.StackTrace);
             }
         }
-        }
-
-
     }
+
+
+}
 

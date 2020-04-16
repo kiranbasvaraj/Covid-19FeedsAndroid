@@ -119,7 +119,7 @@ namespace Covid19Feeds.Services
                     var client = GetHttpClient();
                     var response = await client.GetAsync(Url);
                     var json = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
-                    HandleIfErrorResponse(response.StatusCode, json);
+                   HandleIfErrorResponse(response.StatusCode, json);
                     if (typeof(T) == typeof(string))
                     {
                         return GetValue<T>(json);

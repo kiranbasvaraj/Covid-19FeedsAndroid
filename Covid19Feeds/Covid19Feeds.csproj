@@ -38,6 +38,9 @@
     <Folder Include="Services\" />
     <Folder Include="Views\Popups\" />
     <Folder Include="Views\CovidInformViews\" />
+    <Folder Include="Views\Covid19IndiaViews\" />
+    <Folder Include="ViewModels\Covid19IndiaViewModels\" />
+    <Folder Include="Views\Cards\Covid19IndiaCards\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="Helpers\ColorConvertor.cs" />

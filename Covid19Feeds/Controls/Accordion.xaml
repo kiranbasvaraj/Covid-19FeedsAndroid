@@ -22,7 +22,7 @@
                 <StackLayout Orientation="Horizontal">
                     <pancakeview:PancakeView HorizontalOptions="Start" VerticalOptions="CenterAndExpand" Sides="4" BackgroundGradientStartColor="#0A79DF" CornerRadius="80" BackgroundGradientEndColor="White" HeightRequest="15" WidthRequest="15"/>
                     <!--<Image Source="ic_tab1selected" HeightRequest="20" WidthRequest="20"></Image>-->
-                    <Label x:Name="titlelbl" FontSize="Subtitle" VerticalTextAlignment="Center" HorizontalOptions="Start" VerticalOptions="Start" Margin="5,0,0,0" Style="{StaticResource PageTileLabel}" />
+                    <Label x:Name="titlelbl" FontSize="Subtitle" VerticalTextAlignment="Center" HorizontalOptions="Start" VerticalOptions="Center" Margin="5,0,0,0" Style="{StaticResource PageTileLabel}" />
                 </StackLayout>
 
                 <ContentView x:Name="_indicatorContainer" Content="{Binding Source={x:Reference _accordion_view_123}, Path=IndicatorView}" HorizontalOptions="End" Grid.Column="1" VerticalOptions="Center" />

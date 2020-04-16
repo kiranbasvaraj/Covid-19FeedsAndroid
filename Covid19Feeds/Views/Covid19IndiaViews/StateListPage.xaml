@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage BackgroundColor="#EAF0F1" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:vm="clr-namespace:Covid19Feeds.ViewModels" xmlns:vm1="clr-namespace:Covid19Feeds.ViewModels.Covid19IndiaViewModels" xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView" xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms" xmlns:local="clr-namespace:Covid19Feeds.Views.Cards.Covid19IndiaCards" x:Class="Covid19Feeds.Views.Covid19IndiaViews.StateListPage">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <local:CardTemplateSelector x:Key="MessageTemplateSelector" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.BindingContext>
+        <vm1:StateAndDistrictPageViewModel />
+    </ContentPage.BindingContext>
+    <NavigationPage.HasNavigationBar>
+        <x:Boolean>False</x:Boolean>
+    </NavigationPage.HasNavigationBar>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+
+        <!--<ffimageloading:CachedImage  x:Name="image" HeightRequest="50" WidthRequest="50" DownsampleToViewSize="true" LoadingPlaceholder="ic_recovred.svg" />-->
+
+        <yummy:PancakeView Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="3" HasShadow="True" Sides="4" BackgroundGradientEndColor="#1976D2" BackgroundGradientStartColor="#74B9FF" BackgroundGradientAngle="180" BorderIsDashed="true" CornerRadius="0,0,50,50" HorizontalOptions="FillAndExpand" HeightRequest="90" VerticalOptions="StartAndExpand">
+
+            <StackLayout Spacing="-10">
+                <Label x:Name="label" Text="INDIA COVID-19" Style="{StaticResource PageTileLabel}" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" TextColor="White" FontSize="Large" FontAttributes="Bold"></Label>
+                <yummy:PancakeView BorderColor="White" BorderThickness="2" WidthRequest="350" CornerRadius="30" HorizontalOptions="CenterAndExpand">
+                    <SearchBar TextChanged="OnSearch" Placeholder="Search" PlaceholderColor="White" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" TextColor="White"></SearchBar>
+                </yummy:PancakeView>
+            </StackLayout>
+        </yummy:PancakeView>
+       
+        <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"  Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="3">
+            <local:StateDashBoardCard x:Name="frame"  Padding="10,0,10,-2" />
+            <Label x:Name="indicatorlabl" TextColor="SkyBlue" Text="No States Found" FontSize="Medium" IsVisible="false" Style="{StaticResource SubHeaderLabel}" HorizontalTextAlignment="Center"></Label>
+            <ListView x:Name="list" SeparatorVisibility="None" ItemTapped="OnStateTapped" SeparatorColor="Transparent" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" HasUnevenRows="True" CachingStrategy="RecycleElementAndDataTemplate" ItemsSource="{Binding  StateDataModel.statewise}" BackgroundColor="Transparent" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Padding="5,10,5,10">
+                                <local:StateCardView />
+                                <!--<local:StateDashBoardCard/>-->
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+        <StackLayout IsVisible="{Binding IsBusy}" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="3" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+           <ActivityIndicator IsRunning="{Binding IsBusy}" Color="SkyBlue"></ActivityIndicator>
+            <Label Text="Loading..." TextColor="SkyBlue" Style="{StaticResource SubHeaderLabel}"  FontSize="Medium"></Label>
+        </StackLayout>
+           
+
+    </Grid>
+</ContentPage>

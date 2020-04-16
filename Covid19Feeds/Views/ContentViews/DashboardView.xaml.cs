@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Covid19Feeds.Views.Covid19IndiaViews;
 using Covid19Feeds.Views.CovidInformViews;
 using Xamarin.Forms;
 
@@ -20,8 +21,12 @@ namespace Covid19Feeds.Views.ContentViews
         {
             await Application.Current.MainPage.Navigation.PushAsync(new CovidInfoPage());
         }
+        private async void OnIndiaTapped(object s, EventArgs e)
+        {
+            await Application.Current.MainPage.Navigation.PushAsync(new StateListPage());
+        }
 
-
+        
 
     }
 }

@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:pancakeview="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView" xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms" x:Class="Covid19Feeds.Views.Cards.Covid19IndiaCards.StateDashBoardCard">
+
+
+    <!--<
+         </pancakeview:PancakeView>--> 
+    <pancakeview:PancakeView HasShadow="False" BorderGradientStartColor="#74B9FF" BorderGradientAngle="180" BorderIsDashed="False" BorderDrawingStyle="Inside" IsClippedToBounds="True" BorderThickness="5" Padding="0" BorderGradientEndColor="White" CornerRadius="10" BackgroundColor="#ffffff">
+        <Grid Padding="5">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition> 
+
+            </Grid.ColumnDefinitions>
+
+             <Label TextColor="#ff77a9"  Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4" HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center" FontSize="Large" Text="{Binding Total.state}" Style="{StaticResource Key=SubHeaderLabel}"></Label>
+
+            <pancakeview:PancakeView Grid.Row="1" Grid.Column="0" HasShadow="True" CornerRadius="20" BackgroundGradientEndColor="#ffffff" BackgroundGradientStartColor="#ef9a9a">
+                <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Spacing="0">
+                    <Label TextColor="#2F363F" HorizontalTextAlignment="Center" FontSize="Medium" Text="Confirmed" Style="{StaticResource Key=SubHeaderLabel}"></Label>
+                    <Label TextColor="Black" Grid.ColumnSpan="5" HorizontalTextAlignment="Center" FontSize="Medium" Text="{Binding Total.confirmed}" Style="{StaticResource Key=SubHeaderLabel}"></Label>
+                </StackLayout>
+            </pancakeview:PancakeView>
+             <pancakeview:PancakeView  Grid.Row="1" Grid.Column="1" HasShadow="True" CornerRadius="20" BackgroundGradientEndColor="#ffffff" BackgroundGradientStartColor="#b39ddb">
+                 <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Spacing="0">
+                    <Label TextColor="#2F363F" HorizontalTextAlignment="Center" FontSize="Medium" Text="Active" Style="{StaticResource Key=SubHeaderLabel}"></Label>
+                    <Label TextColor="Black" Grid.ColumnSpan="5" HorizontalTextAlignment="Center" FontSize="Medium" Text="{Binding Total.active}" Style="{StaticResource Key=SubHeaderLabel}"></Label>
+                </StackLayout>
+            </pancakeview:PancakeView>
+             <pancakeview:PancakeView Grid.Row="1" Grid.Column="2" HasShadow="True" CornerRadius="20" BackgroundGradientEndColor="#ffffff" BackgroundGradientStartColor="#81d4fa">
+                <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Spacing="0">
+                    <Label TextColor="#2F363F" HorizontalTextAlignment="Center" FontSize="Medium" Text="Recovered" Style="{StaticResource Key=SubHeaderLabel}"></Label>
+                    <Label TextColor="Black" Grid.ColumnSpan="5" HorizontalTextAlignment="Center" FontSize="Medium" Text="{Binding Total.recovered}" Style="{StaticResource Key=SubHeaderLabel}"></Label>
+                </StackLayout>
+            </pancakeview:PancakeView>
+             <pancakeview:PancakeView Grid.Row="1" Grid.Column="3" HasShadow="True" CornerRadius="20" BackgroundGradientEndColor="#ffffff" BackgroundGradientStartColor="#ffe082">
+                 <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Spacing="0">
+                    <Label TextColor="#2F363F" HorizontalTextAlignment="Center" FontSize="Medium" Text="Deaths" Style="{StaticResource Key=SubHeaderLabel}"></Label>
+                    <Label TextColor="Black" Grid.ColumnSpan="5" HorizontalTextAlignment="Center" FontSize="Medium" Text="{Binding Total.deaths}" Style="{StaticResource Key=SubHeaderLabel}"></Label>
+                </StackLayout>
+            </pancakeview:PancakeView>
+
+           
+            <Label Grid.Row="3" TextColor="Black" FontSize="Micro" Grid.Column="0" Grid.ColumnSpan="4" HorizontalTextAlignment="Center" HorizontalOptions="CenterAndExpand" Style="{StaticResource DescriptionLabel}" Text="{Binding Total.lastupdatedtime,StringFormat='Last Updated{0}'}"></Label>
+
+
+        </Grid>
+    </pancakeview:PancakeView>
+
+
+</ContentView>

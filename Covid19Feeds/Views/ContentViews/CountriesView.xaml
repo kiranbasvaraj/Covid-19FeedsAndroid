@@ -18,7 +18,7 @@
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
-            <Label Text="No Results" IsVisible="{Binding IsNoResultLabelVisilbe}" VerticalOptions="Start" TextColor="SkyBlue" FontSize="Medium" Style="{StaticResource SubHeaderLabel}" HorizontalTextAlignment="Center"></Label>
+            <Label Text="No Countries Found" x:Name="indicatorlabl" VerticalOptions="Start" TextColor="SkyBlue" FontSize="Medium" IsVisible="false" Style="{StaticResource SubHeaderLabel}" HorizontalTextAlignment="Center"></Label>
         </Grid>
         </StackLayout>
        

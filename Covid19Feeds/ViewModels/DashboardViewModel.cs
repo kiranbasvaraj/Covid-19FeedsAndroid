@@ -7,11 +7,8 @@ using Covid19Feeds.Services;
 using WantToWork.Helpers;
 using Xamarin.Forms;
 using System.Linq;
-using Rg.Plugins.Popup.Extensions;
-using Covid19Feeds.Views.Popups;
 using Covid19Feeds.Views;
 using Covid19Feeds.Helpers;
-using Covid19Feeds.Views.CovidInformViews;
 using Xamarin.Essentials;
 
 namespace Covid19Feeds.ViewModels
@@ -40,7 +37,7 @@ namespace Covid19Feeds.ViewModels
         {
             //AboutMeCommand = new Command(async () => await NavigateToAboutMePage());
             SendMailCommand = new Command<string>(async (input) => await SendEmailAboutFeedback(input));
-            ShareAppCommand = new Command<string>(async(input) =>await ShareAppLink(input));
+            ShareAppCommand = new Command<string>(async (input) => await ShareAppLink(input));
             ChangeTabCommand = new Command<string>((input) => ChangeTabs(input));
             CVSelectionCommand = new Command(async () => await CVSelection());
             SettingTappedCommand = new Command(async () => await SettingTapped());
@@ -527,7 +524,7 @@ namespace Covid19Feeds.ViewModels
 
 
 
-       
+
 
         //="Feedback COVID-19 Android Application"
 
@@ -574,5 +571,9 @@ namespace Covid19Feeds.ViewModels
             }
         }
         #endregion
+
+
+
+       
     }
 }

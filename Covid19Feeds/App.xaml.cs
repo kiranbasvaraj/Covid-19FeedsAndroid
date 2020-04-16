@@ -1,4 +1,5 @@
 ﻿using Covid19Feeds.Views;
+using Covid19Feeds.Views.Covid19IndiaViews;
 using Covid19Feeds.Views.CovidInformViews;
 using eliteKit;
 using Microsoft.AppCenter;

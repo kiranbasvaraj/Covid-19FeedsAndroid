@@ -27,7 +27,7 @@
                      <TapGestureRecognizer Command="{Binding OpenUriCommand}" CommandParameter="api"></TapGestureRecognizer>
                  </Label.GestureRecognizers>
                  <Label.FormattedText>
-                     <FormattedString>
+                     <FormattedString>                
                          <Span Text="API's Used:                                                                                                                                                        "  TextColor="Gray"></Span>
                          <Span Text="https://corona.lmao.ninja/docs/#/Countries/get_v2_countries__query_" TextDecorations="Underline" TextColor="#74B9FF" FontSize="14"></Span>
                      </FormattedString>
@@ -41,7 +41,7 @@
                  </Label.GestureRecognizers>
                  <Label.FormattedText>
                      <FormattedString>
-                         <Span Text="Used Informations from WHO: "  TextColor="Gray"></Span>
+                         <Span Text="Used Informations from WHO:                                                                              "  TextColor="Gray"></Span>
                          <Span Text="https://www.who.int/news-room/q-a-detail/q-a-coronaviruses" TextDecorations="Underline" TextColor="#74B9FF" FontSize="14"></Span>
                      </FormattedString>
                  </Label.FormattedText>
@@ -55,7 +55,7 @@
                  </Label.GestureRecognizers>
                  <Label.FormattedText>
                      <FormattedString>
-                         <Span Text="Platfrom Used To Build This App:                              " TextColor="Gray"></Span>
+                         <Span Text="Platfrom Used To Build This App:                                                                              " TextColor="Gray"></Span>
                          <Span Text="Xamarin.Forms:  "  TextColor="#74B9FF"></Span>
                          <Span Text="check here"  TextColor="Gray" TextDecorations="Underline" FontSize="14"></Span>
                      </FormattedString>
@@ -70,7 +70,7 @@
                  </Label.GestureRecognizers>
                  <Label.FormattedText>
                      <FormattedString>
-                         <Span Text="Note:                                                                                                                                "   TextColor="#EC4849"></Span>
+                         <Span Text="Note:                                                                                                                                                                              "   TextColor="#EC4849"></Span>
                          <Span Text="All the images,apis,animation files and anyother resources used in this application belong to their respective owners and I dose not  claim any right over them. This application is built to spread awareness and educate people about COVID-19 only!"  TextColor="#74B9FF" FontSize="14"></Span>
                      </FormattedString>
                  </Label.FormattedText>
