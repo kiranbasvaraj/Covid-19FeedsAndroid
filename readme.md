@@ -12,7 +12,7 @@ Application helps to fetch covid details from all the countries specifically app
 
 
 
-## Platfrom Used
+## Platform Used
 
 [Xamarin.forms](https://dotnet.microsoft.com/apps/xamarin)
 
