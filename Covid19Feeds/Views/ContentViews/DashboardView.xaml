@@ -101,7 +101,7 @@
                     </Grid>
                 </yummy:PancakeView>
 
-                <yummy:PancakeView BackgroundColor="Transparent" CornerRadius="10">
+                <yummy:PancakeView BackgroundColor="Transparent" CornerRadius="10" IsVisible="{OnPlatform Android=true,iOS=false}">
                     <Grid  BackgroundColor="#d1e9fc">
                         <Grid.GestureRecognizers >
                             <TapGestureRecognizer Command="{Binding FoodShelterCommand}"></TapGestureRecognizer>
