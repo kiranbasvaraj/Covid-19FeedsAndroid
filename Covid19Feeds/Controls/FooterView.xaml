@@ -17,11 +17,11 @@
                             </Image.GestureRecognizers>
                         </Image>
 
-                         <Image Scale="{Binding Scalevalue3}" Source="{Binding TabIcon4}" HeightRequest="40" WidthRequest="40" HorizontalOptions="EndAndExpand">
+                         <!--<Image Scale="{Binding Scalevalue3}" Source="{Binding TabIcon4}" HeightRequest="40" WidthRequest="40" HorizontalOptions="EndAndExpand">
                             <Image.GestureRecognizers>
                                 <TapGestureRecognizer Command="{Binding ChangeTabCommand}" CommandParameter="foodshelter"></TapGestureRecognizer>
                             </Image.GestureRecognizers>
-                        </Image>
+                        </Image>-->
                           <Image Scale="{Binding Scalevalue2}" Source="{Binding TabIcon3}" HeightRequest="40" WidthRequest="40" HorizontalOptions="EndAndExpand">
                             <Image.GestureRecognizers>
                                 <TapGestureRecognizer Command="{Binding ChangeTabCommand}" CommandParameter="about"></TapGestureRecognizer>

@@ -227,5 +227,6 @@
     <BundleResource Include="stayhome.json" />
     <BundleResource Include="Resources\ic_circlemap.png" />
     <BundleResource Include="Resources\ic_tab4unselected.png" />
+    <BundleResource Include="marker.json" />
   </ItemGroup>
 </Project>

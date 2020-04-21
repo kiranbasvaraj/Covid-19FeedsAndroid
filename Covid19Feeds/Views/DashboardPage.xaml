@@ -6,15 +6,15 @@
     <ContentPage.Content>
 
         <yummy:PancakeView>
-          
+
 
             <StackLayout>
-              
-                <ctrl:HeaderView HeaderImage="{Binding HeaderImage}"  Text="{Binding PageTitle}" MoveImageLeftSide="{Binding ShouldMoveTitleToLeft}" />
-                
-                  <Label Text="No Internet"  BackgroundColor="#E84342" HeightRequest="30" TextColor="White" Style="{StaticResource DescriptionLabel}" FontSize="Medium" HorizontalTextAlignment="Center">
+
+                <ctrl:HeaderView HeaderImage="{Binding HeaderImage}" Text="{Binding PageTitle}" MoveImageLeftSide="{Binding ShouldMoveTitleToLeft}" />
+
+                <Label Text="No Internet" BackgroundColor="#E84342" HeightRequest="30" TextColor="White" Style="{StaticResource DescriptionLabel}" FontSize="Medium" HorizontalTextAlignment="Center">
                     <Label.Behaviors>
-                        <bvr:ConnectivityLabelBehaviour/>
+                        <bvr:ConnectivityLabelBehaviour />
                     </Label.Behaviors>
                 </Label>
                 <Grid VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" BackgroundColor="Transparent">
@@ -28,7 +28,7 @@
                         <forms:AnimationView  Animation="spinner.json" Loop="True" AutoPlay="True" HeightRequest="200" WidthRequest="200" />
                         <!--<Label Text="Loading..." TextColor="OrangeRed" VerticalOptions="EndAndExpand" FontSize="Medium" Style="{StaticResource HeaderLabel}"></Label>-->
                     </Grid>
-
+                   
                 </Grid>
                 <ctrl:FooterView VerticalOptions="EndAndExpand" />
 

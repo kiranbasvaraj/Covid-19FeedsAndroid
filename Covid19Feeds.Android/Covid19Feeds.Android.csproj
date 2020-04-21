@@ -100,6 +100,7 @@
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SplashActivity.cs" />
+    <Compile Include="DependencyServices\DroidOpenMap.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -242,6 +243,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable\" />
+    <Folder Include="DependencyServices\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Covid19Feeds\Covid19Feeds.csproj">
@@ -278,6 +280,7 @@
     <AndroidAsset Include="Assets\washhands.json" />
     <AndroidAsset Include="Assets\wearmask.json" />
     <AndroidAsset Include="Assets\stayhome.json" />
+    <AndroidAsset Include="Assets\marker.json" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>

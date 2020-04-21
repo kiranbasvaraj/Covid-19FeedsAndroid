@@ -101,6 +101,17 @@
                     </Grid>
                 </yummy:PancakeView>
 
+                <yummy:PancakeView BackgroundColor="Transparent" CornerRadius="10">
+                    <Grid  BackgroundColor="#d1e9fc">
+                        <Grid.GestureRecognizers >
+                            <TapGestureRecognizer Command="{Binding FoodShelterCommand}"></TapGestureRecognizer>
+                        </Grid.GestureRecognizers>
+                        <forms:AnimationView  Animation="marker.json" Loop="True" AutoPlay="True" HeightRequest="50" WidthRequest="100" VerticalOptions="FillAndExpand" HorizontalOptions="StartAndExpand" />
+                        <Label Text="Food Shelter Near Me" Style="{StaticResource HeaderLabel}" HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"></Label>
+                        <forms:AnimationView   Animation="marker.json" Loop="True" AutoPlay="True" HeightRequest="30" WidthRequest="100" VerticalOptions="FillAndExpand" HorizontalOptions="End" />
+                    </Grid>
+                </yummy:PancakeView>
+              
                 <!--Top most affected-->
 
                 <StackLayout Orientation="Horizontal" Padding="0,20,0,5">

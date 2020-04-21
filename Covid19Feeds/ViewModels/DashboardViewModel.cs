@@ -17,9 +17,14 @@ namespace Covid19Feeds.ViewModels
     {
 
         #region Field Variables
+
+        public string Longitude { get; private set; }
+        public string Latitude { get; private set; }
+
+
+        public Command FoodShelterCommand { get; set; }
+
         public Command AboutMeCommand { get; set; }
-
-
         public Command<string> ChangeTabCommand { get; set; }
         public Command MyCountryDetailsCommand { get; set; }
         public Command<string> SendMailCommand { get; set; }
@@ -35,8 +40,9 @@ namespace Covid19Feeds.ViewModels
 
         public DashboardViewModel()
         {
-            //AboutMeCommand = new Command(async () => await NavigateToAboutMePage());
-            SendMailCommand = new Command<string>(async (input) => await SendEmailAboutFeedback(input));
+            FoodShelterCommand = new Command(()=> { DependencyService.Get<IOpenMap>().OpenMap(); });
+               //AboutMeCommand = new Command(async () => await NavigateToAboutMePage());
+               SendMailCommand = new Command<string>(async (input) => await SendEmailAboutFeedback(input));
             ShareAppCommand = new Command<string>(async (input) => await ShareAppLink(input));
             ChangeTabCommand = new Command<string>((input) => ChangeTabs(input));
             CVSelectionCommand = new Command(async () => await CVSelection());
@@ -335,6 +341,10 @@ namespace Covid19Feeds.ViewModels
             }
         }
 
+
+
+
+
         #endregion
 
 
@@ -365,7 +375,7 @@ namespace Covid19Feeds.ViewModels
         }
 
 
-        private void ChangeTabs(string CommandParam)
+        private async void ChangeTabs(string CommandParam)
         {
             try
             {
@@ -425,7 +435,7 @@ namespace Covid19Feeds.ViewModels
                         ShouldMoveTitleToLeft = false;
                         IsHeaderImageVisible = false;
                         break;
-
+                        // as of not in use
                     case "foodshelter":
                         TabIcon1 = "ic_tab1unselected.png";
                         TabIcon2 = "ic_tab2unselected.png";
@@ -439,7 +449,12 @@ namespace Covid19Feeds.ViewModels
                         Scalevalue1 = 0.8;
                         Scalevalue2 = 0.8;
                         Scalevalue3 = 1;
-                        MapUrl = "https://www.google.co.in/maps/search/food+shelters+near+me/@13.2796812,77.4280801,11z/data=!3m1!4b1";
+                        await LoadCurrentLocation();
+
+                        //string url = string.Format("https://www.google.co.in/maps/search/food+shelters+near+me/@{0},{1},11z/data=!3m1!4b1", Longitude, Latitude);
+                        //MapUrl = url;
+
+                        await OpenMapAsync(Latitude, Longitude);
                         PageTitle = "Food Shelter Near Me";
                         HeaderImage = "ic_circlemap";
                         ShouldMoveTitleToLeft = false;
@@ -559,7 +574,7 @@ namespace Covid19Feeds.ViewModels
         private async Task CVSelection()
         {
 
-           // await Application.Current.MainPage.Navigation.PushModalAsync(new CovidDetailsPage(SeletedItem));
+            // await Application.Current.MainPage.Navigation.PushModalAsync(new CovidDetailsPage(SeletedItem));
 
 
         }
@@ -618,7 +633,7 @@ namespace Covid19Feeds.ViewModels
                     //Bcc = bccRecipients
                 };
                 await Email.ComposeAsync(message);
-                
+
             }
             catch (FeatureNotSupportedException fns)
             {
@@ -651,7 +666,58 @@ namespace Covid19Feeds.ViewModels
         #endregion
 
 
+        public async Task LoadCurrentLocation()
+        {
+            try
+            {
+                IsBusy = true;
+                var request = new GeolocationRequest(GeolocationAccuracy.Medium);
+                var location = await Geolocation.GetLocationAsync(request);
 
-       
+                if (location != null)
+                {
+                    Longitude = location.Longitude.ToString();
+                    Latitude = location.Latitude.ToString();
+
+                    Console.WriteLine($"Latitude: {location.Latitude}, Longitude: {location.Longitude}, Altitude: {location.Altitude}");
+                }
+            }
+            catch (FeatureNotSupportedException fnsEx)
+            {
+                // Handle not supported on device exception
+            }
+            catch (FeatureNotEnabledException fneEx)
+            {
+                // Handle not enabled on device exception
+            }
+            catch (PermissionException pEx)
+            {
+                // Handle permission exception
+            }
+            catch (Exception ex)
+            {
+                // Unable to get location
+            }
+            finally
+            {
+                IsBusy = false;
+            }
+        }
+
+
+        public async Task OpenMapAsync(string lat, string longi)
+        {
+
+            DependencyService.Get<IOpenMap>().OpenMap();
+            //var supportsUri = await Launcher.CanOpenAsync("comgooglemaps://");
+
+            //if (supportsUri)
+            //    await Launcher.OpenAsync($"comgooglemaps://?q={lat},{longi}({"Home"})");
+
+            //else
+
+            // await Map.OpenAsync(new Location() { ad});//.OpenAsync(Double.Parse(Latitude),Double.Parse(Longitude) ,new MapLaunchOptions {Name = "Food Shelter Near Me" });
+        }
+
     }
 }
