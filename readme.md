@@ -43,7 +43,11 @@ Application helps to fetch covid details from all the countries specifically app
  
  
  
- 
+ ## Note
+
+Food Shelter Near Me Functionality Available Only In Android
+
+
  ## SCREEN SHOTS
 <a href="url"><img src="https://user-images.githubusercontent.com/18255703/79691178-adff4f00-827b-11ea-9f77-f703233339aa.jpg" align="left" height="550" width="300" style='border:1px solid #000000'></a>
  <a href="url"><img src="https://user-images.githubusercontent.com/18255703/79691187-b3f53000-827b-11ea-801c-674bdda4c835.jpg" align="center" height="550" width="300" ></a>
