@@ -225,5 +225,7 @@
     <BundleResource Include="washhands.json" />
     <BundleResource Include="wearmask.json" />
     <BundleResource Include="stayhome.json" />
+    <BundleResource Include="Resources\ic_circlemap.png" />
+    <BundleResource Include="Resources\ic_tab4unselected.png" />
   </ItemGroup>
 </Project>

@@ -93,6 +93,17 @@ namespace Covid19Feeds.ViewModels
             }
         }
 
+        private string tabIcon4 { get; set; } = "ic_tab4unselected.png";
+        public string TabIcon4
+        {
+            get { return tabIcon4; }
+            set
+            {
+                tabIcon4 = value;
+                NotifyChage();
+            }
+        }
+
         private double scalevalue { get; set; } = 0.8;
         public double Scalevalue
         {
@@ -123,6 +134,18 @@ namespace Covid19Feeds.ViewModels
             set
             {
                 scalevalue2 = value;
+                NotifyChage();
+            }
+        }
+
+
+        private double scalevalue3 { get; set; } = 0.8;
+        public double Scalevalue3
+        {
+            get { return scalevalue3; }
+            set
+            {
+                scalevalue3 = value;
                 NotifyChage();
             }
         }
@@ -162,6 +185,29 @@ namespace Covid19Feeds.ViewModels
                 NotifyChage();
             }
         }
+
+        private bool isMapsVisible { get; set; }
+        public bool IsMapsVisible
+        {
+            get { return isMapsVisible; }
+            set
+            {
+                isMapsVisible = value;
+                NotifyChage();
+            }
+        }
+
+        private string mapUrl { get; set; }
+        public string MapUrl
+        {
+            get { return mapUrl; }
+            set
+            {
+                mapUrl = value;
+                NotifyChage();
+            }
+        }
+
 
         private string pageTitle { get; set; } = "Covid-19 Feeds";
         public string PageTitle
@@ -301,11 +347,14 @@ namespace Covid19Feeds.ViewModels
             TabIcon1 = "ic_tab1unselected.png";
             TabIcon2 = "ic_tab2selected.png";
             TabIcon3 = "ic_tab3unselected.png";
+            TabIcon4 = "ic_tab4unselected.png";
             IsDashboardVisible = false;
             IsAboutVisible = false;
             IsCountriesVisible = true;
+            IsMapsVisible = false;
             Scalevalue = 0.8;
             Scalevalue1 = 1;
+            Scalevalue2 = 0.8;
             Scalevalue2 = 0.8;
             // HeaderImage = "https://cdn0.iconfinder.com/data/icons/small-n-flat/24/678111-map-marker-512.png";
             // headerImage = "https://cdn3.iconfinder.com/data/icons/coronavirus-12/64/coronavirus-virus-pandemic-disease-infection-covid19-512.png";
@@ -327,12 +376,14 @@ namespace Covid19Feeds.ViewModels
                         TabIcon1 = "ic_tab1selected.png";
                         TabIcon2 = "ic_tab2unselected.png";
                         TabIcon3 = "ic_tab3unselected.png";
+                        TabIcon4 = "ic_tab4unselected.png";
                         Scalevalue = 1;
                         Scalevalue1 = 0.8;
                         Scalevalue2 = 0.8;
                         IsDashboardVisible = true;
                         IsAboutVisible = false;
                         IsCountriesVisible = false;
+                        IsMapsVisible = false;
                         //HeaderImage = "https://cdn2.iconfinder.com/data/icons/covid-19-solid/64/virus-06-512.png";
                         //headerImage = "https://cdn3.iconfinder.com/data/icons/coronavirus-12/64/coronavirus-virus-pandemic-disease-infection-covid19-512.png";
                         HeaderImage = "ic_nwvirus";
@@ -344,9 +395,11 @@ namespace Covid19Feeds.ViewModels
                         TabIcon1 = "ic_tab1unselected.png";
                         TabIcon2 = "ic_tab2selected.png";
                         TabIcon3 = "ic_tab3unselected.png";
+                        TabIcon4 = "ic_tab4unselected.png";
                         IsDashboardVisible = false;
                         IsAboutVisible = false;
                         IsCountriesVisible = true;
+                        IsMapsVisible = false;
                         Scalevalue = 0.8;
                         Scalevalue1 = 1;
                         Scalevalue2 = 0.8;
@@ -359,14 +412,36 @@ namespace Covid19Feeds.ViewModels
                         TabIcon1 = "ic_tab1unselected.png";
                         TabIcon2 = "ic_tab2unselected.png";
                         TabIcon3 = "ic_tab3selected.png";
+                        TabIcon4 = "ic_tab4unselected.png";
                         IsDashboardVisible = false;
                         IsAboutVisible = true;
                         IsCountriesVisible = false;
+                        IsMapsVisible = false;
                         Scalevalue = 0.8;
                         Scalevalue1 = 0.8;
                         Scalevalue2 = 1;
                         PageTitle = "About";
                         HeaderImage = "http://files.softicons.com/download/system-icons/phuzion-icons-by-kyo-tux/png/256/Info.png";
+                        ShouldMoveTitleToLeft = false;
+                        IsHeaderImageVisible = false;
+                        break;
+
+                    case "foodshelter":
+                        TabIcon1 = "ic_tab1unselected.png";
+                        TabIcon2 = "ic_tab2unselected.png";
+                        TabIcon3 = "ic_tab3unselected.png";
+                        TabIcon4 = "ic_tab4selected.png";
+                        IsDashboardVisible = false;
+                        IsAboutVisible = true;
+                        IsCountriesVisible = false;
+                        IsMapsVisible = true;
+                        Scalevalue = 0.8;
+                        Scalevalue1 = 0.8;
+                        Scalevalue2 = 0.8;
+                        Scalevalue3 = 1;
+                        MapUrl = "https://www.google.co.in/maps/search/food+shelters+near+me/@13.2796812,77.4280801,11z/data=!3m1!4b1";
+                        PageTitle = "Food Shelter Near Me";
+                        HeaderImage = "ic_circlemap";
                         ShouldMoveTitleToLeft = false;
                         IsHeaderImageVisible = false;
                         break;
@@ -415,9 +490,11 @@ namespace Covid19Feeds.ViewModels
             TabIcon1 = "ic_tab1selected.png";
             TabIcon2 = "ic_tab2unselected.png";
             TabIcon3 = "ic_tab3unselected.png";
+            TabIcon4 = "ic_tab4unselected.png";
             Scalevalue = 1;
             Scalevalue1 = 0.8;
             Scalevalue2 = 0.8;
+            Scalevalue3 = 0.8;
             IsDashboardVisible = true;
             IsAboutVisible = false;
             IsCountriesVisible = false;

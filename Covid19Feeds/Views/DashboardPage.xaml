@@ -6,17 +6,11 @@
     <ContentPage.Content>
 
         <yummy:PancakeView>
-            <yummy:PancakeView.BackgroundGradientStops>
-                <yummy:GradientStopCollection>
-                    <yummy:GradientStop Color="Transparent" Offset="0" />
-                    <yummy:GradientStop Color="Transparent" Offset="0.5" />
-                    <yummy:GradientStop Color="Transparent" Offset="1" />
-                </yummy:GradientStopCollection>
-            </yummy:PancakeView.BackgroundGradientStops>
+          
 
             <StackLayout>
               
-                <ctrl:HeaderView HeaderImage="{Binding HeaderImage}" Text="{Binding PageTitle}" MoveImageLeftSide="{Binding ShouldMoveTitleToLeft}" />
+                <ctrl:HeaderView HeaderImage="{Binding HeaderImage}"  Text="{Binding PageTitle}" MoveImageLeftSide="{Binding ShouldMoveTitleToLeft}" />
                 
                   <Label Text="No Internet"  BackgroundColor="#E84342" HeightRequest="30" TextColor="White" Style="{StaticResource DescriptionLabel}" FontSize="Medium" HorizontalTextAlignment="Center">
                     <Label.Behaviors>
@@ -27,6 +21,7 @@
                     <local:DashboardView IsVisible="{Binding IsDashboardVisible}" x:Name="dashboard" />
                     <local:CountriesView IsVisible="{Binding IsCountriesVisible}" x:Name="countires" />
                     <local:AboutView IsVisible="{Binding IsAboutVisible}" x:Name="about" />
+                    <local:MapsView IsVisible="{Binding IsMapsVisible}"></local:MapsView>
                     <!--<ffimageloadingsvg:SvgCachedImage WidthRequest="200" HeightRequest="200" Source="sample.svg"/>-->
                     <!--<ActivityIndicator HeightRequest="80" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" WidthRequest="80" IsRunning="{Binding IsBusy}" IsVisible="{Binding IsBusy}"></ActivityIndicator>-->
                     <Grid VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" IsVisible="{Binding IsBusy}">
