@@ -1,7 +1,5 @@
-# Covid-19-Feeds.
-
-
-Application helps to fetch covid details from all the countries specifically app fetches data from all the states in india.
+## Covid-19-Feeds.
+Application helps to fetch covid details from all the countries specifically app fetches data from all the states in india. Food And Shelter Functionality helps find food and shelter near your place
 
 
 
